@@ -19,8 +19,7 @@ namespace NoteAppUI
             InitializeComponent();
             //this.Load += new EventHandler(Form_Load);
         }
-        /*
-         // блок скругления углов
+        /*   блок скругления углов
         [DllImport("Gdi32.dll")]
 
         public static extern IntPtr CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
@@ -34,14 +33,24 @@ namespace NoteAppUI
                 IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
                 SetWindowRgn(this.Handle, hRgn, true);
         }
-        //конец блока скругления углов
-        */
+        конец блока скругления углов */
+
         private void Look_chords_Click(object sender, EventArgs e)
         {
             Look_chords look_chords = new Look_chords();
             look_chords.Owner = this;
             look_chords.Show();
             this.Hide();
+            this.CenterToScreen();
+        }
+
+        private void Add_chord_Click(object sender, EventArgs e)
+        {
+            Add_chord add_chord = new Add_chord();
+            add_chord.Owner = this;
+            add_chord.Show();
+            this.Hide();
+            this.CenterToScreen();
         }
     }
 }

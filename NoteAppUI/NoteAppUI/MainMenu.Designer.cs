@@ -36,27 +36,34 @@
             // 
             // Add_chord
             // 
+            this.Add_chord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.Add_chord.Location = new System.Drawing.Point(108, 250);
             this.Add_chord.Name = "Add_chord";
             this.Add_chord.Size = new System.Drawing.Size(200, 40);
             this.Add_chord.TabIndex = 0;
             this.Add_chord.Text = "Добавить Аккорд";
             this.Add_chord.UseVisualStyleBackColor = true;
+            this.Add_chord.Click += new System.EventHandler(this.Add_chord_Click);
             // 
             // Look_chords
             // 
+            this.Look_chords.BackColor = System.Drawing.Color.Transparent;
+            this.Look_chords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Look_chords.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+            this.Look_chords.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Look_chords.Location = new System.Drawing.Point(108, 175);
             this.Look_chords.Name = "Look_chords";
             this.Look_chords.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Look_chords.Size = new System.Drawing.Size(200, 40);
             this.Look_chords.TabIndex = 1;
             this.Look_chords.Text = "Просмотреть аккорды";
-            this.Look_chords.UseVisualStyleBackColor = true;
+            this.Look_chords.UseVisualStyleBackColor = false;
             this.Look_chords.Click += new System.EventHandler(this.Look_chords_Click);
             // 
             // melody_lib
             // 
             this.melody_lib.Enabled = false;
+            this.melody_lib.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
             this.melody_lib.Location = new System.Drawing.Point(108, 325);
             this.melody_lib.Name = "melody_lib";
             this.melody_lib.Size = new System.Drawing.Size(200, 40);

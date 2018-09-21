@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_chord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_chord.Designer.cs">
+      <DependentUpon>Add_chord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Look_chords.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add_chord.resx">
+      <DependentUpon>Add_chord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Look_chords.resx">
       <DependentUpon>Look_chords.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
