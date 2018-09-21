@@ -27,10 +27,15 @@ namespace NoteAppUI
             this.Close();
         }
 
-        private void Add_chord_Load(object sender, EventArgs e)
+        public void line()
         {
             Graphics g = this.CreateGraphics();
             g.DrawLine(new Pen(Color.Red), 10, 10, 100, 100);
+        }
+
+        private void Add_chord_Shown(object sender, EventArgs e)
+        {
+            line();
         }
     }
 

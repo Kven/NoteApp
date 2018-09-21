@@ -64,7 +64,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChordsLib";
-            this.Load += new System.EventHandler(this.Add_chord_Load);
+            this.Shown += new System.EventHandler(this.Add_chord_Shown);
             this.ResumeLayout(false);
 
         }
