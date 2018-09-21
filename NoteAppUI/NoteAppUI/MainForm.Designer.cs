@@ -30,36 +30,38 @@
         {
             this.Add_chord = new System.Windows.Forms.Button();
             this.Look_chord = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.melody_lib = new System.Windows.Forms.Button();
             this.MainTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Add_chord
             // 
-            this.Add_chord.Location = new System.Drawing.Point(143, 150);
+            this.Add_chord.Location = new System.Drawing.Point(108, 250);
             this.Add_chord.Name = "Add_chord";
-            this.Add_chord.Size = new System.Drawing.Size(137, 57);
+            this.Add_chord.Size = new System.Drawing.Size(200, 40);
             this.Add_chord.TabIndex = 0;
             this.Add_chord.Text = "Добавить Аккорд";
             this.Add_chord.UseVisualStyleBackColor = true;
             // 
             // Look_chord
             // 
-            this.Look_chord.Location = new System.Drawing.Point(143, 250);
+            this.Look_chord.Location = new System.Drawing.Point(108, 175);
             this.Look_chord.Name = "Look_chord";
-            this.Look_chord.Size = new System.Drawing.Size(137, 57);
+            this.Look_chord.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Look_chord.Size = new System.Drawing.Size(200, 40);
             this.Look_chord.TabIndex = 1;
-            this.Look_chord.Text = "button2";
+            this.Look_chord.Text = "Просмотреть аккорды";
             this.Look_chord.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // melody_lib
             // 
-            this.button3.Location = new System.Drawing.Point(143, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 57);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.melody_lib.Enabled = false;
+            this.melody_lib.Location = new System.Drawing.Point(108, 325);
+            this.melody_lib.Name = "melody_lib";
+            this.melody_lib.Size = new System.Drawing.Size(200, 40);
+            this.melody_lib.TabIndex = 2;
+            this.melody_lib.Text = "Библиотека записей";
+            this.melody_lib.UseVisualStyleBackColor = true;
             // 
             // MainTitle
             // 
@@ -80,12 +82,12 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = global::NoteAppUI.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(410, 496);
+            this.ClientSize = new System.Drawing.Size(415, 500);
             this.Controls.Add(this.MainTitle);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.melody_lib);
             this.Controls.Add(this.Look_chord);
             this.Controls.Add(this.Add_chord);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainMenu";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -99,7 +101,7 @@
 
         private System.Windows.Forms.Button Add_chord;
         private System.Windows.Forms.Button Look_chord;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button melody_lib;
         private System.Windows.Forms.Label MainTitle;
     }
 }
