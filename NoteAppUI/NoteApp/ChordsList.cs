@@ -13,7 +13,7 @@ namespace NoteApp
         /// добавляет аккорд в список аккоордов
         /// </summary>
         /// <param name="chord"> аккорд который добавляют в список</param>
-        public void Add (Chord chord)
+        public void Add(Chord chord)
         {
             _list_of_chords.Add(chord);
         }
@@ -24,7 +24,7 @@ namespace NoteApp
         public void Delete(string _name)
         {
         }
-       
+
         /* public list<Chord> GetChords
         {   
             должен вернуть список аккордов, название в лист бокс,
@@ -33,4 +33,5 @@ namespace NoteApp
 
         }
         */
+    }
 }
