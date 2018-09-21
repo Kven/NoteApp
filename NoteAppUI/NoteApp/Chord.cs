@@ -9,7 +9,7 @@ namespace NoteApp
     /// <summary>
     /// Класс содержащий название аккорда, начальный лад, а так же массив значений флагов координат
     /// </summary>
-    class Chord
+    public class Chord
     {
         private string _name;   //название аккорда
         private int _begin;     //начальный лад
