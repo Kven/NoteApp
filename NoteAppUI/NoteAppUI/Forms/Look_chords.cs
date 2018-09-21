@@ -44,6 +44,5 @@ namespace NoteAppUI
             this.Close();
             
         }
-       
     }
 }
