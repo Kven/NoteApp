@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chord.cs" />
     <Compile Include="NoteApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
