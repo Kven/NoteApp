@@ -11,19 +11,19 @@ using System.Runtime.InteropServices;
 using NoteApp;
 
 namespace NoteAppUI
-    {   
-    public partial class MainMenu : Form
+{
+    public partial class Look_chords : Form
     {
-        public MainMenu()
+        public Look_chords()
         {
             InitializeComponent();
             //this.Load += new EventHandler(Form_Load);
         }
         /*
-         // блок скругления углов
+        // Блок скругления углов
         [DllImport("Gdi32.dll")]
 
-        public static extern IntPtr CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
+        public static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
         [DllImport("user32.dll")]
 
@@ -31,17 +31,19 @@ namespace NoteAppUI
 
         void Form_Load(object sender, EventArgs e)
         {
-                IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
-                SetWindowRgn(this.Handle, hRgn, true);
+            IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
+            SetWindowRgn(this.Handle, hRgn, true);
         }
-        //конец блока скругления углов
-        */
-        private void Look_chords_Click(object sender, EventArgs e)
+         //конец блока скругления
+         */
+
+        private void back_Click(object sender, EventArgs e)
         {
-            Look_chords look_chords = new Look_chords();
-            look_chords.Owner = this;
-            look_chords.Show();
+            this.Owner.Show();
             this.Hide();
+            this.Close();
+            
         }
+       
     }
 }

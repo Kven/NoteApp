@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Add_chord = new System.Windows.Forms.Button();
-            this.Look_chord = new System.Windows.Forms.Button();
+            this.Look_chords = new System.Windows.Forms.Button();
             this.melody_lib = new System.Windows.Forms.Button();
             this.MainTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -43,15 +43,16 @@
             this.Add_chord.Text = "Добавить Аккорд";
             this.Add_chord.UseVisualStyleBackColor = true;
             // 
-            // Look_chord
+            // Look_chords
             // 
-            this.Look_chord.Location = new System.Drawing.Point(108, 175);
-            this.Look_chord.Name = "Look_chord";
-            this.Look_chord.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Look_chord.Size = new System.Drawing.Size(200, 40);
-            this.Look_chord.TabIndex = 1;
-            this.Look_chord.Text = "Просмотреть аккорды";
-            this.Look_chord.UseVisualStyleBackColor = true;
+            this.Look_chords.Location = new System.Drawing.Point(108, 175);
+            this.Look_chords.Name = "Look_chords";
+            this.Look_chords.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Look_chords.Size = new System.Drawing.Size(200, 40);
+            this.Look_chords.TabIndex = 1;
+            this.Look_chords.Text = "Просмотреть аккорды";
+            this.Look_chords.UseVisualStyleBackColor = true;
+            this.Look_chords.Click += new System.EventHandler(this.Look_chords_Click);
             // 
             // melody_lib
             // 
@@ -85,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(415, 500);
             this.Controls.Add(this.MainTitle);
             this.Controls.Add(this.melody_lib);
-            this.Controls.Add(this.Look_chord);
+            this.Controls.Add(this.Look_chords);
             this.Controls.Add(this.Add_chord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainMenu";
@@ -100,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Button Add_chord;
-        private System.Windows.Forms.Button Look_chord;
+        private System.Windows.Forms.Button Look_chords;
         private System.Windows.Forms.Button melody_lib;
         private System.Windows.Forms.Label MainTitle;
     }
