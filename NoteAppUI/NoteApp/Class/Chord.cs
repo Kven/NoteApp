@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NoteApp
+namespace NoteApp.Class
 {
     /// <summary>
     /// Класс содержащий название аккорда, начальный лад, а так же массив значений флагов координат
@@ -18,15 +14,16 @@ namespace NoteApp
                                                 0,0,0,0,0,0,
                                                 0,0,0,0,0,0 };    //массив 0 или 1, если 1 то там зажимается струна
 
-        public Chord() { _name = "неизвестно"; _begin = 1; }  //конструктор для "пустого аккорда"
+        public Chord(string name) { _name = "name"; _begin = 1; }  //конструктор для "пустого аккорда"
 
         ~Chord() { } //деконструктор
+
         /// <summary>
         /// Устанавливает название аккорда
         /// </summary>
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 for (int i = 0; i < value.Length; i++)
@@ -44,7 +41,7 @@ namespace NoteApp
         /// </summary>
         public int Begin
         {
-            get { return _begin; }
+            get => _begin;
             set
             {
                 if (value > 16)
@@ -61,10 +58,7 @@ namespace NoteApp
         /// </summary>
         public int[] Frets
         {
-            get
-            {
-                return _frets;
-            }
+            get => _frets;
             set
             {
                 foreach (int i in value)

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace NoteApp
+namespace NoteApp.Class
 {
-    public class ChordsList : Chord
+    public class ChordsList
     {
-        private List<Chord> _list_of_chords = new List<Chord>();
+        private readonly List<Chord> _list_of_chords = new List<Chord>();
+        
         /// <summary>
         /// добавляет аккорд в список аккоордов
         /// </summary>
@@ -20,9 +17,10 @@ namespace NoteApp
         /// <summary>
         /// удаляет аккорд в списке аккордов по названию аккорда
         /// </summary>
-        /// <param name="_name">название аккорда, который нужно удолить</param>
-        public void Delete(string _name)
+        /// <param name="name">название аккорда, который нужно удалить</param>
+        public void Delete(string name)
         {
+
         }
 
         /* public list<Chord> GetChords
