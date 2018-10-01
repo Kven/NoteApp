@@ -48,6 +48,7 @@
     <Compile Include="Class\ChordsList.cs" />
     <Compile Include="Class\JsonFiles.cs" />
     <Compile Include="Class\NoteApp.cs" />
+    <Compile Include="Class\Testy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
