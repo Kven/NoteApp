@@ -1,8 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System;
-using System.Diagnostics.Contracts;
-
-namespace NoteApp.Class
+﻿namespace NoteApp
 {
     public class NoteApp
     {

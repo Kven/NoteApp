@@ -49,33 +49,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Add_chord.cs">
+    <Compile Include="Add_chord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Add_chord.Designer.cs">
+    <Compile Include="Add_chord.Designer.cs">
       <DependentUpon>Add_chord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Look_chords.cs">
+    <Compile Include="Look_chords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Look_chords.Designer.cs">
+    <Compile Include="Look_chords.Designer.cs">
       <DependentUpon>Look_chords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainMenu.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainMenu.Designer.cs">
+    <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Add_chord.resx">
+    <EmbeddedResource Include="Add_chord.resx">
       <DependentUpon>Add_chord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Look_chords.resx">
+    <EmbeddedResource Include="Look_chords.resx">
       <DependentUpon>Look_chords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainMenu.resx">
+    <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,7 +88,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="configs\packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,7 +100,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="configs\App.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NoteApp\NoteApp.csproj">
@@ -115,8 +114,6 @@
   <ItemGroup>
     <None Include="Resources\back-arrow.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="class\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

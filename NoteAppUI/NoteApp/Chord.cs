@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NoteApp.Class
+namespace NoteApp
 {
     /// <summary>
     /// Класс содержащий название аккорда, начальный лад, а так же массив значений флагов координат

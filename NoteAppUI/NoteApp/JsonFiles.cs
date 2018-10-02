@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using Newtonsoft.Json;
 
-namespace NoteApp.Class
+namespace NoteApp
 {
     public class JsonFiles
     {

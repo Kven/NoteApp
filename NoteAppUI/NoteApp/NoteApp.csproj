@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Chord.cs" />
-    <Compile Include="Class\ChordsList.cs" />
-    <Compile Include="Class\JsonFiles.cs" />
-    <Compile Include="Class\NoteApp.cs" />
+    <Compile Include="Chord.cs" />
+    <Compile Include="ChordsList.cs" />
+    <Compile Include="JsonFiles.cs" />
+    <Compile Include="NoteApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
