@@ -26,7 +26,7 @@ namespace NoteApp.Class
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
-            using (StreamReader sr = new StreamReader(@"c:\json.txt"))
+            using (StreamReader sr = new StreamReader(@"D:\json.txt"))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
