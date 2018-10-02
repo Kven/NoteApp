@@ -14,7 +14,13 @@ namespace NoteApp.Class
                                                 0,0,0,0,0,0,
                                                 0,0,0,0,0,0 };    //массив 0 или 1, если 1 то там зажимается струна
 
-        public Chord(string name) { _name = "name"; _begin = 1; }  //конструктор для "пустого аккорда"
+        public Chord() { _name = "Неизвестный аккорд"; _begin = 1; }  //конструктор для "пустого аккорда"
+
+        public Chord(string name)
+        {
+            _name = name;
+            _begin = 1;
+        }
 
         ~Chord() { } //деконструктор
 

@@ -17,24 +17,8 @@ namespace NoteAppUI
         public MainMenu()
         {
             InitializeComponent();
-            //this.Load += new EventHandler(Form_Load);
         }
-        /*   блок скругления углов
-        [DllImport("Gdi32.dll")]
-
-        public static extern IntPtr CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
-
-        [DllImport("user32.dll")]
-
-        public static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
-
-        void Form_Load(object sender, EventArgs e)
-        {
-                IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
-                SetWindowRgn(this.Handle, hRgn, true);
-        }
-        конец блока скругления углов */
-
+        
         private void Look_chords_Click(object sender, EventArgs e)
         {
             Look_chords look_chords = new Look_chords();

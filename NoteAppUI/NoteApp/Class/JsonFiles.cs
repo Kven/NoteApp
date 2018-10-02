@@ -8,13 +8,13 @@ namespace NoteApp.Class
         JsonSerializer serializer = new JsonSerializer();
         
             //Открываем поток для записи в файл с указанием пути
-        public void SaveFile(ChordsList list)
+        public void SaveFile(Chord chord)
         {
-            using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
+            using (StreamWriter sw = new StreamWriter(@"D:\json.txt"))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать
-                serializer.Serialize(writer, list);
+                serializer.Serialize(writer, chord);
             }
         }
 

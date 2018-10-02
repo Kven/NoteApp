@@ -1,35 +1,50 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace NoteApp.Class
 {
     public class ChordsList
     {
-        private readonly List<Chord> _list_of_chords = new List<Chord>();
-        
         /// <summary>
-        /// добавляет аккорд в список аккоордов
+        /// Создаём словарь
         /// </summary>
-        /// <param name="chord"> аккорд который добавляют в список</param>
-        public void Add(Chord chord)
+        private Dictionary<int, Chord> _ChordDic = new Dictionary<int, Chord>();
+
+        /// <summary>
+        /// Метод добавление элементов в словарь
+        /// </summary>
+        public void Add(int i, Chord chord)
         {
-            _list_of_chords.Add(chord);
+            try
+            {
+                _ChordDic.Add(i, chord);
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("\nЗаданный ключ уже используется ");
+                throw;
+            }
+            
         }
         /// <summary>
-        /// удаляет аккорд в списке аккордов по названию аккорда
+        /// Находит ключ по полю имени в классе chord
         /// </summary>
-        /// <param name="name">название аккорда, который нужно удалить</param>
-        public void Delete(string name)
+        /// <param name="name">Название аккорда</param>
+        /// <returns>Возвращает id в словоре</returns>
+        public int Serch(string name)
+        {
+
+
+            return id;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        public void Delete(int i)
         {
 
         }
-
-        /* public list<Chord> GetChords
-        {   
-            должен вернуть список аккордов, название в лист бокс,
-            начальный лад в бокс текст,
-            массив флагов в условную конструцию которая будет ставить точку в определенной координате если 1 и не будет если 0
-
-        }
-        */
     }
 }

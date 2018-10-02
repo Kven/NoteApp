@@ -95,7 +95,7 @@
             this.Controls.Add(this.melody_lib);
             this.Controls.Add(this.Look_chords);
             this.Controls.Add(this.Add_chord);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MainMenu";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

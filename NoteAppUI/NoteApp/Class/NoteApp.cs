@@ -6,6 +6,11 @@ namespace NoteApp.Class
 {
     public class NoteApp
     {
-    }
-      
+        public void Main()
+        {
+            
+        }
+        
+    } 
+       
 }

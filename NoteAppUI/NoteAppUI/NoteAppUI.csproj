@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="configs\packages.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
