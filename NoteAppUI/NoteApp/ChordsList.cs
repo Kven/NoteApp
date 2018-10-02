@@ -33,11 +33,11 @@ namespace NoteApp
         /// <returns>Возвращает id в словоре</returns>
         public int Serch(string name)
         {
-            foreach (var VARIABLE in _ChordDic)
+            foreach (var item in _ChordDic)
             {
-                if (VARIABLE.Value.Name == name)
+                if (item.Value.Name == name)
                 {
-                    return VARIABLE.Key;
+                    return item.Key;
                 }
             }
             return 555;
@@ -50,11 +50,11 @@ namespace NoteApp
         public void Delete(string name)
         {
             int key = 0;
-            foreach (var VARIABLE in _ChordDic)
+            foreach (var item in _ChordDic)
             {
-                if (VARIABLE.Value.Name == name)
+                if (item.Value.Name == name)
                 {
-                    key = VARIABLE.Key;
+                    key = item.Key;
                 }
 
             }

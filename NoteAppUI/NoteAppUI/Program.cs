@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteApp;
 
@@ -21,11 +18,11 @@ namespace NoteAppUI
             Application.Run(new MainMenu());
 
             
-            Chord Am = new Chord("Am");
-            ChordsList List = new ChordsList();
-            List.Add(0,Am);
-            JsonFiles Json = new JsonFiles();
-            Json.SaveFile(List);
+            Chord am = new Chord("Am");
+            ChordsList list = new ChordsList();
+            list.Add(0,am);
+            JsonFiles json = new JsonFiles();
+            json.SaveFile(list);
         }
     }
 }

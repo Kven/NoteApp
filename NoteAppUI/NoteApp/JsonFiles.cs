@@ -5,16 +5,15 @@ namespace NoteApp
 {
     public class JsonFiles
     {
-        JsonSerializer serializer = new JsonSerializer();
-        
-            //Открываем поток для записи в файл с указанием пути
-        public void SaveFile(ChordsList List)
+        //Открываем поток для записи в файл с указанием пути
+        public void SaveFile(ChordsList list)
         {
+            JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter(@"D:\json.txt"))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать
-                serializer.Serialize(writer, List);
+                serializer.Serialize(writer, list);
             }
         }
 
