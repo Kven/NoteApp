@@ -41,7 +41,7 @@ namespace NoteApp.Class
                     return VARIABLE.Key;
                 }
             }
-            return 0;
+            return 555;
         }
 
         /// <summary>

@@ -62,19 +62,17 @@ namespace NoteApp.Class
             }
 
         }
+
         /// <summary>
         /// Устанавливает значение флагов координат
         /// </summary>
         /*
         public int[] Frets
         {
-            get => _frets;
+            get => _frets.keys;
             set
             {
-                foreach (int i in value)
-                {
-                   _frets[i] = value[i];
-                }
+                _freats.add(value)
             }
         }
         */
