@@ -75,11 +75,11 @@
             // 
             this.MainTitle.AutoSize = true;
             this.MainTitle.BackColor = System.Drawing.Color.Transparent;
-            this.MainTitle.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MainTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainTitle.ForeColor = System.Drawing.SystemColors.Info;
-            this.MainTitle.Location = new System.Drawing.Point(12, 53);
+            this.MainTitle.Location = new System.Drawing.Point(39, 91);
             this.MainTitle.Name = "MainTitle";
-            this.MainTitle.Size = new System.Drawing.Size(392, 57);
+            this.MainTitle.Size = new System.Drawing.Size(333, 36);
             this.MainTitle.TabIndex = 3;
             this.MainTitle.Text = "Библиотека Аккордов";
             // 
@@ -87,8 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.BackgroundImage = global::NoteAppUI.Properties.Resources.back;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(415, 500);
             this.Controls.Add(this.MainTitle);

@@ -17,7 +17,6 @@ namespace NoteAppUI
         public Add_chord()
         {
             InitializeComponent();
-            //this.Load += new EventHandler(Form_Load);
         }
 
         private void back_Click(object sender, EventArgs e)
