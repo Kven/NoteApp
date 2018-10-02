@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Linq;
 
 namespace NoteApp.Class
 {
@@ -33,18 +34,32 @@ namespace NoteApp.Class
         /// <returns>Возвращает id в словоре</returns>
         public int Serch(string name)
         {
-
-
-            return id;
+            foreach (var VARIABLE in _ChordDic)
+            {
+                if (VARIABLE.Value.Name == name)
+                {
+                    return VARIABLE.Key;
+                }
+            }
+            return 0;
         }
 
         /// <summary>
-        /// 
+        /// Метод для удаления элемента словаря
         /// </summary>
-        /// <param name="i"></param>
-        public void Delete(int i)
+        /// <param name="name"> Название аккорда который нужно удалить</param>
+        public void Delete(string name)
         {
+            int key = 0;
+            foreach (var VARIABLE in _ChordDic)
+            {
+                if (VARIABLE.Value.Name == name)
+                {
+                    key = VARIABLE.Key;
+                }
 
+            }
+            _ChordDic.Remove(key);
         }
     }
 }

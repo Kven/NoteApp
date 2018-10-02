@@ -20,9 +20,12 @@ namespace NoteAppUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
 
+            
             Chord Am = new Chord("Am");
+            ChordsList List = new ChordsList();
+            List.Add(0,Am);
             JsonFiles Json = new JsonFiles();
-            Json.SaveFile(Am);
+            Json.SaveFile(List);
         }
     }
 }

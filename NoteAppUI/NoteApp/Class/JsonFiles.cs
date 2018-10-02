@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace NoteApp.Class
@@ -8,13 +9,13 @@ namespace NoteApp.Class
         JsonSerializer serializer = new JsonSerializer();
         
             //Открываем поток для записи в файл с указанием пути
-        public void SaveFile(Chord chord)
+        public void SaveFile(ChordsList List)
         {
             using (StreamWriter sw = new StreamWriter(@"D:\json.txt"))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать
-                serializer.Serialize(writer, chord);
+                serializer.Serialize(writer, List);
             }
         }
 
