@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NoteApp.Class
 {
@@ -7,12 +8,14 @@ namespace NoteApp.Class
     /// </summary>
     public class Chord
     {
+        private struct coordinates
+        {
+            private int x;
+            private int y;
+        }
         private string _name;   //название аккорда
         private int _begin;     //начальный лад
-        private int[] _frets = new int[24] {    0,0,0,0,0,0,
-                                                0,0,0,0,0,0,
-                                                0,0,0,0,0,0,
-                                                0,0,0,0,0,0 };    //массив 0 или 1, если 1 то там зажимается струна
+        private Dictionary<int, coordinates> _frets = new Dictionary<int, coordinates>(24);
 
         public Chord() { _name = "Неизвестный аккорд"; _begin = 1; }  //конструктор для "пустого аккорда"
 
@@ -62,6 +65,7 @@ namespace NoteApp.Class
         /// <summary>
         /// Устанавливает значение флагов координат
         /// </summary>
+        /*
         public int[] Frets
         {
             get => _frets;
@@ -73,5 +77,6 @@ namespace NoteApp.Class
                 }
             }
         }
+        */
     }
 }
