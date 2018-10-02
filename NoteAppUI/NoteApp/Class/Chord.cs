@@ -8,14 +8,14 @@ namespace NoteApp.Class
     /// </summary>
     public class Chord
     {
-        private struct coordinates
+        private struct _coordinates
         {
             private int x;
             private int y;
         }
         private string _name;   //название аккорда
         private int _begin;     //начальный лад
-        private Dictionary<int, coordinates> _frets = new Dictionary<int, coordinates>(24);
+        private Dictionary<int, _coordinates> _frets = new Dictionary<int, _coordinates>(24);
 
         public Chord() { _name = "Неизвестный аккорд"; _begin = 1; }  //конструктор для "пустого аккорда"
 
