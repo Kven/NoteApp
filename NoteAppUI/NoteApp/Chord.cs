@@ -8,14 +8,9 @@ namespace NoteApp
     /// </summary>
     public class Chord
     {
-        private struct Coordinates
-        {
-            private int x;
-            private int y;
-        }
         private string _name;   //название аккорда
         private int _begin;     //начальный лад
-        private Dictionary<int, Coordinates> _frets = new Dictionary<int, Coordinates>(24);
+        private List<int[]> _frets = new List<int[]>();
 
         public Chord() { _name = "Неизвестный аккорд"; _begin = 1; }  //конструктор для "пустого аккорда"
 
@@ -64,17 +59,19 @@ namespace NoteApp
         }
 
         /// <summary>
-        /// Устанавливает значение флагов координат
+        /// Устанавливаем значения флагов и мест нанесения точки
+        /// /// </summary>
+        /// <param name="id">Указывает какая позиция на Convas</param>
+        /// <param name="flag">1 если надо поставить точку, 0 нет</param>
+        /// <param name="X">Координата Х</param>
+        /// <param name="Y">Координата У</param>
+        public void SetFrets(int id, int flag, int X, int Y) => _frets.Add(new int[] { id, flag, X, Y});
+
+        /// <summary>
+        /// Поиск по позиции в списке ладов
         /// </summary>
-        /*
-        public int[] Frets
-        {
-            get => _frets.keys;
-            set
-            {
-                _freats.add(value)
-            }
-        }
-        */
-    }
+        /// <param name="id">Указывает какая позиция на Convas</param>
+        /// <returns>Возращает всю информацию об ладе: какая позиция, зажат ли он, и координаты</returns>
+        public int[] GetFrets (int id) => _frets.Find(x => x[0] == id);
+    }    
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NoteApp;
+using NoteAppUI;
 
 
 namespace NoteAppUI
@@ -20,7 +21,7 @@ namespace NoteAppUI
             
             Chord am = new Chord("Am");
             ChordsList list = new ChordsList();
-            list.Add(0,am);
+            list.Add(0, am);
             JsonFiles json = new JsonFiles();
             json.SaveFile(list);
         }

@@ -36,5 +36,7 @@ namespace NoteAppUI
             this.Hide();
             this.CenterToScreen();
         }
+
+
     }
 }
