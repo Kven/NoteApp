@@ -19,14 +19,6 @@ namespace NoteAppUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
 
-            Chord am = new Chord("Am");
-            ChordsList list = new ChordsList();
-            list.Add(0, am);
-            JsonFiles json = new JsonFiles();
-            json.SaveFile(list);
-
-            
-            
         }
     }
 }

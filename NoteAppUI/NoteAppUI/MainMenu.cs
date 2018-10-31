@@ -17,8 +17,16 @@ namespace NoteAppUI
         public MainMenu()
         {
             InitializeComponent();
+
+
+            Chord am = new Chord("Am");
+            ChordsList list = new ChordsList();
+            list.Add(0, am);
+            JsonFiles.SaveFile(list);
+
+
         }
-        
+
         private void Look_chords_Click(object sender, EventArgs e)
         {
             Look_chords look_chords = new Look_chords();
