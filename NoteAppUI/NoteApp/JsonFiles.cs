@@ -14,13 +14,13 @@ namespace NoteApp
             }
         }
 
-        public static T ReadFile<T>(/*string add*/) where T : class 
+        public static Chord ReadFile<Chord>()
         {
             JsonSerializer serializer = new JsonSerializer();
             using (StreamReader sr = new StreamReader(@"D:\path.txt"))
             using (JsonReader reader = new JsonTextReader(sr))
             {
-                return (T)serializer.Deserialize(reader);
+                return (Chord)serializer.Deserialize(reader);
             }
         }
     }
