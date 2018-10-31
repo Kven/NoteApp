@@ -22,7 +22,7 @@ namespace NoteAppUI
             Chord am = new Chord("Am");
             ChordsList list = new ChordsList();
             list.Add(am);
-            JsonFiles.SaveFile(list);
+            list.save();
 
 
         }

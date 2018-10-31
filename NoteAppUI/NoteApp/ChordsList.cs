@@ -36,5 +36,11 @@ namespace NoteApp
         {
             _chordsList.Remove(_chordsList.Find(i=> i.Name == name));
         }
+
+        public void save()
+
+        {
+            JsonFiles.SaveFile(_chordsList);
+        }
     }
 }

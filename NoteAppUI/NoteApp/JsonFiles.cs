@@ -5,7 +5,7 @@ namespace NoteApp
 {
     public class JsonFiles
     {
-        public static void SaveFile(ChordsList data)
+        public static void SaveFile(object data)
         {
             using (StreamWriter file = File.CreateText(@"D:\path.txt"))
             {
