@@ -14,13 +14,16 @@ namespace NoteAppUI
             Chord am = new Chord("Am");
             Chord bm = new Chord("Bm");
             ChordsList list = new ChordsList();
+            for (int i = 0; i < 10; i++)
+            {
+                list.chordsList.Add(new Chord());
+            }
+        
             list.chordsList.Add(am);
             list.chordsList.Add(bm);
             Json json = new Json();
             json.SaveFile(list.chordsList);
-            ChordsList list2 = new ChordsList();
-            list2.chordsList = json.ReadFile();
-
+           
 
 
 
