@@ -5,14 +5,13 @@ namespace NoteApp
 {
     public class JsonFiles
     {
-        public static void SaveFile(Chord data)
+        public static void SaveFile(ChordsList data)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter(@"D:\json.txt"))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    serializer.Serialize(writer, data);
-                }
+            using (StreamWriter file = File.CreateText(@"D:\path.txt"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, data);
+            }
         }
 
         public static void ReadFile(string add)
