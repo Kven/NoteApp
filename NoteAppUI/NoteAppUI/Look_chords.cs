@@ -30,5 +30,11 @@ namespace NoteAppUI
             this.Close();
             
         }
+
+        private void add_chord_Click(object sender, EventArgs e)
+        {
+            Chord newChord = new Chord("Am7");
+            BrowseChord.Items.Add(newChord.Name);
+        }
     }
 }

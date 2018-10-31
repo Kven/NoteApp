@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.back = new System.Windows.Forms.Button();
-            this.browser = new System.Windows.Forms.ListBox();
+            this.BrowseChord = new System.Windows.Forms.ListBox();
+            this.add_chord = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back
@@ -44,20 +45,31 @@
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // browser
+            // BrowseChord
             // 
-            this.browser.FormattingEnabled = true;
-            this.browser.Location = new System.Drawing.Point(50, 32);
-            this.browser.Name = "browser";
-            this.browser.Size = new System.Drawing.Size(316, 433);
-            this.browser.TabIndex = 1;
+            this.BrowseChord.FormattingEnabled = true;
+            this.BrowseChord.Location = new System.Drawing.Point(56, 80);
+            this.BrowseChord.Name = "BrowseChord";
+            this.BrowseChord.Size = new System.Drawing.Size(140, 368);
+            this.BrowseChord.TabIndex = 1;
+            // 
+            // add_chord
+            // 
+            this.add_chord.Location = new System.Drawing.Point(260, 126);
+            this.add_chord.Name = "add_chord";
+            this.add_chord.Size = new System.Drawing.Size(75, 23);
+            this.add_chord.TabIndex = 2;
+            this.add_chord.Text = "button1";
+            this.add_chord.UseVisualStyleBackColor = true;
+            this.add_chord.Click += new System.EventHandler(this.add_chord_Click);
             // 
             // Look_chords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.browser);
+            this.Controls.Add(this.add_chord);
+            this.Controls.Add(this.BrowseChord);
             this.Controls.Add(this.back);
             this.Name = "Look_chords";
             this.ShowIcon = false;
@@ -70,6 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.ListBox browser;
+        private System.Windows.Forms.ListBox BrowseChord;
+        private System.Windows.Forms.Button add_chord;
     }
 }
