@@ -55,6 +55,7 @@
     <Compile Include="Add_chord.Designer.cs">
       <DependentUpon>Add_chord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Draw.cs" />
     <Compile Include="Look_chords.cs">
       <SubType>Form</SubType>
     </Compile>
