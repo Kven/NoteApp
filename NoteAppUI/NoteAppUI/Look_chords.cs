@@ -14,9 +14,13 @@ namespace NoteAppUI
 {
     public partial class Look_chords : Form
     {
+        private ChordsList List = new ChordsList();
+
         public Look_chords()
         {
             InitializeComponent();
+
+
         }
 
         private void back_Click(object sender, EventArgs e)
