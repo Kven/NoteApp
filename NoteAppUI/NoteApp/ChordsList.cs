@@ -23,9 +23,9 @@ namespace NoteApp
         /// </summary>
         /// <param name="name">Название аккорда</param>
         /// <returns>Возвращает id в словаре</returns>
-        public int Serch(string name)
+        public Chord Serch(string name)
         {
-            return _chordsList.FindIndex(n=> n.Name == name);
+            return _chordsList.Find(n=> n.Name == name);
         }
 
         /// <summary>
