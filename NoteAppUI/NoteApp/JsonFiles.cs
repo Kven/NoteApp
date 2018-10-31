@@ -17,14 +17,14 @@ namespace NoteApp
             }
         }
 
-        public void ReadFile()
+        public void ReadFile(string add)
         {
             //Создаём переменную, в которую поместим результат десериализации
             ChordsList list = null;
             //Создаём экземпляр сериализатора
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для чтения из файла с указанием пути
-            using (StreamReader sr = new StreamReader(@"D:\json.txt"))
+            using (StreamReader sr = new StreamReader(@add))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 //Вызываем десериализацию и явно преобразуем результат в целевой тип данных
