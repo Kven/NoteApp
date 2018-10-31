@@ -20,8 +20,6 @@ namespace NoteApp
             _begin = 1;
         }
 
-        ~Chord() { } //деконструктор
-
         /// <summary>
         /// Устанавливает название аккорда
         /// </summary>

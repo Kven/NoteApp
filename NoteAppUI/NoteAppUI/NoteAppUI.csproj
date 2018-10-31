@@ -49,35 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_chord.cs">
+    <Compile Include="AddChordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_chord.Designer.cs">
-      <DependentUpon>Add_chord.cs</DependentUpon>
+    <Compile Include="AddChordForm.Designer.cs">
+      <DependentUpon>AddChordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Draw.cs" />
-    <Compile Include="Look_chords.cs">
+    <Compile Include="LookChordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Look_chords.Designer.cs">
-      <DependentUpon>Look_chords.cs</DependentUpon>
+    <Compile Include="LookChordsForm.Designer.cs">
+      <DependentUpon>LookChordsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Add_chord.resx">
-      <DependentUpon>Add_chord.cs</DependentUpon>
+    <EmbeddedResource Include="AddChordForm.resx">
+      <DependentUpon>AddChordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Look_chords.resx">
-      <DependentUpon>Look_chords.cs</DependentUpon>
+    <EmbeddedResource Include="LookChordsForm.resx">
+      <DependentUpon>LookChordsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

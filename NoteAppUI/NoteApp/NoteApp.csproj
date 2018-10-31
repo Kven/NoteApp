@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Chord.cs" />
     <Compile Include="ChordsList.cs" />
-    <Compile Include="JsonFiles.cs" />
+    <Compile Include="Json.cs" />
     <Compile Include="NoteApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

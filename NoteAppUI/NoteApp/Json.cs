@@ -1,11 +1,12 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace NoteApp
 {
-    public class JsonFiles
+    public class Json
     {
-        public static void SaveFile(object data)
+        public void SaveFile(object data)
         {
             using (StreamWriter file = File.CreateText(@"D:\path.txt"))
             {
@@ -14,13 +15,13 @@ namespace NoteApp
             }
         }
 
-        public static Chord ReadFile<Chord>()
+        public List<Chord> ReadFile()
         {
             JsonSerializer serializer = new JsonSerializer();
             using (StreamReader sr = new StreamReader(@"D:\path.txt"))
             using (JsonReader reader = new JsonTextReader(sr))
             {
-                return (Chord)serializer.Deserialize(reader);
+                return (List<Chord>)serializer.Deserialize(reader);
             }
         }
     }

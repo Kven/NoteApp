@@ -1,6 +1,6 @@
 ﻿namespace NoteAppUI
 {
-    partial class Look_chords
+    partial class AddChordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.back = new System.Windows.Forms.Button();
-            this.BrowseChord = new System.Windows.Forms.ListBox();
-            this.add_chord = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // back
@@ -41,40 +40,31 @@
             this.back.Location = new System.Drawing.Point(372, 12);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(31, 28);
-            this.back.TabIndex = 0;
+            this.back.TabIndex = 1;
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
-            // BrowseChord
+            // button1
             // 
-            this.BrowseChord.FormattingEnabled = true;
-            this.BrowseChord.Location = new System.Drawing.Point(56, 80);
-            this.BrowseChord.Name = "BrowseChord";
-            this.BrowseChord.Size = new System.Drawing.Size(140, 368);
-            this.BrowseChord.TabIndex = 1;
+            this.button1.Location = new System.Drawing.Point(379, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 22);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // add_chord
-            // 
-            this.add_chord.Location = new System.Drawing.Point(260, 126);
-            this.add_chord.Name = "add_chord";
-            this.add_chord.Size = new System.Drawing.Size(75, 23);
-            this.add_chord.TabIndex = 2;
-            this.add_chord.Text = "button1";
-            this.add_chord.UseVisualStyleBackColor = true;
-            this.add_chord.Click += new System.EventHandler(this.add_chord_Click);
-            // 
-            // Look_chords
+            // Add_chord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.add_chord);
-            this.Controls.Add(this.BrowseChord);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.back);
-            this.Name = "Look_chords";
+            this.Name = "Add_chord";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChordsLib";
+            this.Shown += new System.EventHandler(this.Add_chord_Shown);
             this.ResumeLayout(false);
 
         }
@@ -82,7 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.ListBox BrowseChord;
-        private System.Windows.Forms.Button add_chord;
+        private System.Windows.Forms.Button button1;
     }
 }

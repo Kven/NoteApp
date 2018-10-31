@@ -12,9 +12,9 @@ using NoteApp;
 
 namespace NoteAppUI
 {
-    public partial class Add_chord : Form
+    public partial class AddChordForm : Form
     {
-        public Add_chord()
+        public AddChordForm()
         {
             InitializeComponent();
         }
