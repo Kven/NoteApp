@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace NoteApp
 {
-    public class Json
+    public static class Json
     {
-        static void SaveFile(object data)
+        public static void SaveFile(List<Chord> data)
         {
             using (StreamWriter file = File.CreateText(@"D:\path.txt"))
             {
@@ -15,15 +15,17 @@ namespace NoteApp
             }
         }
 
-        static List<Chord> ReadFile()
+        public static List<Chord> ReadFile()
         {
-            JsonSerializer js = new JsonSerializer();
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamReader sr = new StreamReader(@"d:\path.txt"))
-            using (JsonReader reader = new JsonTextReader(sr))
+            List<Chord> data = null;
+            using (StreamReader file = File.OpenText(@"D:\path.txt"))
             {
-                return (List<Chord>)serializer.Deserialize(reader);
+                JsonSerializer serializer = new JsonSerializer();
+                List<Chord> temp = (List<Chord>)serializer.Deserialize(file, typeof(List<Chord>));
+                data = temp;
             }
+            return data;
+
         }
     }
       
