@@ -21,8 +21,6 @@ namespace NoteAppUI
 
         private void back_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
-            this.Hide();
             this.Close();
         }
 

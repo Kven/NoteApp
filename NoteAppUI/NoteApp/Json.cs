@@ -17,8 +17,9 @@ namespace NoteApp
 
         public List<Chord> ReadFile()
         {
+            JsonSerializer js = new JsonSerializer();
             JsonSerializer serializer = new JsonSerializer();
-            using (StreamReader sr = new StreamReader(@"D:\path.txt"))
+            using (StreamReader sr = new StreamReader(@"d:\path.txt"))
             using (JsonReader reader = new JsonTextReader(sr))
             {
                 return (List<Chord>)serializer.Deserialize(reader);

@@ -15,21 +15,19 @@ namespace NoteAppUI
 
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
-            this.Hide();
             this.Close();
             
         }
 
-        private void add_chord_Click(object sender, EventArgs e)
+        private void Add_chord_Click(object sender, EventArgs e)
         {
             Chord newChord = new Chord("Am7");
             BrowseChord.Items.Add(newChord.Name);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
         }
     }

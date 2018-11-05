@@ -44,7 +44,7 @@
             this.back.Size = new System.Drawing.Size(31, 28);
             this.back.TabIndex = 0;
             this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Click += new System.EventHandler(this.Back_Click);
             // 
             // BrowseChord
             // 
@@ -62,7 +62,7 @@
             this.add_chord.TabIndex = 2;
             this.add_chord.Text = "Тест 1";
             this.add_chord.UseVisualStyleBackColor = true;
-            this.add_chord.Click += new System.EventHandler(this.add_chord_Click);
+            this.add_chord.Click += new System.EventHandler(this.Add_chord_Click);
             // 
             // button1
             // 
@@ -72,9 +72,9 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Look_chords
+            // LookChordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -83,10 +83,10 @@
             this.Controls.Add(this.add_chord);
             this.Controls.Add(this.BrowseChord);
             this.Controls.Add(this.back);
-            this.Name = "Look_chords";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "LookChordsForm";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChordsLib";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
 
         }
