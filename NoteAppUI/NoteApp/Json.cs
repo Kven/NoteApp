@@ -6,7 +6,7 @@ namespace NoteApp
 {
     public class Json
     {
-        public void SaveFile(object data)
+        static void SaveFile(object data)
         {
             using (StreamWriter file = File.CreateText(@"D:\path.txt"))
             {
@@ -15,7 +15,7 @@ namespace NoteApp
             }
         }
 
-        public List<Chord> ReadFile()
+        static List<Chord> ReadFile()
         {
             JsonSerializer js = new JsonSerializer();
             JsonSerializer serializer = new JsonSerializer();

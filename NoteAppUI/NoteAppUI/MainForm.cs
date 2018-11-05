@@ -1,11 +1,14 @@
 ﻿using NoteApp;
 using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace NoteAppUI
 {
     public partial class MainForm : Form
     {
+        List<Chord> List = new List<Chord>();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -14,8 +17,12 @@ namespace NoteAppUI
 
         private void Look_chords_Click(object sender, EventArgs e)
         {
-            LookChordsForm look_chords = new LookChordsForm();
+            LookChordsForm look_chords = new LookChordsForm
+            {
+                list = List
+            };
             look_chords.ShowDialog();
+            List = look_chords.list;
             
         }
 
@@ -23,6 +30,7 @@ namespace NoteAppUI
         {
             AddChordForm add_chord = new AddChordForm();
             add_chord.ShowDialog();
+            List.Add(add_chord.newChord);
     
         }
 

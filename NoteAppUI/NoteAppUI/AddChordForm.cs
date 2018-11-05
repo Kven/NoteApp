@@ -14,56 +14,43 @@ namespace NoteAppUI
 {
     public partial class AddChordForm : Form
     {
+
+        public Chord newChord = new Chord();
+
         public AddChordForm()
         {
             InitializeComponent();
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void Сancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        public void line()
+        private void AddChord_Click(object sender, EventArgs e)
         {
-            Graphics g = this.CreateGraphics();
-            g.DrawLine(new Pen(Color.Red), 10, 10, 100, 100);
+            newChord.Name = nameInput.Text;
+            if (int.TryParse(beginInput.Text, out int bg))
+            {
+                if (bg >= 0 && bg <= 12)
+                {
+                    newChord.Begin = bg;
+                }
+                else
+                {
+                    MessageBox.Show("Не правильный лад");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Вы ввели не число");
+            }
+            this.Close();
         }
 
-        private void Add_chord_Shown(object sender, EventArgs e)
-        {
-            line();
-        }
+
+        
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-[DllImport("Gdi32.dll")]
-
-public static extern IntPtr CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
-
-[DllImport("user32.dll")]
-
-public static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
-
-void Form_Load(object sender, EventArgs e)
-{
-   IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
-   SetWindowRgn(this.Handle, hRgn, true);
-}
-//конец блока скругления углов
-*/
 }
