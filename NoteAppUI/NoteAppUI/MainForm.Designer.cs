@@ -93,7 +93,7 @@
             this.save.TabIndex = 4;
             this.save.Text = "Сохр";
             this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
             // load
             // 
@@ -103,7 +103,7 @@
             this.load.TabIndex = 5;
             this.load.Text = "Загрузить";
             this.load.UseVisualStyleBackColor = true;
-            this.load.Click += new System.EventHandler(this.load_Click);
+            this.load.Click += new System.EventHandler(this.Load_Click);
             // 
             // MainForm
             // 

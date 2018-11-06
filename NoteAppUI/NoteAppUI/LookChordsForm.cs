@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using NoteApp;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace NoteAppUI
 {
@@ -29,8 +30,11 @@ namespace NoteAppUI
                 Name = addChordForm.newChord.Name,
                 Begin = addChordForm.newChord.Begin
             };
-            list.Add(newChord);
-            listOfChords.Items.Add(newChord.Name);
+            if (newChord.Name != null)
+            {
+                list.Add(newChord);
+                listOfChords.Items.Add(newChord.Name);
+            }
 
             
         
@@ -46,6 +50,28 @@ namespace NoteAppUI
             {
                 listOfChords.Items.Add(x.Name);
             });
+
+            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
+            using (Graphics g = Graphics.FromImage(noteBox.Image))
+            {
+                Pen pen = new Pen(Color.Black, 2);
+                int x = 50;
+                int y = 10;
+                //вертикальные линии
+                for (int i = 0; i < 6; i++)
+                {
+                    g.DrawLine(pen, x, y, x, y + 200);
+                    x += 30;
+                }
+                //горизонтальные
+                x = 49;
+                y = 10;
+                for (int i = 0; i < 6; i++)
+                {
+                    g.DrawLine(pen, x, y, x + 152, y);
+                    y += 40;
+                }
+            }
         }
     }
 }

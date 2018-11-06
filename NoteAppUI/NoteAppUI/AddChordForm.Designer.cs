@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.noteBox = new System.Windows.Forms.PictureBox();
             this.nameInput = new System.Windows.Forms.TextBox();
             this.beginInput = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.beginLabel = new System.Windows.Forms.Label();
             this.addChord = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // noteBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 313);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.noteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.noteBox.Location = new System.Drawing.Point(53, 129);
+            this.noteBox.Name = "noteBox";
+            this.noteBox.Size = new System.Drawing.Size(294, 313);
+            this.noteBox.TabIndex = 2;
+            this.noteBox.TabStop = false;
             // 
             // nameInput
             // 
@@ -113,18 +114,19 @@
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.beginInput);
             this.Controls.Add(this.nameInput);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.noteBox);
             this.Name = "AddChordForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.AddChordForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox noteBox;
         private System.Windows.Forms.TextBox nameInput;
         private System.Windows.Forms.TextBox beginInput;
         private System.Windows.Forms.Label nameLabel;

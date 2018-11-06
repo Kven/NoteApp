@@ -32,8 +32,8 @@
             this.listOfChords = new System.Windows.Forms.ListBox();
             this.addItemButton = new System.Windows.Forms.Button();
             this.deleteItemButton = new System.Windows.Forms.Button();
-            this.imageBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
+            this.noteBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // back
@@ -76,20 +76,20 @@
             this.deleteItemButton.UseVisualStyleBackColor = true;
             this.deleteItemButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // imageBox
+            // noteBox
             // 
-            this.imageBox.Location = new System.Drawing.Point(177, 67);
-            this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(215, 222);
-            this.imageBox.TabIndex = 4;
-            this.imageBox.TabStop = false;
+            this.noteBox.Location = new System.Drawing.Point(177, 67);
+            this.noteBox.Name = "noteBox";
+            this.noteBox.Size = new System.Drawing.Size(215, 222);
+            this.noteBox.TabIndex = 4;
+            this.noteBox.TabStop = false;
             // 
             // LookChordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.imageBox);
+            this.Controls.Add(this.noteBox);
             this.Controls.Add(this.deleteItemButton);
             this.Controls.Add(this.addItemButton);
             this.Controls.Add(this.listOfChords);
@@ -99,7 +99,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.LookChordsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,6 +110,6 @@
         private System.Windows.Forms.ListBox listOfChords;
         private System.Windows.Forms.Button addItemButton;
         private System.Windows.Forms.Button deleteItemButton;
-        private System.Windows.Forms.PictureBox imageBox;
+        private System.Windows.Forms.PictureBox noteBox;
     }
 }

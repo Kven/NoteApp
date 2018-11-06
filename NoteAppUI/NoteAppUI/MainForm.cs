@@ -34,12 +34,12 @@ namespace NoteAppUI
     
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             Json.SaveFile(List);
         }
 
-        private void load_Click(object sender, EventArgs e)
+        private void Load_Click(object sender, EventArgs e)
         {
             List = Json.ReadFile();
         }
