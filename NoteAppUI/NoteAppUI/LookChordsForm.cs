@@ -13,6 +13,7 @@ namespace NoteAppUI
         public LookChordsForm()
         {
             InitializeComponent();
+            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -46,17 +47,14 @@ namespace NoteAppUI
 
         private void LookChordsForm_Load(object sender, EventArgs e)
         {
-            list.ForEach(x =>
-            {
-                listOfChords.Items.Add(x.Name);
-            });
+            list.ForEach(x => { listOfChords.Items.Add(x.Name); });
 
-            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
+
             using (Graphics g = Graphics.FromImage(noteBox.Image))
             {
                 Pen pen = new Pen(Color.Black, 2);
-                int x = 50;
-                int y = 10;
+                int x = 70;
+                int y = 55;
                 //вертикальные линии
                 for (int i = 0; i < 6; i++)
                 {
@@ -64,8 +62,7 @@ namespace NoteAppUI
                     x += 30;
                 }
                 //горизонтальные
-                x = 49;
-                y = 10;
+                x = 69;
                 for (int i = 0; i < 6; i++)
                 {
                     g.DrawLine(pen, x, y, x + 152, y);
