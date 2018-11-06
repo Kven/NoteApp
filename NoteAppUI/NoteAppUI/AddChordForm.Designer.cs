@@ -36,6 +36,7 @@
             this.addChord = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.Label();
+            this.begin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,6 @@
             this.beginInput.Name = "beginInput";
             this.beginInput.Size = new System.Drawing.Size(100, 24);
             this.beginInput.TabIndex = 4;
-            this.beginInput.Text = "1";
             this.beginInput.TextChanged += new System.EventHandler(this.BeginInput_TextChanged);
             // 
             // nameLabel
@@ -118,11 +118,21 @@
             this.name.Size = new System.Drawing.Size(0, 21);
             this.name.TabIndex = 9;
             // 
+            // begin
+            // 
+            this.begin.AutoSize = true;
+            this.begin.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.begin.Location = new System.Drawing.Point(114, 195);
+            this.begin.Name = "begin";
+            this.begin.Size = new System.Drawing.Size(0, 21);
+            this.begin.TabIndex = 10;
+            // 
             // AddChordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
+            this.Controls.Add(this.begin);
             this.Controls.Add(this.name);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.addChord);
@@ -142,6 +152,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.PictureBox noteBox;
         private System.Windows.Forms.TextBox nameInput;
         private System.Windows.Forms.TextBox beginInput;
@@ -150,5 +161,6 @@
         private System.Windows.Forms.Button addChord;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label begin;
     }
 }

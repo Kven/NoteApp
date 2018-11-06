@@ -101,16 +101,9 @@ namespace NoteAppUI
                     g.DrawLine(pen, x, y, x + 152, y);
                     y += 40;
                 }
-                x = 70;
-                y = 55;
-                if (beginInput.Text != "")
-                {
-                    for (int i = int.Parse(beginInput.Text); i < int.Parse(beginInput.Text) + 5; i++)
-                    {
-                        g.DrawString("" + i, new Font("Arial", 8), Brushes.Black, x - 15, y + 10);
-                        y += 40;
-                    }
-                }
+                x = 55;
+                y = 65;
+                
             }
         }
 
@@ -131,7 +124,7 @@ namespace NoteAppUI
         /// <param name="e"></param>
         private void BeginInput_TextChanged(object sender, EventArgs e)
         {
-            
+            begin.Text = beginInput.Text;
         }
 
         /// <summary>
