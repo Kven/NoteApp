@@ -35,17 +35,20 @@
             this.beginLabel = new System.Windows.Forms.Label();
             this.addChord = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // noteBox
             // 
             this.noteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.noteBox.Location = new System.Drawing.Point(53, 129);
+            this.noteBox.Location = new System.Drawing.Point(67, 134);
             this.noteBox.Name = "noteBox";
             this.noteBox.Size = new System.Drawing.Size(294, 313);
             this.noteBox.TabIndex = 2;
             this.noteBox.TabStop = false;
+            this.noteBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseDown);
+            this.noteBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseUp);
             // 
             // nameInput
             // 
@@ -54,6 +57,7 @@
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(100, 24);
             this.nameInput.TabIndex = 3;
+            this.nameInput.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
             // 
             // beginInput
             // 
@@ -62,6 +66,8 @@
             this.beginInput.Name = "beginInput";
             this.beginInput.Size = new System.Drawing.Size(100, 24);
             this.beginInput.TabIndex = 4;
+            this.beginInput.Text = "1";
+            this.beginInput.TextChanged += new System.EventHandler(this.BeginInput_TextChanged);
             // 
             // nameLabel
             // 
@@ -103,11 +109,21 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.Сancel_Click);
             // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name.Location = new System.Drawing.Point(190, 163);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(0, 21);
+            this.name.TabIndex = 9;
+            // 
             // AddChordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.addChord);
             this.Controls.Add(this.beginLabel);
@@ -133,5 +149,6 @@
         private System.Windows.Forms.Label beginLabel;
         private System.Windows.Forms.Button addChord;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Label name;
     }
 }

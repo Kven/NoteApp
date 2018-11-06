@@ -14,19 +14,38 @@ namespace NoteAppUI
 {
     public partial class AddChordForm : Form
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         public Chord newChord = new Chord();
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public AddChordForm()
         {
+            
             InitializeComponent();
+            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
+            
         }
 
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Сancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddChord_Click(object sender, EventArgs e)
         {
             if (nameInput.Text == "")
@@ -57,10 +76,13 @@ namespace NoteAppUI
                 this.Close();
         }
 
-      
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-            noteBox.Image = new Bitmap(noteBox.Width,noteBox.Height);
             using (Graphics g = Graphics.FromImage(noteBox.Image))
             {
                 Pen pen = new Pen(Color.Black, 2);
@@ -79,7 +101,57 @@ namespace NoteAppUI
                     g.DrawLine(pen, x, y, x + 152, y);
                     y += 40;
                 }
+                x = 70;
+                y = 55;
+                if (beginInput.Text != "")
+                {
+                    for (int i = int.Parse(beginInput.Text); i < int.Parse(beginInput.Text) + 5; i++)
+                    {
+                        g.DrawString("" + i, new Font("Arial", 8), Brushes.Black, x - 15, y + 10);
+                        y += 40;
+                    }
+                }
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameInput_TextChanged(object sender, EventArgs e)
+        {
+            name.Text = nameInput.Text;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BeginInput_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteBox_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteBox_MouseUp(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
