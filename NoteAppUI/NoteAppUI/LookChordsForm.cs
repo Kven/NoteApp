@@ -6,7 +6,7 @@ namespace NoteAppUI
 {
     public partial class LookChordsForm : Form
     {
-        private ChordsList List = new ChordsList();
+        
 
         public LookChordsForm()
         {

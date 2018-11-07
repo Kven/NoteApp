@@ -13,10 +13,11 @@ namespace NoteAppUI
 
             Chord am = new Chord("Am");
             Chord bm = new Chord("Bm");
-            ChordsList list = new ChordsList();
+            
             for (int i = 0; i < 10; i++)
             {
-                list.chordsList.Add(new Chord());
+                Chord ai = new Chord();
+                list.chordsList.add
             }
         
             list.chordsList.Add(am);
