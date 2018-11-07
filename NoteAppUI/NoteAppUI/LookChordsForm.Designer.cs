@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.back = new System.Windows.Forms.Button();
-            this.BrowseChord = new System.Windows.Forms.ListBox();
-            this.add_chord = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.listOfChords = new System.Windows.Forms.ListBox();
+            this.addItemButton = new System.Windows.Forms.Button();
+            this.deleteItemButton = new System.Windows.Forms.Button();
+            this.noteBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // back
@@ -44,49 +46,60 @@
             this.back.Size = new System.Drawing.Size(31, 28);
             this.back.TabIndex = 0;
             this.back.UseVisualStyleBackColor = true;
-            this.back.Click += new System.EventHandler(this.back_Click);
+            this.back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // BrowseChord
+            // listOfChords
             // 
-            this.BrowseChord.FormattingEnabled = true;
-            this.BrowseChord.Location = new System.Drawing.Point(56, 80);
-            this.BrowseChord.Name = "BrowseChord";
-            this.BrowseChord.Size = new System.Drawing.Size(140, 368);
-            this.BrowseChord.TabIndex = 1;
+            this.listOfChords.FormattingEnabled = true;
+            this.listOfChords.Location = new System.Drawing.Point(12, 12);
+            this.listOfChords.Name = "listOfChords";
+            this.listOfChords.Size = new System.Drawing.Size(140, 472);
+            this.listOfChords.TabIndex = 1;
             // 
-            // add_chord
+            // addItemButton
             // 
-            this.add_chord.Location = new System.Drawing.Point(260, 126);
-            this.add_chord.Name = "add_chord";
-            this.add_chord.Size = new System.Drawing.Size(75, 23);
-            this.add_chord.TabIndex = 2;
-            this.add_chord.Text = "Тест 1";
-            this.add_chord.UseVisualStyleBackColor = true;
-            this.add_chord.Click += new System.EventHandler(this.add_chord_Click);
+            this.addItemButton.Location = new System.Drawing.Point(177, 331);
+            this.addItemButton.Name = "addItemButton";
+            this.addItemButton.Size = new System.Drawing.Size(115, 23);
+            this.addItemButton.TabIndex = 2;
+            this.addItemButton.Text = "Добавить аккорд";
+            this.addItemButton.UseVisualStyleBackColor = true;
+            this.addItemButton.Click += new System.EventHandler(this.Add_chord_Click);
             // 
-            // button1
+            // deleteItemButton
             // 
-            this.button1.Location = new System.Drawing.Point(260, 190);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.deleteItemButton.Location = new System.Drawing.Point(177, 372);
+            this.deleteItemButton.Name = "deleteItemButton";
+            this.deleteItemButton.Size = new System.Drawing.Size(115, 23);
+            this.deleteItemButton.TabIndex = 3;
+            this.deleteItemButton.Text = "Удалить аккорд";
+            this.deleteItemButton.UseVisualStyleBackColor = true;
+            this.deleteItemButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Look_chords
+            // noteBox
+            // 
+            this.noteBox.Location = new System.Drawing.Point(177, 67);
+            this.noteBox.Name = "noteBox";
+            this.noteBox.Size = new System.Drawing.Size(215, 222);
+            this.noteBox.TabIndex = 4;
+            this.noteBox.TabStop = false;
+            // 
+            // LookChordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.add_chord);
-            this.Controls.Add(this.BrowseChord);
+            this.Controls.Add(this.noteBox);
+            this.Controls.Add(this.deleteItemButton);
+            this.Controls.Add(this.addItemButton);
+            this.Controls.Add(this.listOfChords);
             this.Controls.Add(this.back);
-            this.Name = "Look_chords";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "LookChordsForm";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChordsLib";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.LookChordsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,8 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Button back;
-        private System.Windows.Forms.ListBox BrowseChord;
-        private System.Windows.Forms.Button add_chord;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listOfChords;
+        private System.Windows.Forms.Button addItemButton;
+        private System.Windows.Forms.Button deleteItemButton;
+        private System.Windows.Forms.PictureBox noteBox;
     }
 }

@@ -14,58 +14,137 @@ namespace NoteAppUI
 {
     public partial class AddChordForm : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public Chord newChord = new Chord();
+        
+        /// <summary>
+        /// 
+        /// </summary>
         public AddChordForm()
         {
+            
             InitializeComponent();
+            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
+            
         }
 
-        private void back_Click(object sender, EventArgs e)
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Сancel_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
-            this.Hide();
             this.Close();
         }
 
-        public void line()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddChord_Click(object sender, EventArgs e)
         {
-            Graphics g = this.CreateGraphics();
-            g.DrawLine(new Pen(Color.Red), 10, 10, 100, 100);
+            if (nameInput.Text == "")
+            {
+                MessageBox.Show("Введите название аккорда");
+            }
+            else
+            {
+                newChord.Name = nameInput.Text;
+            }
+
+            if (int.TryParse(beginInput.Text, out int bg))
+                {
+                    if (bg >= 0 && bg <= 12)
+                    {
+                        newChord.Begin = bg;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не правильный лад");
+                    }
+                }
+                else if (beginInput.Text == "")
+                {
+                    MessageBox.Show("Введите начальный лад");
+                }
+            if (beginInput.Text != "" && nameInput.Text != "")
+                this.Close();
         }
 
-        private void Add_chord_Shown(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddChordForm_Load(object sender, EventArgs e)
         {
-            line();
+            using (Graphics g = Graphics.FromImage(noteBox.Image))
+            {
+                Pen pen = new Pen(Color.Black, 2);
+                int x = 70;
+                int y = 55;
+                //вертикальные линии
+                for (int i = 0; i < 6; i++)
+                {
+                    g.DrawLine(pen, x, y, x, y + 200);
+                    x += 30;
+                }
+                //горизонтальные
+                x = 69;
+                for (int i = 0; i < 6; i++)
+                {
+                    g.DrawLine(pen, x, y, x + 152, y);
+                    y += 40;
+                }
+                x = 55;
+                y = 65;
+                
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameInput_TextChanged(object sender, EventArgs e)
+        {
+            name.Text = nameInput.Text;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BeginInput_TextChanged(object sender, EventArgs e)
+        {
+            begin.Text = beginInput.Text;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteBox_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoteBox_MouseUp(object sender, MouseEventArgs e)
+        {
+
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-[DllImport("Gdi32.dll")]
-
-public static extern IntPtr CreateRoundRectRgn(int nLeftRect,int nTopRect,int nRightRect,int nBottomRect,int nWidthEllipse,int nHeightEllipse);
-
-[DllImport("user32.dll")]
-
-public static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
-
-void Form_Load(object sender, EventArgs e)
-{
-   IntPtr hRgn = CreateRoundRectRgn(7, 7, 425, 530, 30, 25);
-   SetWindowRgn(this.Handle, hRgn, true);
-}
-//конец блока скругления углов
-*/
 }

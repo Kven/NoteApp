@@ -12,12 +12,11 @@ namespace NoteApp
         private int _begin;     //начальный лад
         private List<int[]> _frets = new List<int[]>();
 
-        public Chord() { _name = "Неизвестный аккорд"; _begin = 1; }  //конструктор для "пустого аккорда"
+        public Chord() { }  //конструктор для "пустого аккорда"
 
         public Chord(string name)
         {
             _name = name;
-            _begin = 1;
         }
 
         /// <summary>
@@ -28,13 +27,20 @@ namespace NoteApp
             get => _name;
             set
             {
-                for (int i = 0; i < value.Length; i++)
+                if (value == null)
                 {
-                    if (value[i] == '!') //добавить диапазон
+                    return;
+                }
+                else
+                {
+                    for (int i = 0; i < value.Length; i++)
                     {
-                        throw new ArgumentException("Недопустимые символы в названии акккорда - " + value[i]);
+                        if (value[i] == '!') //добавить диапазон
+                        {
+                            throw new ArgumentException("Недопустимые символы в названии акккорда - " + value[i]);
+                        }
+                        _name = value;
                     }
-                    _name = value;
                 }
             }
         }

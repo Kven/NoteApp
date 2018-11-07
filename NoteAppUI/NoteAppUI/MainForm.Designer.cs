@@ -32,7 +32,8 @@
             this.Look_chords = new System.Windows.Forms.Button();
             this.melody_lib = new System.Windows.Forms.Button();
             this.MainTitle = new System.Windows.Forms.Label();
-            this.simple = new System.Windows.Forms.TextBox();
+            this.save = new System.Windows.Forms.Button();
+            this.load = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Add_chord
@@ -84,30 +85,42 @@
             this.MainTitle.TabIndex = 3;
             this.MainTitle.Text = "Библиотека Аккордов";
             // 
-            // simple
+            // save
             // 
-            this.simple.Location = new System.Drawing.Point(157, 412);
-            this.simple.Name = "simple";
-            this.simple.Size = new System.Drawing.Size(100, 20);
-            this.simple.TabIndex = 4;
+            this.save.Location = new System.Drawing.Point(60, 440);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 4;
+            this.save.Text = "Сохр";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // MainMenu
+            // load
+            // 
+            this.load.Location = new System.Drawing.Point(182, 440);
+            this.load.Name = "load";
+            this.load.Size = new System.Drawing.Size(75, 23);
+            this.load.TabIndex = 5;
+            this.load.Text = "Загрузить";
+            this.load.UseVisualStyleBackColor = true;
+            this.load.Click += new System.EventHandler(this.Load_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.simple);
+            this.Controls.Add(this.load);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.MainTitle);
             this.Controls.Add(this.melody_lib);
             this.Controls.Add(this.Look_chords);
             this.Controls.Add(this.Add_chord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "MainMenu";
+            this.Name = "MainForm";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChordsLib";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +132,8 @@
         private System.Windows.Forms.Button Look_chords;
         private System.Windows.Forms.Button melody_lib;
         private System.Windows.Forms.Label MainTitle;
-        public System.Windows.Forms.TextBox simple;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button load;
     }
 }
 

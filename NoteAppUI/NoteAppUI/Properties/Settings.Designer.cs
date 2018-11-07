@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
 namespace NoteAppUI.Properties
 {
 
@@ -26,5 +28,7 @@ namespace NoteAppUI.Properties
                 return defaultInstance;
             }
         }
+
+        public IEnumerable<string> ValuteCustom { get; internal set; }
     }
 }
