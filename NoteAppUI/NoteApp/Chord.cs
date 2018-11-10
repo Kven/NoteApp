@@ -9,29 +9,29 @@ namespace NoteApp
     public class Chord
     {
 		/// <summary>
-		/// 
+		/// Название аккорда
 		/// </summary>
         private string _name;   
 
 		/// <summary>
-		/// 
+		/// Начальный лад аккорда
 		/// </summary>
         private int _begin;
 
 		/// <summary>
-		/// 
+		/// Лады аккорда
 		/// </summary>
 		public List<int[]> Frets { get; set; } = new List<int[]>();
 
 		/// <summary>
-		/// 
+		/// Конструктор при пустых аргументах
 		/// </summary>
 		public Chord() { } 
 
 		/// <summary>
-		/// 
+		/// Конструктор с передаваемым именем
 		/// </summary>
-		/// <param name="name"></param>
+		/// <param name="name">Название аккорда</param>
         public Chord(string name)
         {
             _name = name;
