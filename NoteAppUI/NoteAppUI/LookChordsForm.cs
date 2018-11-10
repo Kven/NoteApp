@@ -11,7 +11,7 @@ namespace NoteAppUI
 		/// <summary>
 		/// Поле для принятия списка из главной формы - глобальный список аккордов
 		/// </summary>
-        public List<Chord> list = new List<Chord>();
+		public List<Chord> list;
 
 		/// <summary>
 		/// Создаем битмап для размещения на нем сетки
@@ -36,6 +36,7 @@ namespace NoteAppUI
 		{
 			InitializeComponent();
 			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
+			list = new List<Chord>();
 			//---------------------------
 			using (g = Graphics.FromImage(bitmap))
 			{

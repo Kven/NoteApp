@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using NoteApp;
 
 namespace NoteAppUI
 {
-    public partial class AddChordForm : Form
+	public partial class AddChordForm : Form
     {
         /// <summary>
         /// Локальный экземпляр класса
@@ -134,7 +127,6 @@ namespace NoteAppUI
 			int y = e.Y - 7;
 			g.FillEllipse(Brushes.Black, x, y, 15, 15);
 			newChord.SetFretsCoor(x, y);
-			g.DrawString("" + e.X + " " + e.Y, DefaultFont, Brushes.Black, e.X, e.Y);
 		}
 		
 		/// <summary>
