@@ -87,7 +87,6 @@
 			this.noteBox.Size = new System.Drawing.Size(215, 222);
 			this.noteBox.TabIndex = 4;
 			this.noteBox.TabStop = false;
-			this.noteBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
 			// 
 			// chordName
 			// 

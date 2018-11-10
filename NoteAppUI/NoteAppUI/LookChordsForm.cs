@@ -8,14 +8,29 @@ namespace NoteAppUI
 {
     public partial class LookChordsForm : Form
     {
-        public List<Chord> list = new List<Chord>();//
-		Bitmap bitmap;								//
-		Graphics g;									//
-		Chord newChord = new Chord();               //
+		/// <summary>
+		/// Поле для принятия списка из главной формы - глобальный список аккордов
+		/// </summary>
+        public List<Chord> list = new List<Chord>();
+
+		/// <summary>
+		/// Создаем битмап для размещения на нем сетки
+		/// </summary>
+		Bitmap bitmap;
+		
+		/// <summary>
+		/// Инструмент для создания графики
+		/// </summary>
+		Graphics g;
+
+		/// <summary>
+		/// Экземпляр для принятия из формы создания аккорда
+		/// </summary>
+		Chord newChord = new Chord();
 
 
 		/// <summary>
-		/// 
+		/// Инициализая формы, инициализация битмапа, и нарисование сетки
 		/// </summary>
 		public LookChordsForm()
 		{
@@ -48,7 +63,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// 
+		/// Закрывает текущую форму и возвращает на главную форму
 		/// </summary>
         private void Back_Click(object sender, EventArgs e)
         {
@@ -56,7 +71,7 @@ namespace NoteAppUI
         }
 
 		/// <summary>
-		/// 
+		/// Добавляет аккорд в глобальный список, и добавляет визуально в список аккордов 
 		/// </summary>
         private void Add_chord_Click(object sender, EventArgs e)
         {
@@ -73,7 +88,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// 
+		/// Удаляет выделенный аккорд из глобального и визуального списка
 		/// </summary>
 		private void DeleteItemButton_Click(object sender, EventArgs e)
 		{
@@ -82,7 +97,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// 
+		/// При закрузке формы добавляет в визуальный список названия аккордов из глобального
 		/// </summary>
 		private void LookChordsForm_Load(object sender, EventArgs e)
         {
@@ -90,13 +105,17 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// 
+		/// Вызывается при рисовании точек на пикчебоксе
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
 			g = noteBox.CreateGraphics();
 		}
 
+		/// <summary>
+		/// При изменении выделенного аккорда в визуальном списке отображает на картинке его зажатые лады, название и начальный лад 
+		/// при удалении аккорда, идет смена активного элемента и значение устантанавливается в нулевое положение (иначе null)
+		/// </summary>
 		private void ListOfChords_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (listOfChords.SelectedItem != null)
