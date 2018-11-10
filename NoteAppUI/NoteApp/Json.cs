@@ -6,6 +6,10 @@ namespace NoteApp
 {
     public static class Json
     {
+		/// <summary>
+		/// Метод для сохранения списка в файл
+		/// </summary>
+		/// <param name="data">Список, который нужно сохранить</param>
         public static void SaveFile(List<Chord> data)
         {
             using (StreamWriter file = File.CreateText(@"D:\path.txt"))
@@ -15,6 +19,10 @@ namespace NoteApp
             }
         }
 
+		/// <summary>
+		/// Метод для считывания файла и импорта из него значений в список
+		/// </summary>
+		/// <returns>Список аккордов, которые сохранены в файле</returns>
         public static List<Chord> ReadFile()
         {
             List<Chord> data = null;
@@ -25,8 +33,6 @@ namespace NoteApp
                 data = temp;
             }
             return data;
-
         }
-    }
-      
+    }  
 }

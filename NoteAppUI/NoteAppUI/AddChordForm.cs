@@ -1,21 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using NoteApp;
 
 namespace NoteAppUI
 {
-	public partial class AddChordForm : Form
+    public partial class AddChordForm : Form
     {
         /// <summary>
-        /// 
+        /// Локальный экземпляр класса
         /// </summary>
         public Chord newChord = new Chord();
+
+		/// <summary>
+		/// Создаем битмап для рисования на нем сетки
+		/// </summary>
 		Bitmap bitmap;
+
+		/// <summary>
+		/// Инструмент для рисования
+		/// </summary>
 		Graphics g;
 
         /// <summary>
-        /// 
+        /// Инициализация формы и инициализация битмапа
         /// </summary>
         public AddChordForm()
         {
@@ -25,20 +40,16 @@ namespace NoteAppUI
 
        
         /// <summary>
-        /// 
+        /// Закрытие формы и возвращение на главную без добавления аккорда
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Сancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         /// <summary>
-        /// 
+        /// Проверяет значения полей и добавляет аккорд в глобальный список
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void AddChord_Click(object sender, EventArgs e)
         {
             if (nameInput.Text == "")
@@ -70,10 +81,8 @@ namespace NoteAppUI
         }
 
         /// <summary>
-        /// 
+        /// При поялвении формы создает сетку аккорда
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
 			using (g = Graphics.FromImage(bitmap))
@@ -101,38 +110,45 @@ namespace NoteAppUI
         }
 
         /// <summary>
-        /// 
+        /// Динамично отображает название вводимого аккорда
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void NameInput_TextChanged(object sender, EventArgs e)
         {
             name.Text = nameInput.Text;
         }
 
         /// <summary>
-        /// 
+        /// Динамично отображает начальный лад
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void BeginInput_TextChanged(object sender, EventArgs e)
         {
             begin.Text = beginInput.Text;
         }
 
+		/// <summary>
+		/// При нажатии создает точку где зажимается аккорд. Записывает координаты в массив ладов аккорда
+		/// </summary>
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
 			int x = e.X - 7;
 			int y = e.Y - 7;
 			g.FillEllipse(Brushes.Black, x, y, 15, 15);
 			newChord.SetFretsCoor(x, y);
+			g.DrawString("" + e.X + " " + e.Y, DefaultFont, Brushes.Black, e.X, e.Y);
 		}
-
+		
+		/// <summary>
+		/// Вызывается при рисовании точек
+		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
 			g = noteBox.CreateGraphics();
+			
 		}
 
+		/// <summary>
+		/// Стирает все точки на сетке
+		/// </summary>
 		private void Clear_Click(object sender, EventArgs e)
 		{
 			noteBox.Refresh();
