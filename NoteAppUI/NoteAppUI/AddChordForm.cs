@@ -18,7 +18,9 @@ namespace NoteAppUI
         /// 
         /// </summary>
         public Chord newChord = new Chord();
-        
+		Bitmap bitmap;
+		Graphics g;
+
         /// <summary>
         /// 
         /// </summary>
@@ -26,7 +28,7 @@ namespace NoteAppUI
         {
             
             InitializeComponent();
-            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
+			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
             
         }
 
@@ -83,28 +85,28 @@ namespace NoteAppUI
         /// <param name="e"></param>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-            using (Graphics g = Graphics.FromImage(noteBox.Image))
-            {
-                Pen pen = new Pen(Color.Black, 2);
-                int x = 70;
-                int y = 55;
-                //вертикальные линии
-                for (int i = 0; i < 6; i++)
-                {
-                    g.DrawLine(pen, x, y, x, y + 200);
-                    x += 30;
-                }
-                //горизонтальные
-                x = 69;
-                for (int i = 0; i < 6; i++)
-                {
-                    g.DrawLine(pen, x, y, x + 152, y);
-                    y += 40;
-                }
-                x = 55;
-                y = 65;
-                
-            }
+			using (g = Graphics.FromImage(bitmap))
+			{
+				Pen pen = new Pen(Color.Black, 2);
+				int x = 70;
+				int y = 55;
+				//вертикальные линии
+				for (int i = 0; i < 6; i++)
+				{
+					g.DrawLine(pen, x, y, x, y + 200);
+					x += 30;
+				}
+				//горизонтальные
+				x = 69;
+				for (int i = 0; i < 6; i++)
+				{
+					g.DrawLine(pen, x, y, x + 152, y);
+					y += 40;
+				}
+				x = 55;
+				y = 65;
+			}
+			noteBox.Image = bitmap;
         }
 
         /// <summary>
@@ -127,24 +129,20 @@ namespace NoteAppUI
             begin.Text = beginInput.Text;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NoteBox_MouseDown(object sender, MouseEventArgs e)
-        {
+		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
+		{
+				g.FillEllipse(Brushes.Black, e.X-7, e.Y-7, 15, 15);
+		}
 
-        }
+		private void NoteBox_Paint(object sender, PaintEventArgs e)
+		{
+			g = noteBox.CreateGraphics();
+			
+		}
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NoteBox_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
-    }
+		private void Clear_Click(object sender, EventArgs e)
+		{
+			noteBox.Refresh();
+		}
+	}
 }

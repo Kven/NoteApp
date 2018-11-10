@@ -12,8 +12,9 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
-
-        }
+			List = Json.ReadFile();
+			
+		}
 
         private void Look_chords_Click(object sender, EventArgs e)
         {
@@ -34,14 +35,9 @@ namespace NoteAppUI
     
         }
 
-        private void Save_Click(object sender, EventArgs e)
-        {
-            Json.SaveFile(List);
-        }
-
-        private void Load_Click(object sender, EventArgs e)
-        {
-            List = Json.ReadFile();
-        }
-    }
+		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Json.SaveFile(List);
+		}
+	}
 }

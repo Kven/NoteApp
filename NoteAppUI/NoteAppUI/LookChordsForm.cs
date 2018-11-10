@@ -36,9 +36,6 @@ namespace NoteAppUI
                 list.Add(newChord);
                 listOfChords.Items.Add(newChord.Name);
             }
-
-            
-        
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -48,7 +45,6 @@ namespace NoteAppUI
         private void LookChordsForm_Load(object sender, EventArgs e)
         {
             list.ForEach(x => { listOfChords.Items.Add(x.Name); });
-
 
             using (Graphics g = Graphics.FromImage(noteBox.Image))
             {
