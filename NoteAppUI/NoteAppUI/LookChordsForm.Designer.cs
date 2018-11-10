@@ -33,7 +33,6 @@
 			this.addItemButton = new System.Windows.Forms.Button();
 			this.deleteItemButton = new System.Windows.Forms.Button();
 			this.noteBox = new System.Windows.Forms.PictureBox();
-			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -56,6 +55,7 @@
 			this.listOfChords.Name = "listOfChords";
 			this.listOfChords.Size = new System.Drawing.Size(140, 472);
 			this.listOfChords.TabIndex = 1;
+			this.listOfChords.SelectedIndexChanged += new System.EventHandler(this.ListOfChords_SelectedIndexChanged);
 			// 
 			// addItemButton
 			// 
@@ -86,24 +86,12 @@
 			this.noteBox.TabIndex = 4;
 			this.noteBox.TabStop = false;
 			this.noteBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
-			this.noteBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseDown);
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(320, 435);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 5;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
 			// LookChordsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(415, 500);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.noteBox);
 			this.Controls.Add(this.deleteItemButton);
 			this.Controls.Add(this.addItemButton);
@@ -126,6 +114,5 @@
         private System.Windows.Forms.Button addItemButton;
         private System.Windows.Forms.Button deleteItemButton;
         private System.Windows.Forms.PictureBox noteBox;
-		private System.Windows.Forms.Button button1;
 	}
 }
