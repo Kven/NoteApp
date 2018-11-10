@@ -8,12 +8,30 @@ namespace NoteApp
     /// </summary>
     public class Chord
     {
-        private string _name;   //название аккорда
-        private int _begin;     //начальный лад
+		/// <summary>
+		/// 
+		/// </summary>
+        private string _name;   
+
+		/// <summary>
+		/// 
+		/// </summary>
+        private int _begin; 
+
+		/// <summary>
+		/// 
+		/// </summary>
         private List<int[]> _frets = new List<int[]>();
 
-        public Chord() { }  //конструктор для "пустого аккорда"
+		/// <summary>
+		/// 
+		/// </summary>
+        public Chord() { } 
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="name"></param>
         public Chord(string name)
         {
             _name = name;
@@ -44,6 +62,7 @@ namespace NoteApp
                 }
             }
         }
+
         /// <summary>
         /// Устанавливает начальный лад
         /// </summary>
@@ -59,23 +78,28 @@ namespace NoteApp
                 else
                     _begin = value;
             }
-
         }
+
 
         /// <summary>
         /// Устанавливаем значения флагов и мест нанесения точки
         /// /// </summary>
-        /// <param name="id">Указывает какая позиция на Convas</param>
-        /// <param name="flag">1 если надо поставить точку, 0 нет</param>
         /// <param name="X">Координата Х</param>
         /// <param name="Y">Координата У</param>
-        public void SetFrets(int id, int flag, int X, int Y) => _frets.Add(new int[] { id, flag, X, Y});
+		public void SetFretsCoor(int X, int Y) => _frets.Add(new int[] {X, Y});
 
-        /// <summary>
-        /// Поиск по позиции в списке ладов
-        /// </summary>
-        /// <param name="id">Указывает какая позиция на Convas</param>
-        /// <returns>Возращает всю информацию об ладе: какая позиция, зажат ли он, и координаты</returns>
-        public int[] GetFrets (int id) => _frets.Find(x => x[0] == id);
-    }    
+
+
+		public List<int[]> Frets
+		{
+			get => _frets;
+
+			set
+			{
+				_frets = value;
+			}
+		}
+		
+	
+	}
 }

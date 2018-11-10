@@ -9,12 +9,39 @@ namespace NoteAppUI
     public partial class LookChordsForm : Form
     {
         public List<Chord> list = new List<Chord>();
+		Bitmap bitmap;
+		Graphics g;
+		
 
-        public LookChordsForm()
+		public LookChordsForm()
         {
             InitializeComponent();
-            noteBox.Image = new Bitmap(noteBox.Width, noteBox.Height);
-        }
+			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
+			//---------------------------
+			using (g = Graphics.FromImage(bitmap))
+			{
+				Pen pen = new Pen(Color.Black, 2);
+				int x1 = 31;
+				int y = 6;
+				//вертикальные линии
+				for (int i = 0; i < 6; i++)
+				{
+					g.DrawLine(pen, x1, y, x1, y + 200);
+					x1 += 30;
+				}
+				//горизонтальные
+				x1 = 30;
+				for (int i = 0; i < 6; i++)
+				{
+					g.DrawLine(pen, x1, y, x1 + 152, y);
+					y += 40;
+				}
+				x1 = 55;
+				y = 65;
+			}
+			noteBox.Image = bitmap;
+			//------------------------------
+		}
 
         private void Back_Click(object sender, EventArgs e)
         {
@@ -36,35 +63,32 @@ namespace NoteAppUI
                 list.Add(newChord);
                 listOfChords.Items.Add(newChord.Name);
             }
-        }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-        }
+			newChord.Frets = addChordForm.newChord.Frets;
+		}
 
-        private void LookChordsForm_Load(object sender, EventArgs e)
+		private void DeleteItemButton_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void LookChordsForm_Load(object sender, EventArgs e)
         {
             list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+		}
 
-            using (Graphics g = Graphics.FromImage(noteBox.Image))
-            {
-                Pen pen = new Pen(Color.Black, 2);
-                int x = 70;
-                int y = 55;
-                //вертикальные линии
-                for (int i = 0; i < 6; i++)
-                {
-                    g.DrawLine(pen, x, y, x, y + 200);
-                    x += 30;
-                }
-                //горизонтальные
-                x = 69;
-                for (int i = 0; i < 6; i++)
-                {
-                    g.DrawLine(pen, x, y, x + 152, y);
-                    y += 40;
-                }
-            }
-        }
-    }
+		private void NoteBox_Paint(object sender, PaintEventArgs e)
+		{
+			g = noteBox.CreateGraphics();
+		}
+
+		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
+		{
+			int x = e.X - 7;
+			int y = e.Y - 7;
+			g.DrawString("" + e.X+ " " + e.Y, DefaultFont, Brushes.Black, e.X, e.Y);
+		}
+
+		
+	}
 }

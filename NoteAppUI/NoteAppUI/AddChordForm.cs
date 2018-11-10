@@ -26,10 +26,8 @@ namespace NoteAppUI
         /// </summary>
         public AddChordForm()
         {
-            
             InitializeComponent();
 			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-            
         }
 
        
@@ -131,7 +129,11 @@ namespace NoteAppUI
 
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
-				g.FillEllipse(Brushes.Black, e.X-7, e.Y-7, 15, 15);
+			int x = e.X - 7;
+			int y = e.Y - 7;
+			g.FillEllipse(Brushes.Black, x, y, 15, 15);
+			newChord.SetFretsCoor(x, y);
+			g.DrawString("" + e.X + " " + e.Y, DefaultFont, Brushes.Black, e.X, e.Y);
 		}
 
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
