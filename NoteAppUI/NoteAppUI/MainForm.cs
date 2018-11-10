@@ -18,7 +18,7 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
-			//List = Json.ReadFile();	
+			List = Json.ReadFile();	
 		}
 
 		/// <summary>
