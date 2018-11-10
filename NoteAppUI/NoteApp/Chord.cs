@@ -16,17 +16,17 @@ namespace NoteApp
 		/// <summary>
 		/// 
 		/// </summary>
-        private int _begin; 
+        private int _begin;
 
 		/// <summary>
 		/// 
 		/// </summary>
-        private List<int[]> _frets = new List<int[]>();
+		public List<int[]> Frets { get; set; } = new List<int[]>();
 
 		/// <summary>
 		/// 
 		/// </summary>
-        public Chord() { } 
+		public Chord() { } 
 
 		/// <summary>
 		/// 
@@ -86,20 +86,12 @@ namespace NoteApp
         /// /// </summary>
         /// <param name="X">Координата Х</param>
         /// <param name="Y">Координата У</param>
-		public void SetFretsCoor(int X, int Y) => _frets.Add(new int[] {X, Y});
+		public void SetFretsCoor(int X, int Y) => Frets.Add(new int[] {X, Y});
 
 
 
-		public List<int[]> Frets
-		{
-			get => _frets;
-
-			set
-			{
-				_frets = value;
-			}
-		}
 		
-	
+
+
 	}
 }

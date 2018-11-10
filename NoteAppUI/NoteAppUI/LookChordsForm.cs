@@ -11,7 +11,9 @@ namespace NoteAppUI
         public List<Chord> list = new List<Chord>();
 		Bitmap bitmap;
 		Graphics g;
-		
+		Chord newChord = new Chord();
+
+
 
 		public LookChordsForm()
         {
@@ -38,7 +40,12 @@ namespace NoteAppUI
 				}
 				x1 = 55;
 				y = 65;
+
 			}
+
+			
+
+
 			noteBox.Image = bitmap;
 			//------------------------------
 		}
@@ -53,11 +60,8 @@ namespace NoteAppUI
         {
             AddChordForm addChordForm = new AddChordForm();
             addChordForm.ShowDialog();
-            Chord newChord = new Chord
-            {
-                Name = addChordForm.newChord.Name,
-                Begin = addChordForm.newChord.Begin
-            };
+			newChord.Name = addChordForm.newChord.Name;
+			newChord.Begin = addChordForm.newChord.Begin;
             if (newChord.Name != null)
             {
                 list.Add(newChord);
@@ -89,6 +93,15 @@ namespace NoteAppUI
 			g.DrawString("" + e.X+ " " + e.Y, DefaultFont, Brushes.Black, e.X, e.Y);
 		}
 
-		
+		private void Button1_Click(object sender, EventArgs e)
+		{
+			int count = newChord.Frets.Count;
+			for (int i = 0; i < count; i++)
+			{
+				
+				g.FillEllipse(Brushes.Black, (int)newChord.Frets[i].GetValue(0) - 34, (int)newChord.Frets[i].GetValue(1) - 46, 10, 10);
+			}
+			
+		}
 	}
 }
