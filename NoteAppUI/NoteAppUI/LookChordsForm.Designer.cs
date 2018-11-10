@@ -33,6 +33,8 @@
 			this.addItemButton = new System.Windows.Forms.Button();
 			this.deleteItemButton = new System.Windows.Forms.Button();
 			this.noteBox = new System.Windows.Forms.PictureBox();
+			this.chordName = new System.Windows.Forms.Label();
+			this.chordBegin = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,7 +61,7 @@
 			// 
 			// addItemButton
 			// 
-			this.addItemButton.Location = new System.Drawing.Point(177, 331);
+			this.addItemButton.Location = new System.Drawing.Point(177, 395);
 			this.addItemButton.Name = "addItemButton";
 			this.addItemButton.Size = new System.Drawing.Size(115, 23);
 			this.addItemButton.TabIndex = 2;
@@ -69,7 +71,7 @@
 			// 
 			// deleteItemButton
 			// 
-			this.deleteItemButton.Location = new System.Drawing.Point(177, 372);
+			this.deleteItemButton.Location = new System.Drawing.Point(177, 435);
 			this.deleteItemButton.Name = "deleteItemButton";
 			this.deleteItemButton.Size = new System.Drawing.Size(115, 23);
 			this.deleteItemButton.TabIndex = 3;
@@ -80,18 +82,38 @@
 			// noteBox
 			// 
 			this.noteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.noteBox.Location = new System.Drawing.Point(177, 65);
+			this.noteBox.Location = new System.Drawing.Point(177, 110);
 			this.noteBox.Name = "noteBox";
 			this.noteBox.Size = new System.Drawing.Size(215, 222);
 			this.noteBox.TabIndex = 4;
 			this.noteBox.TabStop = false;
 			this.noteBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
 			// 
+			// chordName
+			// 
+			this.chordName.AutoSize = true;
+			this.chordName.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.chordName.Location = new System.Drawing.Point(267, 87);
+			this.chordName.Name = "chordName";
+			this.chordName.Size = new System.Drawing.Size(0, 17);
+			this.chordName.TabIndex = 5;
+			// 
+			// chordBegin
+			// 
+			this.chordBegin.AutoSize = true;
+			this.chordBegin.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.chordBegin.Location = new System.Drawing.Point(192, 130);
+			this.chordBegin.Name = "chordBegin";
+			this.chordBegin.Size = new System.Drawing.Size(0, 17);
+			this.chordBegin.TabIndex = 6;
+			// 
 			// LookChordsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(415, 500);
+			this.Controls.Add(this.chordBegin);
+			this.Controls.Add(this.chordName);
 			this.Controls.Add(this.noteBox);
 			this.Controls.Add(this.deleteItemButton);
 			this.Controls.Add(this.addItemButton);
@@ -104,6 +126,7 @@
 			this.Load += new System.EventHandler(this.LookChordsForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
@@ -114,5 +137,7 @@
         private System.Windows.Forms.Button addItemButton;
         private System.Windows.Forms.Button deleteItemButton;
         private System.Windows.Forms.PictureBox noteBox;
+		private System.Windows.Forms.Label chordName;
+		private System.Windows.Forms.Label chordBegin;
 	}
 }

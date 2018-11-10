@@ -106,6 +106,8 @@ namespace NoteAppUI
 					noteBox.Refresh();
 					Chord selectedChord = new Chord();
 					selectedChord = list.Find(x => x.Name == listOfChords.SelectedItem.ToString());
+					chordName.Text = listOfChords.SelectedItem.ToString();
+					chordBegin.Text = list.Find(x => x.Name == listOfChords.SelectedItem.ToString()).Begin.ToString();
 					int count = selectedChord.Frets.Count;
 					for (int i = 0; i < count; i++)
 					{
