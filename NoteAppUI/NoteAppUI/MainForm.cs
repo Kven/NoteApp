@@ -41,7 +41,10 @@ namespace NoteAppUI
         {
             AddChordForm add_chord = new AddChordForm();
             add_chord.ShowDialog();
-            List.Add(add_chord.newChord);
+            if (add_chord.newChord.Name != null)
+            {
+                List.Add(add_chord.newChord);
+            }
         }
 
 		/// <summary>
