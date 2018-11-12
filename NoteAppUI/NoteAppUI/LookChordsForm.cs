@@ -11,9 +11,12 @@ namespace NoteAppUI
 		/// <summary>
 		/// Поле для принятия списка из главной формы - глобальный список аккордов
 		/// </summary>
-		public List<Chord> list;
+		public List<Chord> list = new List<Chord>();
 
-		/// <summary>
+
+        public bool first = true;
+
+        /// <summary>
 		/// Создаем битмап для размещения на нем сетки
 		/// </summary>
 		Bitmap bitmap;
@@ -35,8 +38,9 @@ namespace NoteAppUI
 		public LookChordsForm()
 		{
 			InitializeComponent();
-			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			list = new List<Chord>();
+
+		    bitmap = new Bitmap(noteBox.Width, noteBox.Height);
+			
 			//---------------------------
 			using (g = Graphics.FromImage(bitmap))
 			{
@@ -102,8 +106,17 @@ namespace NoteAppUI
 		/// </summary>
 		private void LookChordsForm_Load(object sender, EventArgs e)
         {
+            if (first)
+            {
+                OpenFileDialog ofDialog = new OpenFileDialog();
+                ofDialog.DefaultExt = ".txt";
+                ofDialog.ShowDialog();
+                var fromFile = Json.ReadFile(ofDialog.FileName);
+                list.AddRange(fromFile);
+            }
+
             list.ForEach(x => { listOfChords.Items.Add(x.Name); });
-		}
+        }
 
 		/// <summary>
 		/// Вызывается при рисовании точек на пикчебоксе

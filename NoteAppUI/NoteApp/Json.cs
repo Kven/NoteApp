@@ -10,9 +10,9 @@ namespace NoteApp
 		/// Метод для сохранения списка в файл
 		/// </summary>
 		/// <param name="data">Список, который нужно сохранить</param>
-        public static void SaveFile(List<Chord> data)
+        public static void SaveFile(List<Chord> data, string path)
         {
-            using (StreamWriter file = File.CreateText(@"D:\path.txt"))
+            using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, data);
@@ -23,10 +23,10 @@ namespace NoteApp
 		/// Метод для считывания файла и импорта из него значений в список
 		/// </summary>
 		/// <returns>Список аккордов, которые сохранены в файле</returns>
-        public static List<Chord> ReadFile()
+        public static List<Chord> ReadFile(string path)
         {
             List<Chord> data = null;
-            using (StreamReader file = File.OpenText(@"D:\path.txt"))
+            using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 List<Chord> temp = (List<Chord>)serializer.Deserialize(file, typeof(List<Chord>));

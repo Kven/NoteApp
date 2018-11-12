@@ -11,6 +11,8 @@ namespace NoteAppUI
 		/// Глобальный список аккордов
 		/// </summary>
         List<Chord> List = new List<Chord>();
+
+        public bool first = true;
         
 		/// <summary>
 		/// Инициализация главной формы и дессериализация файла в глобальный список аккордов (импорт)
@@ -18,21 +20,29 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
-			List = Json.ReadFile();	
-		}
+            
+        }
 
 		/// <summary>
 		/// Создается форма просмотра аккордов, туда передается глобальный списко аккордов
 		/// </summary>
         private void Look_chords_Click(object sender, EventArgs e)
-        {
-            LookChordsForm look_chords = new LookChordsForm
-            {
-                list = List
-            };
-            look_chords.ShowDialog();
-            List = look_chords.list;   
-        }
+		{
+		    LookChordsForm look_chords = new LookChordsForm();
+		    if (first)
+		    {
+		        look_chords.list = List;
+		        look_chords.ShowDialog();
+		        first = false;
+		    }
+		    else
+		    {
+		        look_chords.list = List;
+		        look_chords.first = false;
+                look_chords.ShowDialog();
+		        
+		    }
+		}
 
 		/// <summary>
 		/// Создается форма создания аккордов, и принимается оттуда новый аккорд, и сразу добавляется в глобальный список
@@ -52,7 +62,14 @@ namespace NoteAppUI
 		/// </summary>
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			Json.SaveFile(List);
+		    DialogResult dialogResult = MessageBox.Show("Сохранить?", "",
+		        MessageBoxButtons.YesNo);
+		    if (dialogResult == DialogResult.Yes)
+		    {
+		        SaveFileDialog sfDialog = new SaveFileDialog();
+		        sfDialog.ShowDialog();
+		        Json.SaveFile(List, sfDialog.FileName);
+		    }
 		}
 	}
 }
