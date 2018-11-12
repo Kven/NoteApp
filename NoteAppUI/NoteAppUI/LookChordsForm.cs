@@ -14,7 +14,8 @@ namespace NoteAppUI
 		public List<Chord> list = new List<Chord>();
 
 
-        public bool first = true;
+        public bool firstOpen = true;
+        public bool needCreate = true;
 
         /// <summary>
 		/// Создаем битмап для размещения на нем сетки
@@ -105,17 +106,28 @@ namespace NoteAppUI
 		/// При закрузке формы добавляет в визуальный список названия аккордов из глобального
 		/// </summary>
 		private void LookChordsForm_Load(object sender, EventArgs e)
-        {
-            if (first)
-            {
-                OpenFileDialog ofDialog = new OpenFileDialog();
-                ofDialog.DefaultExt = ".txt";
-                ofDialog.ShowDialog();
-                var fromFile = Json.ReadFile(ofDialog.FileName);
-                list.AddRange(fromFile);
-            }
+		{
 
-            list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+		    if (firstOpen)
+		    {
+		        DialogResult result;
+		        result = MessageBox.Show("Создать новую библиотеку?", "", MessageBoxButtons.YesNo);
+		        if (result == DialogResult.Yes)
+		        {
+		            SaveFileDialog sfDialog = new SaveFileDialog();
+		            sfDialog.ShowDialog();
+		            Json.SaveFile(list, sfDialog.FileName);
+		        }
+		        else
+		        {
+		            OpenFileDialog ofDialog = new OpenFileDialog();
+		            ofDialog.DefaultExt = ".txt";
+		            ofDialog.ShowDialog();
+		            var fromFile = Json.ReadFile(ofDialog.FileName);
+		            list.AddRange(fromFile);
+		        }
+		    }
+		    list.ForEach(x => { listOfChords.Items.Add(x.Name); });
         }
 
 		/// <summary>

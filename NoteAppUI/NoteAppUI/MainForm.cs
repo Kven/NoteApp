@@ -12,7 +12,7 @@ namespace NoteAppUI
 		/// </summary>
         List<Chord> List = new List<Chord>();
 
-        public bool first = true;
+        public bool firstOpen = true;
         
 		/// <summary>
 		/// Инициализация главной формы и дессериализация файла в глобальный список аккордов (импорт)
@@ -29,16 +29,16 @@ namespace NoteAppUI
         private void Look_chords_Click(object sender, EventArgs e)
 		{
 		    LookChordsForm look_chords = new LookChordsForm();
-		    if (first)
+		    if (firstOpen)
 		    {
 		        look_chords.list = List;
 		        look_chords.ShowDialog();
-		        first = false;
+		        firstOpen = false;
 		    }
 		    else
 		    {
 		        look_chords.list = List;
-		        look_chords.first = false;
+		        look_chords.firstOpen = false;
                 look_chords.ShowDialog();
 		        
 		    }
