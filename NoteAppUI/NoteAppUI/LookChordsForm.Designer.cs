@@ -44,7 +44,7 @@
 			// back
 			// 
 			this.back.FlatAppearance.BorderSize = 0;
-			this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.back.Image = global::NoteAppUI.Properties.Resources.back_arrow;
 			this.back.Location = new System.Drawing.Point(372, 12);
 			this.back.Name = "back";
@@ -55,35 +55,43 @@
 			// 
 			// listOfChords
 			// 
+			this.listOfChords.BackColor = System.Drawing.Color.Moccasin;
+			this.listOfChords.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.listOfChords.ForeColor = System.Drawing.Color.Black;
 			this.listOfChords.FormattingEnabled = true;
 			this.listOfChords.Location = new System.Drawing.Point(12, 12);
 			this.listOfChords.Name = "listOfChords";
-			this.listOfChords.Size = new System.Drawing.Size(140, 472);
+			this.listOfChords.Size = new System.Drawing.Size(140, 470);
 			this.listOfChords.TabIndex = 1;
 			this.listOfChords.SelectedIndexChanged += new System.EventHandler(this.ListOfChords_SelectedIndexChanged);
 			// 
 			// addItemButton
 			// 
+			this.addItemButton.BackColor = System.Drawing.Color.Moccasin;
+			this.addItemButton.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.addItemButton.Location = new System.Drawing.Point(177, 395);
 			this.addItemButton.Name = "addItemButton";
 			this.addItemButton.Size = new System.Drawing.Size(115, 23);
 			this.addItemButton.TabIndex = 2;
 			this.addItemButton.Text = "Добавить аккорд";
-			this.addItemButton.UseVisualStyleBackColor = true;
+			this.addItemButton.UseVisualStyleBackColor = false;
 			this.addItemButton.Click += new System.EventHandler(this.Add_chord_Click);
 			// 
 			// deleteItemButton
 			// 
+			this.deleteItemButton.BackColor = System.Drawing.Color.Moccasin;
+			this.deleteItemButton.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.deleteItemButton.Location = new System.Drawing.Point(177, 435);
 			this.deleteItemButton.Name = "deleteItemButton";
 			this.deleteItemButton.Size = new System.Drawing.Size(115, 23);
 			this.deleteItemButton.TabIndex = 3;
 			this.deleteItemButton.Text = "Удалить аккорд";
-			this.deleteItemButton.UseVisualStyleBackColor = true;
+			this.deleteItemButton.UseVisualStyleBackColor = false;
 			this.deleteItemButton.Click += new System.EventHandler(this.DeleteItemButton_Click);
 			// 
 			// noteBox
 			// 
+			this.noteBox.BackColor = System.Drawing.Color.Moccasin;
 			this.noteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.noteBox.Location = new System.Drawing.Point(177, 110);
 			this.noteBox.Name = "noteBox";
@@ -112,38 +120,50 @@
 			// 
 			// New
 			// 
+			this.New.BackColor = System.Drawing.Color.Moccasin;
+			this.New.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.New.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.New.ForeColor = System.Drawing.Color.Black;
 			this.New.Location = new System.Drawing.Point(177, 15);
 			this.New.Name = "New";
 			this.New.Size = new System.Drawing.Size(75, 23);
 			this.New.TabIndex = 7;
 			this.New.Text = "Новый ";
-			this.New.UseVisualStyleBackColor = true;
+			this.New.UseVisualStyleBackColor = false;
 			this.New.Click += new System.EventHandler(this.New_Click);
 			// 
 			// Open
 			// 
+			this.Open.BackColor = System.Drawing.Color.Moccasin;
+			this.Open.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.Open.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.Open.Location = new System.Drawing.Point(177, 58);
 			this.Open.Name = "Open";
 			this.Open.Size = new System.Drawing.Size(75, 23);
 			this.Open.TabIndex = 8;
 			this.Open.Text = "Открыть";
-			this.Open.UseVisualStyleBackColor = true;
+			this.Open.UseVisualStyleBackColor = false;
 			this.Open.Click += new System.EventHandler(this.Open_Click);
 			// 
 			// Save
 			// 
+			this.Save.BackColor = System.Drawing.Color.Moccasin;
+			this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.Save.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.Save.Location = new System.Drawing.Point(270, 58);
 			this.Save.Name = "Save";
+			this.Save.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.Save.Size = new System.Drawing.Size(75, 23);
 			this.Save.TabIndex = 9;
 			this.Save.Text = "Сохранить";
-			this.Save.UseVisualStyleBackColor = true;
+			this.Save.UseVisualStyleBackColor = false;
 			this.Save.Click += new System.EventHandler(this.Save_Click);
 			// 
 			// LookChordsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.Save);
 			this.Controls.Add(this.Open);

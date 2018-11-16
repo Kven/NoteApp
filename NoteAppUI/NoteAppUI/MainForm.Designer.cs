@@ -46,10 +46,10 @@
 			// 
 			// Look_chords
 			// 
-			this.Look_chords.BackColor = System.Drawing.Color.Transparent;
+			this.Look_chords.BackColor = System.Drawing.Color.PeachPuff;
 			this.Look_chords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.Look_chords.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-			this.Look_chords.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.Look_chords.ForeColor = System.Drawing.Color.Black;
 			this.Look_chords.Location = new System.Drawing.Point(108, 175);
 			this.Look_chords.Name = "Look_chords";
 			this.Look_chords.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -75,7 +75,7 @@
 			this.MainTitle.AutoSize = true;
 			this.MainTitle.BackColor = System.Drawing.Color.Transparent;
 			this.MainTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.MainTitle.ForeColor = System.Drawing.SystemColors.Info;
+			this.MainTitle.ForeColor = System.Drawing.Color.Black;
 			this.MainTitle.Location = new System.Drawing.Point(39, 91);
 			this.MainTitle.Name = "MainTitle";
 			this.MainTitle.Size = new System.Drawing.Size(333, 36);
@@ -86,7 +86,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.BackColor = System.Drawing.Color.White;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.MainTitle);
