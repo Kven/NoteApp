@@ -116,7 +116,7 @@
 			this.New.Name = "New";
 			this.New.Size = new System.Drawing.Size(75, 23);
 			this.New.TabIndex = 7;
-			this.New.Text = "Создать";
+			this.New.Text = "Новый ";
 			this.New.UseVisualStyleBackColor = true;
 			this.New.Click += new System.EventHandler(this.New_Click);
 			// 
