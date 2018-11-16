@@ -156,6 +156,7 @@
 			this.Name = "AddChordForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Создание аккорда";
 			this.Load += new System.EventHandler(this.AddChordForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
 			this.ResumeLayout(false);

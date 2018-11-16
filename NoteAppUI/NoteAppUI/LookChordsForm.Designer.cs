@@ -159,6 +159,7 @@
 			this.Name = "LookChordsForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "Просмотр библиотеки";
 			this.Load += new System.EventHandler(this.LookChordsForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
 			this.ResumeLayout(false);

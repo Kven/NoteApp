@@ -96,6 +96,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Name = "MainForm";
 			this.ShowIcon = false;
+			this.Text = "Библиотека аккордов";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

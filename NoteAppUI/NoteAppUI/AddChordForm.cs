@@ -125,6 +125,7 @@ namespace NoteAppUI
 		private void Clear_Click(object sender, EventArgs e)
 		{
 			noteBox.Refresh();
+			newChord.Frets.Clear();
 		}
 	}
 }
