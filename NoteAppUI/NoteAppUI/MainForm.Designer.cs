@@ -43,7 +43,6 @@
 			this.Add_chord.TabIndex = 0;
 			this.Add_chord.Text = "Добавить Аккорд";
 			this.Add_chord.UseVisualStyleBackColor = true;
-			this.Add_chord.Click += new System.EventHandler(this.Add_chord_Click);
 			// 
 			// Look_chords
 			// 

@@ -57,7 +57,7 @@ namespace NoteAppUI
 			newChord.Name = addChordForm.newChord.Name;
 			newChord.Begin = addChordForm.newChord.Begin;
 			newChord.Frets = addChordForm.newChord.Frets;
-			if (string.IsNullOrWhiteSpace(newChord.Name))
+			if (!string.IsNullOrWhiteSpace(newChord.Name))
             {
                 list.Add(newChord);
                 listOfChords.Items.Add(newChord.Name);
@@ -114,30 +114,44 @@ namespace NoteAppUI
 			else
 			{
 				listOfChords.SelectedIndex = -1;
+				chordBegin.Text = "";
+				chordName.Text = "";
+				noteBox.Refresh();
 			}
 		}
 
+		/// <summary>
+		/// Открывает форму открытия файла и десериализует его в список аккордов
+		/// </summary>
 		private void Open_Click(object sender, EventArgs e)
 		{
 			listOfChords.Items.Clear();
+			list.Clear();
 			OpenFileDialog ofDialog = new OpenFileDialog
 			{
 				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
 			};
 			ofDialog.ShowDialog();
-			var fromFile = Json.ReadFile(ofDialog.FileName);
-			list.AddRange(fromFile);
-			list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
+			{
+				var fromFile = Json.ReadFile(ofDialog.FileName);
+				list.AddRange(fromFile);
+				list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+			}
 		}
 
+		/// <summary>
+		/// Очищает все, создаёт пустую рабочую среду
+		/// </summary>
 		private void New_Click(object sender, EventArgs e)
 		{
 			listOfChords.Items.Clear();
-			SaveFileDialog sfDialog = new SaveFileDialog();
-			sfDialog.ShowDialog();
-			Json.SaveFile(list, sfDialog.FileName);
+			list.Clear();
 		}
 
+		/// <summary>
+		/// Сохраняет список аккордов в файл путем сериализации
+		/// </summary>
 		private void Save_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog sfDialog = new SaveFileDialog
@@ -145,7 +159,10 @@ namespace NoteAppUI
 				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
 			};
 			sfDialog.ShowDialog();
-			Json.SaveFile(list, sfDialog.FileName);
+			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))
+			{
+				Json.SaveFile(list, sfDialog.FileName);
+			}
 		}
 	}
 }

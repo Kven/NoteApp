@@ -25,25 +25,23 @@ namespace NoteAppUI
 		/// </summary>
         private void Look_chords_Click(object sender, EventArgs e)
 		{
-			LookChordsForm look_chords = new LookChordsForm
-			{
-				list = tempList
-			};
+			LookChordsForm look_chords = new LookChordsForm();
+			tempList.ForEach(x => look_chords.list.Add(x));
 			look_chords.ShowDialog();
 		}
 
 		/// <summary>
 		/// Создается форма создания аккордов, и принимается оттуда новый аккорд, и сразу добавляется в глобальный список
 		/// </summary>
-        private void Add_chord_Click(object sender, EventArgs e)
-        {
-            AddChordForm add_chord = new AddChordForm();
-            add_chord.ShowDialog();
-            if (string.IsNullOrEmpty(add_chord.newChord.Name))
-            {
-                tempList.Add(add_chord.newChord);
-            }
-        }
+        //private void Add_chord_Click(object sender, EventArgs e)
+        //{
+        //    AddChordForm add_chord = new AddChordForm();
+        //    add_chord.ShowDialog();
+        //    if (!string.IsNullOrEmpty(add_chord.newChord.Name))
+        //    {
+        //        tempList.Add(add_chord.newChord);
+        //    }
+        //}
 
 	}
 }
