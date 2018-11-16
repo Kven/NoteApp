@@ -43,6 +43,7 @@
 			// 
 			// noteBox
 			// 
+			this.noteBox.BackColor = System.Drawing.Color.Moccasin;
 			this.noteBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.noteBox.Location = new System.Drawing.Point(67, 134);
 			this.noteBox.Name = "noteBox";
@@ -92,27 +93,30 @@
 			// 
 			// addChord
 			// 
+			this.addChord.BackColor = System.Drawing.Color.Moccasin;
 			this.addChord.Location = new System.Drawing.Point(309, 64);
 			this.addChord.Name = "addChord";
 			this.addChord.Size = new System.Drawing.Size(80, 33);
 			this.addChord.TabIndex = 7;
 			this.addChord.Text = "Добавить";
-			this.addChord.UseVisualStyleBackColor = true;
+			this.addChord.UseVisualStyleBackColor = false;
 			this.addChord.Click += new System.EventHandler(this.AddChord_Click);
 			// 
 			// cancel
 			// 
+			this.cancel.BackColor = System.Drawing.Color.Moccasin;
 			this.cancel.Location = new System.Drawing.Point(328, 465);
 			this.cancel.Name = "cancel";
 			this.cancel.Size = new System.Drawing.Size(75, 23);
 			this.cancel.TabIndex = 8;
 			this.cancel.Text = "Отменить";
-			this.cancel.UseVisualStyleBackColor = true;
+			this.cancel.UseVisualStyleBackColor = false;
 			this.cancel.Click += new System.EventHandler(this.Сancel_Click);
 			// 
 			// name
 			// 
 			this.name.AutoSize = true;
+			this.name.BackColor = System.Drawing.Color.Moccasin;
 			this.name.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.name.Location = new System.Drawing.Point(190, 163);
 			this.name.Name = "name";
@@ -122,6 +126,7 @@
 			// begin
 			// 
 			this.begin.AutoSize = true;
+			this.begin.BackColor = System.Drawing.Color.Moccasin;
 			this.begin.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.begin.Location = new System.Drawing.Point(114, 195);
 			this.begin.Name = "begin";
@@ -130,18 +135,20 @@
 			// 
 			// clear
 			// 
+			this.clear.BackColor = System.Drawing.Color.Moccasin;
 			this.clear.Location = new System.Drawing.Point(60, 453);
 			this.clear.Name = "clear";
 			this.clear.Size = new System.Drawing.Size(75, 23);
 			this.clear.TabIndex = 11;
 			this.clear.Text = "Очистить";
-			this.clear.UseVisualStyleBackColor = true;
+			this.clear.UseVisualStyleBackColor = false;
 			this.clear.Click += new System.EventHandler(this.Clear_Click);
 			// 
 			// AddChordForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.BurlyWood;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.clear);
 			this.Controls.Add(this.begin);
@@ -153,6 +160,7 @@
 			this.Controls.Add(this.beginInput);
 			this.Controls.Add(this.nameInput);
 			this.Controls.Add(this.noteBox);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "AddChordForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -103,6 +103,7 @@
 			// chordName
 			// 
 			this.chordName.AutoSize = true;
+			this.chordName.BackColor = System.Drawing.Color.BurlyWood;
 			this.chordName.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.chordName.Location = new System.Drawing.Point(267, 87);
 			this.chordName.Name = "chordName";
@@ -112,6 +113,7 @@
 			// chordBegin
 			// 
 			this.chordBegin.AutoSize = true;
+			this.chordBegin.BackColor = System.Drawing.Color.Moccasin;
 			this.chordBegin.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.chordBegin.Location = new System.Drawing.Point(192, 130);
 			this.chordBegin.Name = "chordBegin";
@@ -163,7 +165,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.White;
+			this.BackColor = System.Drawing.Color.BurlyWood;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.Save);
 			this.Controls.Add(this.Open);
@@ -175,7 +177,7 @@
 			this.Controls.Add(this.addItemButton);
 			this.Controls.Add(this.listOfChords);
 			this.Controls.Add(this.back);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "LookChordsForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
