@@ -88,6 +88,8 @@ namespace NoteApp
         /// <param name="Y">Координата У</param>
 		public void SetFretsCoor(int X, int Y) => Frets.Add(new int[] {X, Y});
 
+		public void SetFretsCoor(int[] coor) => Frets.Add(coor);
+
 
 
 		

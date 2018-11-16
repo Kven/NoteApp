@@ -10,9 +10,7 @@ namespace NoteAppUI
 		/// <summary>
 		/// Глобальный список аккордов
 		/// </summary>
-        List<Chord> List = new List<Chord>();
-
-        public bool firstOpen = true;
+        List<Chord> tempList = new List<Chord>();
         
 		/// <summary>
 		/// Инициализация главной формы и дессериализация файла в глобальный список аккордов (импорт)
@@ -20,7 +18,6 @@ namespace NoteAppUI
         public MainForm()
         {
             InitializeComponent();
-            
         }
 
 		/// <summary>
@@ -28,20 +25,11 @@ namespace NoteAppUI
 		/// </summary>
         private void Look_chords_Click(object sender, EventArgs e)
 		{
-		    LookChordsForm look_chords = new LookChordsForm();
-		    if (firstOpen)
-		    {
-		        look_chords.list = List;
-		        look_chords.ShowDialog();
-		        firstOpen = false;
-		    }
-		    else
-		    {
-		        look_chords.list = List;
-		        look_chords.firstOpen = false;
-                look_chords.ShowDialog();
-		        
-		    }
+			LookChordsForm look_chords = new LookChordsForm
+			{
+				list = tempList
+			};
+			look_chords.ShowDialog();
 		}
 
 		/// <summary>
@@ -51,25 +39,11 @@ namespace NoteAppUI
         {
             AddChordForm add_chord = new AddChordForm();
             add_chord.ShowDialog();
-            if (add_chord.newChord.Name != null)
+            if (string.IsNullOrEmpty(add_chord.newChord.Name))
             {
-                List.Add(add_chord.newChord);
+                tempList.Add(add_chord.newChord);
             }
         }
 
-		/// <summary>
-		/// Перед закрытием формы сохраняет в файл глобальный список аккордов (экспорт)
-		/// </summary>
-		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-		    DialogResult dialogResult = MessageBox.Show("Сохранить?", "",
-		        MessageBoxButtons.YesNo);
-		    if (dialogResult == DialogResult.Yes)
-		    {
-		        SaveFileDialog sfDialog = new SaveFileDialog();
-		        sfDialog.ShowDialog();
-		        Json.SaveFile(List, sfDialog.FileName);
-		    }
-		}
 	}
 }

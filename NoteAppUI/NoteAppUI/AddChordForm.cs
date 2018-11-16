@@ -82,7 +82,7 @@ namespace NoteAppUI
         /// </summary>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-			Draw.DrawGrid(bitmap, g, noteBox);
+			Draw.DrawGrid(bitmap, g, noteBox, 70, 55);
         }
 
         /// <summary>
@@ -106,7 +106,8 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
-			Draw.Check(e.X, e.Y, g);
+			
+			newChord.SetFretsCoor(Draw.Point(e.X, e.Y, g));
 		}
 		
 		/// <summary>

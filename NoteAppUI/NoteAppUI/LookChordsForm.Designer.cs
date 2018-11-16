@@ -35,6 +35,9 @@
 			this.noteBox = new System.Windows.Forms.PictureBox();
 			this.chordName = new System.Windows.Forms.Label();
 			this.chordBegin = new System.Windows.Forms.Label();
+			this.New = new System.Windows.Forms.Button();
+			this.Open = new System.Windows.Forms.Button();
+			this.Save = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -107,11 +110,44 @@
 			this.chordBegin.Size = new System.Drawing.Size(0, 17);
 			this.chordBegin.TabIndex = 6;
 			// 
+			// New
+			// 
+			this.New.Location = new System.Drawing.Point(177, 15);
+			this.New.Name = "New";
+			this.New.Size = new System.Drawing.Size(75, 23);
+			this.New.TabIndex = 7;
+			this.New.Text = "Создать";
+			this.New.UseVisualStyleBackColor = true;
+			this.New.Click += new System.EventHandler(this.New_Click);
+			// 
+			// Open
+			// 
+			this.Open.Location = new System.Drawing.Point(177, 58);
+			this.Open.Name = "Open";
+			this.Open.Size = new System.Drawing.Size(75, 23);
+			this.Open.TabIndex = 8;
+			this.Open.Text = "Открыть";
+			this.Open.UseVisualStyleBackColor = true;
+			this.Open.Click += new System.EventHandler(this.Open_Click);
+			// 
+			// Save
+			// 
+			this.Save.Location = new System.Drawing.Point(270, 58);
+			this.Save.Name = "Save";
+			this.Save.Size = new System.Drawing.Size(75, 23);
+			this.Save.TabIndex = 9;
+			this.Save.Text = "Сохранить";
+			this.Save.UseVisualStyleBackColor = true;
+			this.Save.Click += new System.EventHandler(this.Save_Click);
+			// 
 			// LookChordsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(415, 500);
+			this.Controls.Add(this.Save);
+			this.Controls.Add(this.Open);
+			this.Controls.Add(this.New);
 			this.Controls.Add(this.chordBegin);
 			this.Controls.Add(this.chordName);
 			this.Controls.Add(this.noteBox);
@@ -139,5 +175,8 @@
         private System.Windows.Forms.PictureBox noteBox;
 		private System.Windows.Forms.Label chordName;
 		private System.Windows.Forms.Label chordBegin;
+		private System.Windows.Forms.Button New;
+		private System.Windows.Forms.Button Open;
+		private System.Windows.Forms.Button Save;
 	}
 }

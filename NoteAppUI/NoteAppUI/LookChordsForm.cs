@@ -13,10 +13,6 @@ namespace NoteAppUI
 		/// </summary>
 		public List<Chord> list = new List<Chord>();
 
-
-        public bool firstOpen = true;
-        public bool needCreate = true;
-
         /// <summary>
 		/// Создаем битмап для размещения на нем сетки
 		/// </summary>
@@ -39,33 +35,8 @@ namespace NoteAppUI
 		public LookChordsForm()
 		{
 			InitializeComponent();
-
 		    bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			
-			//---------------------------
-			using (g = Graphics.FromImage(bitmap))
-			{
-				Pen pen = new Pen(Color.Black, 2);
-				int x1 = 31;
-				int y = 6;
-				//вертикальные линии
-				for (int i = 0; i < 6; i++)
-				{
-					g.DrawLine(pen, x1, y, x1, y + 200);
-					x1 += 30;
-				}
-				//горизонтальные
-				x1 = 30;
-				for (int i = 0; i < 6; i++)
-				{
-					g.DrawLine(pen, x1, y, x1 + 152, y);
-					y += 40;
-				}
-				x1 = 55;
-				y = 65;
-			}
-			noteBox.Image = bitmap;
-			//------------------------------
+			Draw.DrawGrid(bitmap, g, noteBox, 31, 6);
 		}
 
 		/// <summary>
@@ -85,12 +56,12 @@ namespace NoteAppUI
             addChordForm.ShowDialog();
 			newChord.Name = addChordForm.newChord.Name;
 			newChord.Begin = addChordForm.newChord.Begin;
-            if (newChord.Name != null)
+			newChord.Frets = addChordForm.newChord.Frets;
+			if (string.IsNullOrWhiteSpace(newChord.Name))
             {
                 list.Add(newChord);
                 listOfChords.Items.Add(newChord.Name);
             }
-			newChord.Frets = addChordForm.newChord.Frets;
 		}
 
 		/// <summary>
@@ -106,34 +77,8 @@ namespace NoteAppUI
 		/// При закрузке формы добавляет в визуальный список названия аккордов из глобального
 		/// </summary>
 		private void LookChordsForm_Load(object sender, EventArgs e)
-		{
-
-		    if (firstOpen)
-		    {
-		        DialogResult result;
-		        result = MessageBox.Show("Создать новую библиотеку?", "", MessageBoxButtons.YesNo);
-		        if (result == DialogResult.Yes)
-		        {
-		            SaveFileDialog sfDialog = new SaveFileDialog
-					{
-						Filter = ".txt",
-						DefaultExt = ".txt"
-					};
-		            sfDialog.ShowDialog();
-		            Json.SaveFile(list, sfDialog.FileName);
-		        }
-		        else
-		        {
-					OpenFileDialog ofDialog = new OpenFileDialog
-					{
-						DefaultExt = ".txt"
-					};
-					ofDialog.ShowDialog();
-		            var fromFile = Json.ReadFile(ofDialog.FileName);
-		            list.AddRange(fromFile);
-		        }
-		    }
-		    list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+		{ 
+			list.ForEach(x => { listOfChords.Items.Add(x.Name); });
         }
 
 		/// <summary>
@@ -162,14 +107,45 @@ namespace NoteAppUI
 					int count = selectedChord.Frets.Count;
 					for (int i = 0; i < count; i++)
 					{
-						g.FillEllipse(Brushes.Black, (int)selectedChord.Frets[i].GetValue(0) - 34, (int)selectedChord.Frets[i].GetValue(1) - 46, 15, 15);
+						g.FillEllipse(Brushes.Black, (int)selectedChord.Frets[i].GetValue(0) - 40, (int)selectedChord.Frets[i].GetValue(1) - 49, 15, 15);
 					}
 				}
 			}
 			else
 			{
-				listOfChords.SelectedIndex = 0;
+				listOfChords.SelectedIndex = -1;
 			}
+		}
+
+		private void Open_Click(object sender, EventArgs e)
+		{
+			listOfChords.Items.Clear();
+			OpenFileDialog ofDialog = new OpenFileDialog
+			{
+				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+			};
+			ofDialog.ShowDialog();
+			var fromFile = Json.ReadFile(ofDialog.FileName);
+			list.AddRange(fromFile);
+			list.ForEach(x => { listOfChords.Items.Add(x.Name); });
+		}
+
+		private void New_Click(object sender, EventArgs e)
+		{
+			listOfChords.Items.Clear();
+			SaveFileDialog sfDialog = new SaveFileDialog();
+			sfDialog.ShowDialog();
+			Json.SaveFile(list, sfDialog.FileName);
+		}
+
+		private void Save_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog sfDialog = new SaveFileDialog
+			{
+				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+			};
+			sfDialog.ShowDialog();
+			Json.SaveFile(list, sfDialog.FileName);
 		}
 	}
 }
