@@ -114,15 +114,21 @@ namespace NoteAppUI
 		        result = MessageBox.Show("Создать новую библиотеку?", "", MessageBoxButtons.YesNo);
 		        if (result == DialogResult.Yes)
 		        {
-		            SaveFileDialog sfDialog = new SaveFileDialog();
+		            SaveFileDialog sfDialog = new SaveFileDialog
+					{
+						Filter = ".txt",
+						DefaultExt = ".txt"
+					};
 		            sfDialog.ShowDialog();
 		            Json.SaveFile(list, sfDialog.FileName);
 		        }
 		        else
 		        {
-		            OpenFileDialog ofDialog = new OpenFileDialog();
-		            ofDialog.DefaultExt = ".txt";
-		            ofDialog.ShowDialog();
+					OpenFileDialog ofDialog = new OpenFileDialog
+					{
+						DefaultExt = ".txt"
+					};
+					ofDialog.ShowDialog();
 		            var fromFile = Json.ReadFile(ofDialog.FileName);
 		            list.AddRange(fromFile);
 		        }
