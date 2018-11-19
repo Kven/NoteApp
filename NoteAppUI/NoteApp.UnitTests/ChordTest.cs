@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 
-namespace NoteApp
+namespace NoteApp.UnitTests
 {
 	[TestFixture]
 	public class ChordTest
