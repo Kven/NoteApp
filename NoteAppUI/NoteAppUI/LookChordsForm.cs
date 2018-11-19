@@ -164,5 +164,6 @@ namespace NoteAppUI
 				Json.SaveFile(list, sfDialog.FileName);
 			}
 		}
+
 	}
 }

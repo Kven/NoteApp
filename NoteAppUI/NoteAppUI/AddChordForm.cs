@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using NoteApp;
 
@@ -45,13 +46,22 @@ namespace NoteAppUI
         /// </summary>
         private void AddChord_Click(object sender, EventArgs e)
         {
+            Regex rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
             if (string.IsNullOrWhiteSpace(nameInput.Text))
             {
                 MessageBox.Show("Введите название аккорда");
             }
             else
             {
-                newChord.Name = nameInput.Text;
+                if (rN.IsMatch(nameInput.Text))
+                {
+                    newChord.Name = nameInput.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Не корректн");
+                }
+                    
 			}
 
 			if (string.IsNullOrWhiteSpace(beginInput.Text))
@@ -73,7 +83,7 @@ namespace NoteAppUI
 				}
 			}
                
-            if (!string.IsNullOrWhiteSpace(beginInput.Text) && !string.IsNullOrWhiteSpace(nameInput.Text))
+            if (!string.IsNullOrWhiteSpace(newChord.Name) && !string.IsNullOrWhiteSpace(Convert.ToString(newChord.Begin)))
                 this.Close();
         }
 
