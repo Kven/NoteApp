@@ -33,7 +33,7 @@ namespace NoteApp.UnitTests
 			Assert.AreEqual(expected, actual, "Get _name возвращает неверное значение");
 		}
 
-		[Test(Description = "Тестирование на присвоеие значения в поля begin")]
+		[Test(Description = "Тестирование на присвоеие значения в поле begin")]
 		public void TestBeginSet_CorrectValue()
 		{
 			var expected = 1;
@@ -53,5 +53,7 @@ namespace NoteApp.UnitTests
 
 			Assert.AreEqual(expected, actual, "Get _begin возвращает неверное значение");
 		}
+
+		[Test(Description ="Тестирование присвоения значения в поле ")]
 	}
 }
