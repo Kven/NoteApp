@@ -92,7 +92,7 @@
 			this.close.Size = new System.Drawing.Size(18, 18);
 			this.close.TabIndex = 4;
 			this.close.Text = "X";
-			this.close.Click += new System.EventHandler(this.close_Click);
+			this.close.Click += new System.EventHandler(this.Close_Click);
 			// 
 			// MainForm
 			// 

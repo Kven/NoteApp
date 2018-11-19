@@ -30,7 +30,7 @@ namespace NoteAppUI
 			look_chords.ShowDialog();
 		}
 
-		private void close_Click(object sender, EventArgs e)
+		private void Close_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
