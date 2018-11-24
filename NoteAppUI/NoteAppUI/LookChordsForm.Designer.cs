@@ -118,9 +118,9 @@
 			// chordName
 			// 
 			this.chordName.AutoSize = true;
-			this.chordName.BackColor = System.Drawing.Color.BurlyWood;
+			this.chordName.BackColor = System.Drawing.Color.Transparent;
 			this.chordName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.chordName.Location = new System.Drawing.Point(267, 87);
+			this.chordName.Location = new System.Drawing.Point(250, 50);
 			this.chordName.Name = "chordName";
 			this.chordName.Size = new System.Drawing.Size(0, 20);
 			this.chordName.TabIndex = 5;
@@ -128,11 +128,11 @@
 			// chordBegin
 			// 
 			this.chordBegin.AutoSize = true;
-			this.chordBegin.BackColor = System.Drawing.Color.Moccasin;
-			this.chordBegin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.chordBegin.Location = new System.Drawing.Point(192, 130);
+			this.chordBegin.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.chordBegin.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.chordBegin.Location = new System.Drawing.Point(185, 80);
 			this.chordBegin.Name = "chordBegin";
-			this.chordBegin.Size = new System.Drawing.Size(0, 20);
+			this.chordBegin.Size = new System.Drawing.Size(0, 19);
 			this.chordBegin.TabIndex = 6;
 			// 
 			// New
