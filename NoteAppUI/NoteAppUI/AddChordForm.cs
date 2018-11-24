@@ -137,5 +137,6 @@ namespace NoteAppUI
 			noteBox.Refresh();
 			newChord.Frets.Clear();
 		}
+
 	}
 }
