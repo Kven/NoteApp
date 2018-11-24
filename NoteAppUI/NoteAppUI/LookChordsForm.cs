@@ -129,7 +129,7 @@ namespace NoteAppUI
 			list.Clear();
 			OpenFileDialog ofDialog = new OpenFileDialog
 			{
-				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+				Filter = "Файл библиотека (*.nlb)|*.nlb|Все файлы (*.*)|*.*"
 			};
 			ofDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
@@ -156,7 +156,7 @@ namespace NoteAppUI
 		{
 			SaveFileDialog sfDialog = new SaveFileDialog
 			{
-				Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*"
+				Filter = "Файл библеотека (*.nlb)|*.nlb|Все файлы (*.*)|*.*"
 			};
 			sfDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))
