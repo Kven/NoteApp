@@ -64,7 +64,8 @@ namespace NoteApp
 		{
 			get { return _frets; }
 			set { _frets = value; }
-		} 
+			
+		}
 		
 		/// <summary>
 		/// Добавление координат точек в поле Frets в класс

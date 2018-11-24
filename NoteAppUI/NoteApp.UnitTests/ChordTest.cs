@@ -54,6 +54,53 @@ namespace NoteApp.UnitTests
 			Assert.AreEqual(expected, actual, "Get _begin возвращает неверное значение");
 		}
 
-		[Test(Description ="Тестирование присвоения значения в поле ")]
+		[Test(Description = "Тестирование на присвоеие значения в поле frets")]
+		public void TestFretsSet_CorrectValue()
+		{
+			var expected = new List<int[]> { new int[] { 1, 1 } };
+			var chord = new Chord();
+			chord.Frets = new List<int[]> { new int[] { 1, 1 } };
+
+			Assert.AreEqual(expected, chord.Frets, "Set _frets присваивает некорректное значение");
+		}
+
+		[Test(Description = "Тестирование на получение значения из поля frets")]
+		public void TestFretsGet_CorrectValue()
+		{
+			var expected = new List<int[]> { new int[] { 1, 1 } };
+			var chord = new Chord();
+			chord.Frets = expected;
+			var actual = chord.Frets;
+
+			Assert.AreEqual(expected, actual, "Get _frets возвращает неверное значение");
+		}
+
+		[Test(Description = "Тестирование метода на добавления значения в список поля frets")]
+		public void TestSetFretsCoor_Method()
+		{
+			var expected = new int[] { 1, 1 };
+			var chord = new Chord();
+			chord.SetFretsCoor(new int[] { 1, 1 });
+
+			Assert.AreEqual(expected, chord.Frets[0], "SetFretsCoor присваивает некорректное значение");
+		}
+
+		[Test(Description = "Тестирование конструктора с начальным названием")]
+		public void TestChordString_Construct()
+		{
+			string expected = "Am";
+			var chord = new Chord("Am");
+
+			Assert.AreEqual(expected, chord.Name, "Конструктор присваивает некорректное значение в название");
+		}
+
+		[Test(Description = "Тестирование пустого конструктора")]
+		public void TestChord_Construct()
+		{
+			
+			var chord = new Chord();
+
+			Assert.IsNull(chord.Name, "Конструктор присваивает какое то значение");
+		}
 	}
 }
