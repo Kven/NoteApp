@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace NoteApp
 {
@@ -26,6 +27,8 @@ namespace NoteApp
 		/// <summary>
 		/// Название аккорда
 		/// </summary>
+		[Required]
+		[StringLength(10, MinimumLength = 2)]
 		private string _name;
 
 		/// <summary>
@@ -41,11 +44,14 @@ namespace NoteApp
 		/// <summary>
 		/// Начальный лад аккорда
 		/// </summary>
+		[Required]
+		[Range(1,16)]
 		private int _begin;
 
 		/// <summary>
 		/// Устанавливает начальный лад
 		/// </summary>
+		
 		public int Begin
 		{
 			get { return _begin; }
