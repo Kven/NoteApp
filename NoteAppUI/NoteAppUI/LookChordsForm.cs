@@ -156,7 +156,7 @@ namespace NoteAppUI
 		{
 			SaveFileDialog sfDialog = new SaveFileDialog
 			{
-				Filter = "Файл библеотека (*.nlb)|*.nlb|Все файлы (*.*)|*.*"
+				Filter = "Файл библиотека (*.nlb)|*.nlb"
 			};
 			sfDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))

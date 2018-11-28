@@ -11,7 +11,7 @@ namespace NoteAppUI
 		{
 			
 			// первый столбец
-			if (x > 58 && x < 80) //точки x+13  y+16
+			if (x > 58 && x < 80) //
 			{ 
 				if (y > 50 && y < 90) 
 				{
@@ -179,7 +179,7 @@ namespace NoteAppUI
 					return new int[] { 213, 226 };
 				}
 			}
-			return null;
+			return new int[]{0,0};
 		}
 
 		public static void DrawString(int x, int y, Graphics g)
