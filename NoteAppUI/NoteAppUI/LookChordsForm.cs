@@ -54,11 +54,11 @@ namespace NoteAppUI
         {
             AddChordForm addChordForm = new AddChordForm();
             addChordForm.ShowDialog();
-			if (!string.IsNullOrWhiteSpace(addChordForm.newChord.Name))
+			if (addChordForm.newChord != null)
             {
-                list.Add(newChord);
+                list.Add(addChordForm.newChord);
 				addChordForm.Close();
-                listOfChords.Items.Add(newChord.Name);
+                listOfChords.Items.Add(list[list.Count-1].Name);
             }
 		}
 
@@ -95,7 +95,7 @@ namespace NoteAppUI
 		{
 			if (listOfChords.SelectedItem != null)
 			{
-				if (list.Find(x => x.Name == listOfChords.SelectedItem.ToString()) != null)
+				if (list.Find(x => x.Name == listOfChords.SelectedItem.ToString()) != null  )
 				{
 					noteBox.Refresh();
 					Chord selectedChord = new Chord();

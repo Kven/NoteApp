@@ -12,9 +12,9 @@ namespace NoteAppUI
 		/// <summary>
 		/// Локальный экземпляр класса
 		/// </summary>
-		public Chord newChord = new Chord();
+		public Chord newChord;
 
-		private List<(int, int)> tempCoor = new List<(int, int)>();
+		private List<(int, int)> tempCoor;
 
 		Regex rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
 
@@ -35,7 +35,8 @@ namespace NoteAppUI
         {
             InitializeComponent();
 			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-        }
+			tempCoor = new List<(int, int)>();
+		}
 
        
         /// <summary>
@@ -51,9 +52,9 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
-			tempCoor.Add(Draw.Point(e.X, e.Y, g));
-			List<(int, int)> simpl = newChord.Frets;
-			newChord.SetFretsCoor(Draw.Point(e.X, e.Y, g));
+			if (e.X >= 50 && e.X <= 240 && e.Y >= 50 && e.Y <= 250)
+				tempCoor.Add(Draw.Point(e.X, e.Y, g));
+			
 		}
 
 		/// <summary>
@@ -71,9 +72,12 @@ namespace NoteAppUI
 				{
 					if (bg >= 0 && bg <= 12)
 					{
+						/*
 						newChord.Name = nameInput.Text;
-						newChord.Begin = int.Parse(beginInput.Text);
-						//tempCoor.ForEach(x=> newChord.SetFretsCoor((x.Item1,x.Item2)));
+						newChord.Begin = int.Parse(beginInput.Text);*/
+						newChord = new Chord(nameInput.Text, int.Parse(beginInput.Text));
+						tempCoor.ForEach(x => newChord.SetFretsCoor((x.Item1, x.Item2)));
+
 						Hide();
 					}
 				}
@@ -123,7 +127,7 @@ namespace NoteAppUI
 		private void Clear_Click(object sender, EventArgs e)
 		{
 			noteBox.Refresh();
-			newChord.Frets.Clear();
+			tempCoor.Clear();
 		}
 
 	}

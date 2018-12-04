@@ -14,7 +14,6 @@ namespace NoteAppUI
 			int xFinal = 240;
 			int yStart = 50;
 			int yFinal = 250;
-
 			while (xStart < xFinal)
 			{
 				while (yStart <= yFinal)
