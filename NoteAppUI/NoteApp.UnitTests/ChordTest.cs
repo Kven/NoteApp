@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-
+using NoteApp;
 
 namespace NoteApp.UnitTests
 {
@@ -8,17 +8,17 @@ namespace NoteApp.UnitTests
 	public class ChordTest
 
 	{
-		[Test(Description = "Тестирование присвоения значения в поле _name")]
+		[Test(Description = "Тестирование присвоения значения в поле Name")]
 		public void TestNameSet_CorrectValue()
 		{
 			var expected = "Am";
 			var chord = new Chord();
 			chord.Name = "Am";
 
-			Assert.AreEqual(expected, chord.Name, "Set _name присваивает некорректное значение");
+			Assert.AreEqual(expected, chord.Name, "Set Name присваивает некорректное значение");
 		}
 
-		[Test(Description = "Тестирование на получение значения из поля _name")]
+		[Test(Description = "Тестирование на получение значения из поля Name")]
 		public void TestNameGet_CorrectValue()
 		{
 			var expected = "Bm";
@@ -26,20 +26,20 @@ namespace NoteApp.UnitTests
 			chord.Name = expected;
 			var actual = chord.Name;
 
-			Assert.AreEqual(expected, actual, "Get _name возвращает неверное значение");
+			Assert.AreEqual(expected, actual, "Get Name возвращает неверное значение");
 		}
 
-		[Test(Description = "Тестирование на присвоеие значения в поле begin")]
+		[Test(Description = "Тестирование на присвоеие значения в поле Begin")]
 		public void TestBeginSet_CorrectValue()
 		{
 			var expected = 1;
 			var chord = new Chord();
 			chord.Begin = 1;
 
-			Assert.AreEqual(expected, chord.Begin, "Set _begin присваивает некорректное значение");
+			Assert.AreEqual(expected, chord.Begin, "Set Begin присваивает некорректное значение");
 		}
 
-		[Test(Description = "Тестирование на получение значения из поля begin")]
+		[Test(Description = "Тестирование на получение значения из поля Begin")]
 		public void TestBeginGet_CorrectValue()
 		{
 			var expected = 7;
@@ -47,47 +47,40 @@ namespace NoteApp.UnitTests
 			chord.Begin = expected;
 			var actual = chord.Begin;
 
-			Assert.AreEqual(expected, actual, "Get _begin возвращает неверное значение");
-		}
-
-		[Test(Description = "Тестирование на присвоеие значения в поле frets")]
-		public void TestFretsSet_CorrectValue()
-		{
-			var expected = new List<int[]> { new int[] { 1, 1 } };
-			var chord = new Chord();
-			chord.Frets = new List<int[]> { new int[] { 1, 1 } };
-
-			Assert.AreEqual(expected, chord.Frets, "Set _frets присваивает некорректное значение");
+			Assert.AreEqual(expected, actual, "Get Begin возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование на получение значения из поля frets")]
 		public void TestFretsGet_CorrectValue()
 		{
-			var expected = new List<int[]> { new int[] { 1, 1 } };
+			var expected = (1,1);
 			var chord = new Chord();
-			chord.Frets = expected;
-			var actual = chord.Frets;
+			//chord.SetFretsCoor();
+			//var actual = chord.Frets;
 
-			Assert.AreEqual(expected, actual, "Get _frets возвращает неверное значение");
+			//Assert.AreEqual(expected, actual, "Get Frets возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование метода на добавления значения в список поля frets")]
 		public void TestSetFretsCoor_Method()
 		{
-			var expected = new int[] { 1, 1 };
+			var expected = (1, 1);
 			var chord = new Chord();
-			chord.SetFretsCoor(new int[] { 1, 1 });
+			//chord.SetFretsCoor((1,1));
 
-			Assert.AreEqual(expected, chord.Frets[0], "SetFretsCoor присваивает некорректное значение");
+			//Assert.AreEqual(expected, chord.Frets[0], "SetFretsCoor присваивает некорректное значение");
 		}
 
 		[Test(Description = "Тестирование конструктора с начальным названием")]
 		public void TestChordString_Construct()
 		{
-			string expected = "Am";
-			var chord = new Chord("Am");
+			string expectedName = "Am";
+			int expectedBegin = 1;
+			var chord = new Chord("Am",1);
 
-			Assert.AreEqual(expected, chord.Name, "Конструктор присваивает некорректное значение в название");
+			Assert.AreEqual(expectedName, chord.Name, "Конструктор присваивает некорректное значение в название");
+			Assert.AreEqual(expectedBegin, chord.Begin, "Конструктор присваивает некорректное значение в начальный лад");
+
 		}
 
 		[Test(Description = "Тестирование пустого конструктора")]

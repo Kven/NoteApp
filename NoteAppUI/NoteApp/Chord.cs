@@ -46,7 +46,8 @@ namespace NoteApp
 		/// <summary>
 		/// Присвоение значения и вовзращение списка координат.
 		/// </summary>
-		public List<(int, int)> Frets {get;}
+		public List<(int, int)> Frets { get; private set; }
+		
 		
 		/// <summary>
 		/// Добавление координат точек в поле Frets в класс
