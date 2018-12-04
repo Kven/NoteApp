@@ -2,6 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using NoteApp;
 
 namespace NoteApp.UnitTests
 {
@@ -15,7 +16,6 @@ namespace NoteApp.UnitTests
 			expected.Add(new Chord() { Name = "Am", Begin = 1, Frets = new List<int[]>{ new int[] {1,1} } });
 			string path = "C:/test.txt";
 			Json.SaveFile(expected, path);
-
 			var actual = new List<Chord>();
 			
 			using (StreamReader file = File.OpenText(path))
@@ -23,7 +23,15 @@ namespace NoteApp.UnitTests
 				JsonSerializer serializer = new JsonSerializer();
 				actual = (List<Chord>)serializer.Deserialize(file, typeof(List<Chord>));
 			}
-			Assert.AreEqual(expected, actual, "Файл сериализован не правильно");
+
+		    foreach (var VARIABLE in expected)
+		    {
+		        foreach (var actualvar in actual)
+		        {
+		            Assert.AreEqual(VARIABLE.Name, actualvar.Nme, "Файл сериализован не правильно");
+		        }
+		    }
+			
 		}
 
 		[Test(Description = "Тест метода десириализации из файла")]

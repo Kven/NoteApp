@@ -6,33 +6,33 @@ namespace NoteApp
 {
     public static class Json
     {
-		/// <summary>
-		/// Метод для сохранения списка в файл
-		/// </summary>
-		/// <param name="data">Список, который нужно сохранить</param>
+        /// <summary>
+        ///     Метод для сохранения списка в файл
+        /// </summary>
+        /// <param name="data">Список, который нужно сохранить</param>
         public static void SaveFile(List<Chord> data, string path)
         {
-            using (StreamWriter file = File.CreateText(path))
+            using (var file = File.CreateText(path))
             {
-                JsonSerializer serializer = new JsonSerializer();
+                var serializer = new JsonSerializer();
                 serializer.Serialize(file, data);
             }
         }
 
-		/// <summary>
-		/// Метод для считывания файла и импорта из него значений в список
-		/// </summary>
-		/// <returns>Список аккордов, которые сохранены в файле</returns>
+        /// <summary>
+        ///     Метод для считывания файла и импорта из него значений в список
+        /// </summary>
+        /// <returns>Список аккордов, которые сохранены в файле</returns>
         public static List<Chord> ReadFile(string path)
         {
-            List<Chord> data = null;
-            using (StreamReader file = File.OpenText(path))
+            List<Chord> data;
+            using (var file = File.OpenText(path))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                List<Chord> temp = (List<Chord>)serializer.Deserialize(file, typeof(List<Chord>));
-                data = temp;
+                var serializer = new JsonSerializer();
+                data = (List<Chord>) serializer.Deserialize(file, typeof(List<Chord>));
             }
+
             return data;
         }
-    }  
+    }
 }
