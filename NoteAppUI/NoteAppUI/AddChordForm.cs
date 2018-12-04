@@ -3,15 +3,20 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using NoteApp;
+using System.Collections.Generic;
 
 namespace NoteAppUI
 {
 	public partial class AddChordForm : Form
     {
-        /// <summary>
-        /// Локальный экземпляр класса
-        /// </summary>
-        public Chord newChord = new Chord();
+		/// <summary>
+		/// Локальный экземпляр класса
+		/// </summary>
+		public Chord newChord = new Chord();
+
+		private List<(int, int)> tempCoor = new List<(int, int)>();
+
+		Regex rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
 
 		/// <summary>
 		/// Создаем битмап для рисования на нем сетки
@@ -38,53 +43,45 @@ namespace NoteAppUI
         /// </summary>
         private void Сancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        /// <summary>
-        /// Проверяет значения полей и добавляет аккорд в глобальный список
-        /// </summary>
-        private void AddChord_Click(object sender, EventArgs e)
-        {
-            Regex rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
-            if (string.IsNullOrWhiteSpace(nameInput.Text))
-            {
-                MessageBox.Show("Введите название аккорда");
-            }
-            else
-            {
-                if (rN.IsMatch(nameInput.Text))
-                {
-                    newChord.Name = nameInput.Text;
-                }
-                else
-                {
-                    MessageBox.Show("Не корректн");
-                }
-                    
-			}
+		/// <summary>
+		/// При нажатии создает точку где зажимается аккорд. Записывает координаты в массив ладов аккорда
+		/// </summary>
+		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
+		{
+			tempCoor.Add(Draw.Point(e.X, e.Y, g));
+			List<(int, int)> simpl = newChord.Frets;
+			newChord.SetFretsCoor(Draw.Point(e.X, e.Y, g));
+		}
 
-			if (string.IsNullOrWhiteSpace(beginInput.Text))
+		/// <summary>
+		/// Проверяет значения полей и добавляет аккорд в глобальный список
+		/// </summary>
+		private void AddChord_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(nameInput.Text) || string.IsNullOrWhiteSpace(beginInput.Text))
 			{
-				MessageBox.Show("Введите начальный лад");
+				MessageBox.Show("Введите название и начальный лад");
 			}
 			else
 			{
-				if (int.TryParse(beginInput.Text, out int bg))
+				if (rN.IsMatch(nameInput.Text) && int.TryParse(beginInput.Text, out int bg))
 				{
 					if (bg >= 0 && bg <= 12)
 					{
-						newChord.Begin = bg;
-					}
-					else
-					{
-						MessageBox.Show("Не допустимый лад");
+						newChord.Name = nameInput.Text;
+						newChord.Begin = int.Parse(beginInput.Text);
+						//tempCoor.ForEach(x=> newChord.SetFretsCoor((x.Item1,x.Item2)));
+						Hide();
 					}
 				}
+				else
+				{
+					MessageBox.Show("Введено не корректное название или не допустимый лад");
+				}
 			}
-               
-            if (!string.IsNullOrWhiteSpace(newChord.Name) && !string.IsNullOrWhiteSpace(Convert.ToString(newChord.Begin)))
-                this.Close();
         }
 
         /// <summary>
@@ -111,15 +108,6 @@ namespace NoteAppUI
             begin.Text = beginInput.Text;
         }
 
-		/// <summary>
-		/// При нажатии создает точку где зажимается аккорд. Записывает координаты в массив ладов аккорда
-		/// </summary>
-		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
-		{
-			
-			newChord.SetFretsCoor(Draw.Point(e.X, e.Y, g));
-		}
-		
 		/// <summary>
 		/// Вызывается при рисовании точек
 		/// </summary>

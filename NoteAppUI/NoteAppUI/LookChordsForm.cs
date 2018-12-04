@@ -44,7 +44,7 @@ namespace NoteAppUI
 		/// </summary>
         private void Back_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            Close(); 
         }
 
 		/// <summary>
@@ -54,12 +54,10 @@ namespace NoteAppUI
         {
             AddChordForm addChordForm = new AddChordForm();
             addChordForm.ShowDialog();
-			newChord.Name = addChordForm.newChord.Name;
-			newChord.Begin = addChordForm.newChord.Begin;
-			newChord.Frets = addChordForm.newChord.Frets;
-			if (!string.IsNullOrWhiteSpace(newChord.Name))
+			if (!string.IsNullOrWhiteSpace(addChordForm.newChord.Name))
             {
                 list.Add(newChord);
+				addChordForm.Close();
                 listOfChords.Items.Add(newChord.Name);
             }
 		}
@@ -107,7 +105,7 @@ namespace NoteAppUI
 					int count = selectedChord.Frets.Count;
 					for (int i = 0; i < count; i++)
 					{
-						g.FillEllipse(Brushes.Black, (int)selectedChord.Frets[i].GetValue(0) - 40, (int)selectedChord.Frets[i].GetValue(1) - 49, 15, 15);
+						g.FillEllipse(Brushes.Black, selectedChord.Frets[i].Item1 - 40, selectedChord.Frets[i].Item2 - 49, 15, 15);
 					}
 				}
 			}
