@@ -134,7 +134,7 @@ namespace NoteAppUI
 			ofDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
 			{
-				var fromFile = Json.ReadFile(ofDialog.FileName);
+				var fromFile = Serializator.ReadFile(ofDialog.FileName);
 				list.AddRange(fromFile);
 				list.ForEach(x => { listOfChords.Items.Add(x.Name); });
 			}
@@ -161,7 +161,7 @@ namespace NoteAppUI
 			sfDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))
 			{
-				Json.SaveFile(list, sfDialog.FileName);
+				Serializator.SaveFile(list, sfDialog.FileName);
 			}
 		}
 

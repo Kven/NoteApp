@@ -12,9 +12,10 @@ namespace NoteApp
 		/// Конструктор с передаваемым именем
 		/// </summary>
 		/// <param name="name">Название аккорда</param>
-		public Chord(string name)
+		public Chord(string name, int begin)
 		{
 			Name = name;
+			Begin = begin;
 		}
 
 		/// <summary>
@@ -25,22 +26,22 @@ namespace NoteApp
         /// <summary>
         /// Устанавливает название аккорда
         /// </summary>
-        public String Name { get; set; }
+        public String Name { get; private set; }
 
         /// <summary>
 		/// Устанавливает начальный лад
 		/// </summary>
-		public int Begin { get; set; }
+		public int Begin { get; private set; }
 
         /// <summary>
         /// Присвоение значения и вовзращение списка координат.
         /// </summary>
-        public List<int[]> Frets { get; set; }
+        public List<(int, int)> Frets { get; private set; }
 		
 		/// <summary>
 		/// Добавление координат точек в поле Frets в класс
 		/// </summary>
-		/// <param name="coor">Массив из двух координат</param>
-		public void SetFretsCoor(int[] coor) => Frets.Add(coor);
+		/// <param name="coor">Кортедж из координат точки</param>
+		public void SetFretsCoor((int, int) coor) => Frets.Add(coor);
 	}
 }

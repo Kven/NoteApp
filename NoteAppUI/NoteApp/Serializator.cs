@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace NoteApp
 {
-    public static class Json
+    public static class Serializator
     {
         /// <summary>
         ///     Метод для сохранения списка в файл
@@ -31,7 +31,6 @@ namespace NoteApp
                 var serializer = new JsonSerializer();
                 data = (List<Chord>) serializer.Deserialize(file, typeof(List<Chord>));
             }
-
             return data;
         }
     }
