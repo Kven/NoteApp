@@ -24,11 +24,11 @@ namespace NoteApp.UnitTests
 				actual = (List<Chord>)serializer.Deserialize(file, typeof(List<Chord>));
 			}
 
-		    foreach (var VARIABLE in expected)
+		    foreach (var variable in expected)
 		    {
 		        foreach (var actualvar in actual)
 		        {
-		            Assert.AreEqual(VARIABLE.Name, actualvar.Name, "Файл сериализован не правильно");
+		            Assert.AreEqual(variable.Name, actualvar.Name, "Файл сериализован не правильно");
 		        }
 		    }
 			

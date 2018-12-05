@@ -10,7 +10,7 @@ namespace NoteAppUI
 		/// <summary>
 		/// Глобальный список аккордов
 		/// </summary>
-        List<Chord> tempList = new List<Chord>();
+        List<Chord> _tempList = new List<Chord>();
         
 		/// <summary>
 		/// Инициализация главной формы и дессериализация файла в глобальный список аккордов (импорт)
@@ -26,28 +26,15 @@ namespace NoteAppUI
 		/// </summary>
         private void Look_chords_Click(object sender, EventArgs e)
 		{
-			LookChordsForm look_chords = new LookChordsForm();
-			tempList.ForEach(x => look_chords.list.Add(x));
-			look_chords.ShowDialog();
+			LookChordsForm lookChords = new LookChordsForm();
+			_tempList.ForEach(x => lookChords.List.Add(x));
+			lookChords.ShowDialog();
 		}
 
 		private void Close_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
-
-		/// <summary>
-		/// Создается форма создания аккордов, и принимается оттуда новый аккорд, и сразу добавляется в глобальный список
-		/// </summary>
-		//private void Add_chord_Click(object sender, EventArgs e)
-		//{
-		//    AddChordForm add_chord = new AddChordForm();
-		//    add_chord.ShowDialog();
-		//    if (!string.IsNullOrEmpty(add_chord.newChord.Name))
-		//    {
-		//        tempList.Add(add_chord.newChord);
-		//    }
-		//}
 
 	}
 }

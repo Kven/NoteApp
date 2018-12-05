@@ -12,21 +12,21 @@ namespace NoteAppUI
 		/// <summary>
 		/// Локальный экземпляр класса
 		/// </summary>
-		public Chord newChord;
+		public Chord NewChord;
 
-		private List<(int, int)> tempCoor;
+		private List<(int, int)> _tempCoor;
 
-		Regex rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
+		Regex _rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
 
 		/// <summary>
 		/// Создаем битмап для рисования на нем сетки
 		/// </summary>
-		Bitmap bitmap;
+		Bitmap _bitmap;
 
 		/// <summary>
 		/// Инструмент для рисования
 		/// </summary>
-		Graphics g;
+		Graphics _g;
 
         /// <summary>
         /// Инициализация формы и инициализация битмапа
@@ -34,8 +34,8 @@ namespace NoteAppUI
         public AddChordForm()
         {
             InitializeComponent();
-			bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			tempCoor = new List<(int, int)>();
+			_bitmap = new Bitmap(noteBox.Width, noteBox.Height);
+			_tempCoor = new List<(int, int)>();
 		}
 
        
@@ -53,7 +53,7 @@ namespace NoteAppUI
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
 			if (e.X >= 50 && e.X <= 240 && e.Y >= 50 && e.Y <= 250)
-				tempCoor.Add(Draw.Point(e.X, e.Y, g));
+				_tempCoor.Add(Draw.Point(e.X, e.Y, _g));
 			
 		}
 
@@ -68,16 +68,12 @@ namespace NoteAppUI
 			}
 			else
 			{
-				if (rN.IsMatch(nameInput.Text) && int.TryParse(beginInput.Text, out int bg))
+				if (_rN.IsMatch(nameInput.Text) && int.TryParse(beginInput.Text, out int bg))
 				{
 					if (bg >= 0 && bg <= 12)
 					{
-						/*
-						newChord.Name = nameInput.Text;
-						newChord.Begin = int.Parse(beginInput.Text);*/
-						newChord = new Chord(nameInput.Text, int.Parse(beginInput.Text));
-						tempCoor.ForEach(x => newChord.SetFretsCoor((x.Item1, x.Item2)));
-
+						NewChord = new Chord(nameInput.Text, int.Parse(beginInput.Text));
+						_tempCoor.ForEach(x => NewChord.SetFretsCoor((x.Item1, x.Item2)));
 						Hide();
 					}
 				}
@@ -93,7 +89,7 @@ namespace NoteAppUI
         /// </summary>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-			Draw.DrawGrid(bitmap, g, noteBox, 70, 55);
+			Draw.DrawGrid(_bitmap, _g, noteBox, 70, 55);
         }
 
         /// <summary>
@@ -117,7 +113,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			g = noteBox.CreateGraphics();
+			_g = noteBox.CreateGraphics();
 			
 		}
 
@@ -127,7 +123,7 @@ namespace NoteAppUI
 		private void Clear_Click(object sender, EventArgs e)
 		{
 			noteBox.Refresh();
-			tempCoor.Clear();
+			_tempCoor.Clear();
 		}
 
 	}
