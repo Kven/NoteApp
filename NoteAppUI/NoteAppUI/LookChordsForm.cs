@@ -120,6 +120,7 @@ namespace NoteAppUI
 			ofDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
 			{
+			    label_libname.Text = ofDialog.FileName.Substring(ofDialog.FileName.LastIndexOf('\\')+1,(ofDialog.FileName.Length)-ofDialog.FileName.LastIndexOf('\\')-5);
 				var fromFile = Serializator.ReadFile(ofDialog.FileName);
 				List.AddRange(fromFile);
 				List.ForEach(x => { listOfChords.Items.Add(x.Name); });

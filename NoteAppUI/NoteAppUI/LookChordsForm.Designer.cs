@@ -39,6 +39,7 @@
             this.New = new System.Windows.Forms.Button();
             this.Open = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
+            this.label_libname = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,12 +193,23 @@
             this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // label_libname
+            // 
+            this.label_libname.AutoSize = true;
+            this.label_libname.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_libname.Location = new System.Drawing.Point(181, 27);
+            this.label_libname.Name = "label_libname";
+            this.label_libname.Size = new System.Drawing.Size(130, 17);
+            this.label_libname.TabIndex = 10;
+            this.label_libname.Text = "Новая библиотека";
+            // 
             // LookChordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(415, 500);
+            this.Controls.Add(this.label_libname);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Open);
             this.Controls.Add(this.New);
@@ -232,5 +244,6 @@
 		private System.Windows.Forms.Button New;
 		private System.Windows.Forms.Button Open;
 		private System.Windows.Forms.Button Save;
-	}
+        private System.Windows.Forms.Label label_libname;
+    }
 }
