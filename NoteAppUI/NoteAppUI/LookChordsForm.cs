@@ -89,11 +89,11 @@ namespace NoteAppUI
 					noteBox.Refresh();
 					Chord selectedChord = List.Find(x => x.Name == listOfChords.SelectedItem.ToString());
 					chordName.Text = listOfChords.SelectedItem.ToString();
-					chordBegin.Text = List.Find(x => x.Name == listOfChords.SelectedItem.ToString()).Begin.ToString();
-					int count = selectedChord.Frets.Count;
+					chordBegin.Text = List.Find(x => x.Name == listOfChords.SelectedItem.ToString()).BeginFret.ToString();
+					int count = selectedChord.Points.Count;
 					for (int i = 0; i < count; i++)
 					{
-						_g.FillEllipse(Brushes.Black, selectedChord.Frets[i].Item1 - 40, selectedChord.Frets[i].Item2 - 49, 15, 15);
+						_g.FillEllipse(Brushes.Black, selectedChord.Points[i].Item1 - 40, selectedChord.Points[i].Item2 - 49, 15, 15);
 					}
 				}
 			}
@@ -122,7 +122,7 @@ namespace NoteAppUI
 			{
 			    label_libname.Text = ofDialog.FileName.Substring(ofDialog.FileName.LastIndexOf('\\') + 1,
 			        ofDialog.FileName.Length - ofDialog.FileName.LastIndexOf('\\') - 5);
-				var fromFile = Serializator.ReadFile(ofDialog.FileName);
+				var fromFile = Serialize.ReadFile(ofDialog.FileName);
 				List.AddRange(fromFile);
 				List.ForEach(x => { listOfChords.Items.Add(x.Name); });
 			}
@@ -151,7 +151,7 @@ namespace NoteAppUI
 			{
 			    label_libname.Text = sfDialog.FileName.Substring(sfDialog.FileName.LastIndexOf('\\') + 1,
 			        sfDialog.FileName.Length - sfDialog.FileName.LastIndexOf('\\') - 5);
-                Serializator.SaveFile(List, sfDialog.FileName);
+                Serialize.SaveFile(List, sfDialog.FileName);
 			}
 		}
 

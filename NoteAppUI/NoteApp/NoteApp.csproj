@@ -54,8 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chord.cs" />
+    <Compile Include="CoordinatesStruct.cs" />
     <Compile Include="ListOfChords.cs" />
-    <Compile Include="Serializator.cs" />
+    <Compile Include="Serialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

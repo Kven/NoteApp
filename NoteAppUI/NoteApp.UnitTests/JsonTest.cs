@@ -13,9 +13,9 @@ namespace NoteApp.UnitTests
 		public void TestJsonSaveFile_Method()
 		{
 			var expected = new List<Chord>();
-			expected.Add(new Chord() { Name = "Am", Begin = 1 });
+			expected.Add(new Chord() { Name = "Am", BeginFret = 1 });
 			string path = "C:/test.txt";
-			Serializator.SaveFile(expected, path);
+			Serialize.SaveFile(expected, path);
 			var actual = new List<Chord>();
 			
 			using (StreamReader file = File.OpenText(path))

@@ -28,25 +28,25 @@ namespace NoteApp.UnitTests
 			Assert.AreEqual(expected, actual, "Get Name возвращает неверное значение");
 		}
 
-		[Test(Description = "Тестирование на присвоеие значения в поле Begin")]
+		[Test(Description = "Тестирование на присвоеие значения в поле BeginFret")]
 		public void TestBeginSet_CorrectValue()
 		{
 			var expected = 1;
 			var chord = new Chord();
-			chord.Begin = 1;
+			chord.BeginFret = 1;
 
-			Assert.AreEqual(expected, chord.Begin, "Set Begin присваивает некорректное значение");
+			Assert.AreEqual(expected, chord.BeginFret, "Set BeginFret присваивает некорректное значение");
 		}
 
-		[Test(Description = "Тестирование на получение значения из поля Begin")]
+		[Test(Description = "Тестирование на получение значения из поля BeginFret")]
 		public void TestBeginGet_CorrectValue()
 		{
 			var expected = 7;
 			var chord = new Chord();
-			chord.Begin = expected;
-			var actual = chord.Begin;
+			chord.BeginFret = expected;
+			var actual = chord.BeginFret;
 
-			Assert.AreEqual(expected, actual, "Get Begin возвращает неверное значение");
+			Assert.AreEqual(expected, actual, "Get BeginFret возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование на получение значения из поля frets")]
@@ -55,9 +55,9 @@ namespace NoteApp.UnitTests
 			var expected = (1,1);
 			var chord = new Chord();
 			chord.SetFretsCoor(expected);
-			var actual = chord.Frets;
+			var actual = chord.Points;
 
-			Assert.AreEqual(expected, actual, "Get Frets возвращает неверное значение");
+			Assert.AreEqual(expected, actual, "Get Points возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование метода на добавления значения в список поля frets")]
@@ -67,7 +67,7 @@ namespace NoteApp.UnitTests
 			var chord = new Chord();
 			chord.SetFretsCoor((1,1));
 
-			Assert.AreEqual(expected, chord.Frets[0], "SetFretsCoor присваивает некорректное значение");
+			Assert.AreEqual(expected, chord.Points[0], "SetFretsCoor присваивает некорректное значение");
 		}
 
 		[Test(Description = "Тестирование конструктора с начальным названием")]
@@ -78,7 +78,7 @@ namespace NoteApp.UnitTests
 			var chord = new Chord("Am",1);
 
 			Assert.AreEqual(expectedName, chord.Name, "Конструктор присваивает некорректное значение в название");
-			Assert.AreEqual(expectedBegin, chord.Begin, "Конструктор присваивает некорректное значение в начальный лад");
+			Assert.AreEqual(expectedBegin, chord.BeginFret, "Конструктор присваивает некорректное значение в начальный лад");
 
 		}
 

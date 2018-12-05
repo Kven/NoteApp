@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace NoteApp
 {
-    public static class Serializator
+    public static class Serialize
     {
         /// <summary>
         ///     Метод для сохранения списка в файл
