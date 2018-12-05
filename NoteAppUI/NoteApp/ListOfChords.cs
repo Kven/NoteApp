@@ -7,14 +7,24 @@ namespace NoteApp
 		/// <summary>
 		/// Контейнер для аккордов
 		/// </summary>
-		private readonly List<Chord> _chords;
+		public List<Chord> Chords
+		{
+			get
+			{
+				return Chords;
+			}
+			private set
+			{
+
+			}
+		}
 
 		/// <summary>
 		/// Конструктор с пустыми параметрами, инициализирующий список
 		/// </summary>
 		public ListOfChords ()
 		{
-			_chords = new List<Chord>();
+			Chords = new List<Chord>();
 		}
 
 		/// <summary>
@@ -26,7 +36,7 @@ namespace NoteApp
 		{
 			get
 			{
-				return _chords[index];
+				return Chords[index];
 			}
 		}
 

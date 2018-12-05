@@ -12,6 +12,9 @@ namespace NoteAppUI
 		int yFinal = 250; // Нижняя граница области рисования
 		int xStep = 30; // Расстояние между линиями сетки по оси Х
 		int yStep = 40; // Расстояние между линиями сетки по оси У
+		int fillEllipseWidth = 15; //Устанавливает Ширину точки
+		int fillEllipseHeight = 15; //Устанавливает Высоту точки
+		
 
 		/// <summary>
 		/// Провека области нажатия мыши и отрисовка точки на ближайшее местоположение
@@ -22,12 +25,8 @@ namespace NoteAppUI
 		/// <returns>Возвращает структуру координат точки зажатия</returns>
 		public Coordinates Point (int x, int y, Graphics g)
 		{
-			
 			int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 16; //Корректирует положение точки на сетке по оси У относительно верхней границы
-			int fillEllipseWidth = 15; //Устанавливает Ширину точки
-			int fillEllipseHeight = 15; //Устанавливает Высоту точки
-					   			 
 			while (xStart < xFinal)
 			{
 				while (yStart <= yFinal)
@@ -86,6 +85,18 @@ namespace NoteAppUI
 			pictureBox.Image = bitmap;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="graphic"></param>
+		/// <param name="x"></param>
+		/// <param name="y"></param>
+		public void DrawPoint(Graphics graphic, int x, int y)
+		{
+			int xPointCorrect = 40; //Кооректирует положение точки на сетке по оси Х относительно левой границы
+			int yPointCorrect = 49; //Корректирует положение точки на сетке по оси У относительно верхней границы
+			graphic.FillEllipse(Brushes.Black, x - xPointCorrect, y - yPointCorrect, fillEllipseWidth, fillEllipseHeight);
+		}
 
 	}
 }

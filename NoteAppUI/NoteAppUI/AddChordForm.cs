@@ -17,10 +17,10 @@ namespace NoteAppUI
 		/// <summary>
 		/// Экземпляр класса-рисовки
 		/// </summary>
-		private Draw _draw = new Draw();
+		private Draw _draw;
 
 		/// <summary>
-		/// 
+		/// Контейнер для временного хранения точек (структуры координат)
 		/// </summary>
 		private List<Coordinates> _tempCoordinatesList;
 
@@ -44,6 +44,7 @@ namespace NoteAppUI
             InitializeComponent();
 			_bitmap = new Bitmap(noteBox.Width, noteBox.Height);
 			_tempCoordinatesList = new List<Coordinates>();
+			_draw = new Draw();
 		}
 
        
@@ -56,7 +57,7 @@ namespace NoteAppUI
         }
 
 		/// <summary>
-		/// При нажатии создает точку где зажимается аккорд. Записывает координаты в массив ладов аккорда
+		/// При нажатии создает точку где зажимается аккорд. Записывает координаты во временный контейнер
 		/// </summary>
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -65,11 +66,11 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// Проверяет значения полей и добавляет аккорд в глобальный список
+		/// Проверяет значения полей и инициализация локального класса со всеми значениями для передачи в форму просмотра аккордов
 		/// </summary>
 		private void AddChord_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrWhiteSpace(nameInput.Text) || string.IsNullOrWhiteSpace(beginInput.Text))
+			if (string.IsNullOrWhiteSpace(nameInput.Text) && string.IsNullOrWhiteSpace(beginInput.Text))
 			{
 				MessageBox.Show("Введите название и начальный лад");
 			}
@@ -96,8 +97,8 @@ namespace NoteAppUI
         /// </summary>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-			int xPosition = 70;
-			int yPosition = 55;
+			int xPosition = 70; //Точка начала отрисовки линий сетки по оси Х
+			int yPosition = 55; //Точка начала отрисовки линий сетки по оси У
 			_draw.DrawGrid(_bitmap, _graphic, noteBox, xPosition, yPosition);
         }
 
@@ -127,7 +128,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// Стирает все точки на сетке
+		/// Стирает все точки на сетке и очищает временный контейнер точек _tempCoordinatesList
 		/// </summary>
 		private void Clear_Click(object sender, EventArgs e)
 		{
