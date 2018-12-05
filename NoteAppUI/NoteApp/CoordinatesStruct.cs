@@ -13,7 +13,7 @@ namespace NoteApp
 			{
 				return X;
 			}
-			set
+			private set
 			{
 				if (value >= 50 && value <= 240)
 					X = value;
@@ -31,13 +31,19 @@ namespace NoteApp
 			{
 				return Y;
 			}
-			set
+			private set
 			{
 				if (value >= 50 && value <= 250)
 					Y = value;
 				else
 					throw new Exception("Координата У не может быть меньше 50 или больше 250");
 			}
+		}
+
+		public Coordinates (int x, int y)
+		{
+			X = x;
+			Y = y;
 		}
 	}
 

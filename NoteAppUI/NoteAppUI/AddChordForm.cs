@@ -14,19 +14,27 @@ namespace NoteAppUI
 		/// </summary>
 		public Chord NewChord;
 
-		private List<(int, int)> _tempCoor;
+		/// <summary>
+		/// Экземпляр класса-рисовки
+		/// </summary>
+		private Draw _draw = new Draw();
 
-		Regex _rN = new Regex(@"^[A-Z]{1,10}"); //;
+		/// <summary>
+		/// 
+		/// </summary>
+		private List<Coordinates> _tempCoordinatesList;
+
+		Regex _rN = new Regex(@"^[A-Z]{1,10}"); //регулярное выражение - шаблон для проверки вводимого названия аккорда
 
 		/// <summary>
 		/// Создаем битмап для рисования на нем сетки
 		/// </summary>
-		Bitmap _bitmap;
+		private Bitmap _bitmap;
 
 		/// <summary>
 		/// Инструмент для рисования
 		/// </summary>
-		Graphics _g;
+		private Graphics _graphic;
 
         /// <summary>
         /// Инициализация формы и инициализация битмапа
@@ -35,7 +43,7 @@ namespace NoteAppUI
         {
             InitializeComponent();
 			_bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			_tempCoor = new List<(int, int)>();
+			_tempCoordinatesList = new List<Coordinates>();
 		}
 
        
@@ -53,8 +61,7 @@ namespace NoteAppUI
 		private void NoteBox_MouseDown(object sender, MouseEventArgs e)
 		{
 			if (e.X >= 50 && e.X <= 240 && e.Y >= 50 && e.Y <= 250)
-				_tempCoor.Add(Draw.Point(e.X, e.Y, _g));
-			
+				_tempCoordinatesList.Add(_draw.Point(e.X, e.Y, _graphic));
 		}
 
 		/// <summary>
@@ -73,7 +80,7 @@ namespace NoteAppUI
 					if (bg >= 0 && bg <= 12)
 					{
 						NewChord = new Chord(nameInput.Text, int.Parse(beginInput.Text));
-						_tempCoor.ForEach(x => NewChord.SetFretsCoor((x.Item1, x.Item2)));
+						_tempCoordinatesList.ForEach(x => NewChord.SetFretsCoor(x));
 						Hide();
 					}
 				}
@@ -89,7 +96,9 @@ namespace NoteAppUI
         /// </summary>
         private void AddChordForm_Load(object sender, EventArgs e)
         {
-			Draw.DrawGrid(_bitmap, _g, noteBox, 70, 55);
+			int xPosition = 70;
+			int yPosition = 55;
+			_draw.DrawGrid(_bitmap, _graphic, noteBox, xPosition, yPosition);
         }
 
         /// <summary>
@@ -113,7 +122,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			_g = noteBox.CreateGraphics();
+			_graphic = noteBox.CreateGraphics();
 			
 		}
 
@@ -123,7 +132,7 @@ namespace NoteAppUI
 		private void Clear_Click(object sender, EventArgs e)
 		{
 			noteBox.Refresh();
-			_tempCoor.Clear();
+			_tempCoordinatesList.Clear();
 		}
 
 	}
