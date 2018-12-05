@@ -40,7 +40,7 @@ namespace NoteAppUI
 			return (0, 0);
 		}
 
-		public static void DrawString(int x, int y, Graphics g)
+		public static void DrawLabel(int x, int y, Graphics g)
 		{
 			g.DrawString("" + x + " " + y, SystemFonts.DefaultFont, Brushes.Black, x - 7, y - 7);
 		}
