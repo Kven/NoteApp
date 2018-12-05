@@ -11,7 +11,7 @@ namespace NoteAppUI
 		/// <summary>
 		/// Список аккордов
 		/// </summary>
-		private ListOfChords _listOfChords = new ListOfChords();
+		private ListOfChords _listOfChords;
 
         /// <summary>
 		/// Инструмент для создания графики
@@ -32,8 +32,10 @@ namespace NoteAppUI
 		public LookChordsForm()
 		{
 		    InitializeComponent();
-		    var bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			_draw.DrawGrid(bitmap, _graphic, noteBox, xGridBeginPosition, yGridBeginPosition);
+			_listOfChords = new ListOfChords();
+		    var bitmap = new Bitmap(gridPictureBox.Width, gridPictureBox.Height);
+			_draw = new Draw();
+			_draw.DrawGrid(bitmap, _graphic, gridPictureBox, xGridBeginPosition, yGridBeginPosition);
 		}
 
 		/// <summary>
@@ -81,7 +83,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			_graphic = noteBox.CreateGraphics();
+			_graphic = gridPictureBox.CreateGraphics();
 		}
 
 		/// <summary>
@@ -94,10 +96,10 @@ namespace NoteAppUI
 			{
 				if (_listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()) != null  )
 				{
-					noteBox.Refresh();
+					gridPictureBox.Refresh();
 					Chord selectedChord = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString());
-					chordName.Text = ListOfChordNamesListBox.SelectedItem.ToString();
-					chordBegin.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();
+					chordNameLabel.Text = ListOfChordNamesListBox.SelectedItem.ToString();
+					chordBeginFretLabel.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();
 					int count = selectedChord.Points.Count;
 					for (int i = 0; i < count; i++)
 					{
@@ -108,9 +110,9 @@ namespace NoteAppUI
 			else
 			{
 				ListOfChordNamesListBox.SelectedIndex = -1;
-				chordBegin.Text = "";
-				chordName.Text = "";
-				noteBox.Refresh();
+				chordBeginFretLabel.Text = "";
+				chordNameLabel.Text = "";
+				gridPictureBox.Refresh();
 			}
 		}
 
@@ -128,7 +130,7 @@ namespace NoteAppUI
 			openFileDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(openFileDialog.FileName))
 			{
-			    label_libname.Text = openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf('\\') + 1,
+			    nameOfCurrentLibraryLabel.Text = openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf('\\') + 1,
 			        openFileDialog.FileName.Length - openFileDialog.FileName.LastIndexOf('\\') - 5);
 				var fromFile = Serialize.ReadFile(openFileDialog.FileName);
 				_listOfChords = fromFile;
@@ -157,7 +159,7 @@ namespace NoteAppUI
 			saveFileDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
 			{
-			    label_libname.Text = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf('\\') + 1,
+			    nameOfCurrentLibraryLabel.Text = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf('\\') + 1,
 			        saveFileDialog.FileName.Length - saveFileDialog.FileName.LastIndexOf('\\') - 5);
                 Serialize.SaveFile(_listOfChords, saveFileDialog.FileName);
 			}

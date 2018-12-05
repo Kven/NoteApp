@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="addItemButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="addChordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3VAAAN1QE91ljxAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3UAAAN1AHvkboVAAAAB3RJ
         TUUH4gsYDBYuvHEfNAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABRSURBVDhP
         YwCC40DcQSYG6QUzyAVgvfgM0IJiXICgAR5QjAsMNwNAgQXTAMPVUIwuDgtY6hqADcA04AIjwQBQYMEC
         DBsgaAAhANZLQXZmOA4AXoEtGTrQel8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="deleteItemButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="deleteChordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3WAAAN1gGQb3mcAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3VAAAN1QE91ljxAAAAB3RJ
         TUUH4gwFCgM0YngvugAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAzSURBVDhP
         YwCC40DcQSYG6QUzyAVgvaMGUNEALSD2IBKD1IIAdQ0gB4waQC0DKMjODMcBTxsnJTZ3N/oAAAAASUVO
         RK5CYII=
 </value>
   </data>
-  <data name="New.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="createNewLibraryButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3VAAAN1QE91ljxAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3UAAAN1AHvkboVAAAAB3RJ
         TUUH4gsYDBYT5BlTJQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADPSURBVDhP
         3ZO9DgFBFEZHhwdQ6iQKCREvgJfgKVQSjURHtFqlVvw0XsJD+c5eswk7rp/SSU727szeL7Ozs+EHqnJs
         5fdU5Flu5ZKBSEk2ZDNhXQLNJznI7ixkRFGTF7mWpD47k2V5lLGZ614yHiayT/ECHjrIZDMsZMfKJLzz
@@ -147,10 +147,10 @@
         Rk4sx55/5wFCWAmv48mx59+5E8IN9aMp9heBQ2sAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Open.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="openLibraryButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3VAAAN1QE91ljxAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3UAAAN1AHvkboVAAAAB3RJ
         TUUH4gsYDBUmmYfExQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC/SURBVDhP
         7dIxDgFBFIfxiYZEQaVWKYVzcAN3cAWNTiNxH4VEqZZoFZQblQrft5mVGFvYUHrJz76Z9/5TCb+sVvx+
         Um+7HdyQYYsp6ijK3jtn7rhrJq82urgnNmhE9uncjNlwiod0QbOobGbG7POQLmgZlc2KzMsh9X+gwgND
@@ -158,10 +158,10 @@
         2W8qhAdXmo06t847lgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="saveLibraryButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3WAAAN1gGQb3mcAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3VAAAN1QE91ljxAAAAB3RJ
         TUUH4gwFCgIuhgHngQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADHSURBVDhP
         rdO/DsFQHMXxDiQ2sRk8gEcwGCQW7yERk3gAERZGHkFMDBW7sEkHid3oTXyP3ttcUb2N9CSf9ndvmzP0
         T0Ai7IynM6e54YoFkuiCjTvblBFiiyE6GCAp8RVUsIGu2QKlj7mGPAV7HOAWKO/7fQUlrLGEt+AMrX+5

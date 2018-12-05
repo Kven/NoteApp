@@ -7,43 +7,26 @@ namespace NoteApp
 		/// <summary>
 		/// Координата Х, хранит местоположение точки зажима по оси Х
 		/// </summary>
-		public int X
-		{
-			get
-			{
-				return X;
-			}
-			private set
-			{
-				if (value >= 50 && value <= 240)
-					X = value;
-				else
-					throw new Exception("Координата Х не может быть меньше 50 или больше 240");
-			}
-		}
+		public readonly int X;
+
 
 		/// <summary>
 		/// Координата У, хранит местоположение точки зажима по оси У
 		/// </summary>
-		public int Y
-		{
-			get
-			{
-				return Y;
-			}
-			private set
-			{
-				if (value >= 50 && value <= 250)
-					Y = value;
-				else
-					throw new Exception("Координата У не может быть меньше 50 или больше 250");
-			}
-		}
+		public readonly int Y;
+		
 
 		public Coordinates (int x, int y)
 		{
-			X = x;
-			Y = y;
+			if (x >= 50 && x <= 240)
+				X = x;
+			else
+				throw new Exception("Координата Х не может быть меньше 50 или больше 240");
+
+			if (y >= 50 && y <= 250)
+				Y = y;
+			else
+				throw new Exception("Координата У не может быть меньше 50 или больше 250");
 		}
 	}
 

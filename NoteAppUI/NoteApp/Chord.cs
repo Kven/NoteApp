@@ -15,16 +15,11 @@ namespace NoteApp
 		/// <param name="beginfret">Начальный лад</param>
 		public Chord(string name, int beginfret)
 		{
-			if (name.Length >= 10 && name.Length < 1)
-				throw new Exception("Недопустимая длина названия");
-			else
-				Name = name;
-
+			Name = name; 
+						
 			if (beginfret <= 12 && beginfret >= 1)
 				BeginFret = beginfret;
-			else
-				throw new Exception("Лад не в диапазоне допустимых значений");
-
+			
 			Points = new List<Coordinates>();
 		}
 
@@ -44,10 +39,7 @@ namespace NoteApp
 			}
 			set
 			{
-				if (value.Length >= 10 && value.Length < 1)
-					throw new Exception("Недопустимая длина названия");
-				else
-					Name = value;
+				Name = value;
 			}
 		}
 
@@ -61,10 +53,7 @@ namespace NoteApp
 			}
 			set
 			{
-				if (value <= 12 && value >= 1)
-					BeginFret = value;
-				else
-					throw new Exception("Лад не в диапазоне допустимых значений");
+				BeginFret = value;
 			}
 		}
 

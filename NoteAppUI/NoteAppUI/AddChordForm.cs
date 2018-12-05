@@ -42,7 +42,7 @@ namespace NoteAppUI
         public AddChordForm()
         {
             InitializeComponent();
-			_bitmap = new Bitmap(noteBox.Width, noteBox.Height);
+			_bitmap = new Bitmap(gridPictureBox.Width, gridPictureBox.Height);
 			_tempCoordinatesList = new List<Coordinates>();
 			_draw = new Draw();
 		}
@@ -70,17 +70,17 @@ namespace NoteAppUI
 		/// </summary>
 		private void AddChord_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrWhiteSpace(nameInput.Text) && string.IsNullOrWhiteSpace(beginInput.Text))
+			if (string.IsNullOrWhiteSpace(nameInputTextBox.Text) && string.IsNullOrWhiteSpace(beginFretInputTextBox.Text))
 			{
 				MessageBox.Show("Введите название и начальный лад");
 			}
 			else
 			{
-				if (_rN.IsMatch(nameInput.Text) && int.TryParse(beginInput.Text, out int bg))
+				if (_rN.IsMatch(nameInputTextBox.Text) && int.TryParse(beginFretInputTextBox.Text, out int bg))
 				{
 					if (bg >= 0 && bg <= 12)
 					{
-						NewChord = new Chord(nameInput.Text, int.Parse(beginInput.Text));
+						NewChord = new Chord(nameInputTextBox.Text, int.Parse(beginFretInputTextBox.Text));
 						_tempCoordinatesList.ForEach(x => NewChord.SetFretsCoor(x));
 						Hide();
 					}
@@ -99,7 +99,7 @@ namespace NoteAppUI
         {
 			int xPosition = 70; //Точка начала отрисовки линий сетки по оси Х
 			int yPosition = 55; //Точка начала отрисовки линий сетки по оси У
-			_draw.DrawGrid(_bitmap, _graphic, noteBox, xPosition, yPosition);
+			_draw.DrawGrid(_bitmap, _graphic, gridPictureBox, xPosition, yPosition);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace NoteAppUI
         /// </summary>
         private void NameInput_TextChanged(object sender, EventArgs e)
         {
-            name.Text = nameInput.Text;
+            nameOnBoxLabel.Text = nameInputTextBox.Text;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace NoteAppUI
         /// </summary>
         private void BeginInput_TextChanged(object sender, EventArgs e)
         {
-            begin.Text = beginInput.Text;
+            beginFretOnBoxLabel.Text = beginFretInputTextBox.Text;
         }
 
 		/// <summary>
@@ -123,7 +123,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			_graphic = noteBox.CreateGraphics();
+			_graphic = gridPictureBox.CreateGraphics();
 			
 		}
 
@@ -132,7 +132,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void Clear_Click(object sender, EventArgs e)
 		{
-			noteBox.Refresh();
+			gridPictureBox.Refresh();
 			_tempCoordinatesList.Clear();
 		}
 

@@ -7,17 +7,7 @@ namespace NoteApp
 		/// <summary>
 		/// Контейнер для аккордов
 		/// </summary>
-		public List<Chord> Chords
-		{
-			get
-			{
-				return Chords;
-			}
-			private set
-			{
-
-			}
-		}
+		public List<Chord> Chords { get; set; }
 
 		/// <summary>
 		/// Конструктор с пустыми параметрами, инициализирующий список
