@@ -2,7 +2,7 @@
 
 namespace NoteApp
 {
-	class ListOfChords
+	public class ListOfChords
 	{
 		/// <summary>
 		/// Контейнер для аккордов

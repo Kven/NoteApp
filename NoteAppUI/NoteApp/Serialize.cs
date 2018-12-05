@@ -11,7 +11,7 @@ namespace NoteApp
         /// </summary>
         /// <param name="data">Список, который нужно сохранить</param>
         /// <param name="path">Куда сохранить файл</param>
-        public static void SaveFile(List<Chord> data, string path)
+        public static void SaveFile(ListOfChords data, string path)
         {
             using (var file = File.CreateText(path))
             {
@@ -24,13 +24,13 @@ namespace NoteApp
         ///     Метод для считывания файла и импорта из него значений в список
         /// </summary>
         /// <returns>Список аккордов, которые сохранены в файле</returns>
-        public static List<Chord> ReadFile(string path)
+        public static ListOfChords ReadFile(string path)
         {
-            List<Chord> data;
+            ListOfChords data;
             using (var file = File.OpenText(path))
             {
                 var serializer = new JsonSerializer();
-                data = (List<Chord>) serializer.Deserialize(file, typeof(List<Chord>));
+				data = (ListOfChords) serializer.Deserialize(file, typeof(ListOfChords));
             }
             return data;
         }
