@@ -120,7 +120,8 @@ namespace NoteAppUI
 			ofDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
 			{
-			    label_libname.Text = ofDialog.FileName.Substring(ofDialog.FileName.LastIndexOf('\\')+1,(ofDialog.FileName.Length)-ofDialog.FileName.LastIndexOf('\\')-5);
+			    label_libname.Text = ofDialog.FileName.Substring(ofDialog.FileName.LastIndexOf('\\') + 1,
+			        ofDialog.FileName.Length - ofDialog.FileName.LastIndexOf('\\') - 5);
 				var fromFile = Serializator.ReadFile(ofDialog.FileName);
 				List.AddRange(fromFile);
 				List.ForEach(x => { listOfChords.Items.Add(x.Name); });
@@ -148,7 +149,9 @@ namespace NoteAppUI
 			sfDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))
 			{
-				Serializator.SaveFile(List, sfDialog.FileName);
+			    label_libname.Text = sfDialog.FileName.Substring(sfDialog.FileName.LastIndexOf('\\') + 1,
+			        sfDialog.FileName.Length - sfDialog.FileName.LastIndexOf('\\') - 5);
+                Serializator.SaveFile(List, sfDialog.FileName);
 			}
 		}
 

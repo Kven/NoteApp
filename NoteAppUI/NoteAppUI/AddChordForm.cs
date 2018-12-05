@@ -16,7 +16,7 @@ namespace NoteAppUI
 
 		private List<(int, int)> _tempCoor;
 
-		Regex _rN = new Regex(@"^[A-Z][0-9a-z]{1,10}"); //;
+		Regex _rN = new Regex(@"^[A-Z]{1,10}"); //;
 
 		/// <summary>
 		/// Создаем битмап для рисования на нем сетки
