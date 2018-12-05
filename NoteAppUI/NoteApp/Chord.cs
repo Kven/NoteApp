@@ -8,13 +8,14 @@ namespace NoteApp
 	/// </summary>
 	public class Chord
 	{
-		/// <summary>
-		/// Конструктор с передаваемым именем
-		/// </summary>
-		/// <param name="name">Название аккорда</param>
-		public Chord(string name, int begin)
+	    /// <summary>
+	    /// Конструктор с передаваемым именем
+	    /// </summary>
+	    /// <param name="name">Название аккорда</param>
+	    /// <param name="begin">Начальный лад</param>
+	    public Chord(string name, int begin)
 		{
-			if (name.Length >= 10 || name.Length < 2)
+			if (name.Length >= 10 && name.Length < 1)
 				throw new Exception("Недопустимая длина названия");
 			else
 				Name = name;

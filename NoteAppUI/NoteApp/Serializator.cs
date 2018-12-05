@@ -10,6 +10,7 @@ namespace NoteApp
         ///     Метод для сохранения списка в файл
         /// </summary>
         /// <param name="data">Список, который нужно сохранить</param>
+        /// <param name="path">Куда сохранить файл</param>
         public static void SaveFile(List<Chord> data, string path)
         {
             using (var file = File.CreateText(path))
