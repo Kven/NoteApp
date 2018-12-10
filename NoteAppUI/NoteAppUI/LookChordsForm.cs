@@ -42,9 +42,16 @@ namespace NoteAppUI
 		/// Закрывает текущую форму и возвращает на главную форму
 		/// </summary>
         private void Back_Click(object sender, EventArgs e)
-        {
-            Close(); 
-        }
+		{
+
+		    if (MessageBox.Show("Сохранить перед выходом?", "", MessageBoxButtons.YesNo) == DialogResult.No)
+		    Close();
+		    else
+		    {
+		        Save_Click(sender, e);
+		        Close();
+		    }
+		}
 
 		/// <summary>
 		/// Добавляет аккорд в глобальный список, и добавляет визуально в список аккордов 
@@ -67,8 +74,13 @@ namespace NoteAppUI
 		/// </summary>
 		private void DeleteItemButton_Click(object sender, EventArgs e)
 		{
-			_listOfChords.Chords.RemoveAt(_listOfChords.Chords.FindIndex(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()));
-			ListOfChordNamesListBox.Items.RemoveAt(ListOfChordNamesListBox.Items.IndexOf(ListOfChordNamesListBox.SelectedItem.ToString()));
+		    if (MessageBox.Show("Точно удалить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+		    {
+		        _listOfChords.Chords.RemoveAt(_listOfChords.Chords.FindIndex(x =>
+		            x.Name == ListOfChordNamesListBox.SelectedItem.ToString()));
+		        ListOfChordNamesListBox.Items.RemoveAt(
+		            ListOfChordNamesListBox.Items.IndexOf(ListOfChordNamesListBox.SelectedItem.ToString()));
+		    }
 		}
 
 		/// <summary>
