@@ -26,7 +26,10 @@ namespace NoteAppUI
 		/// <returns>Возвращает структуру координат точки зажатия</returns>
 		public Coordinates Point (int x, int y, Graphics g)
 		{
-			int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
+		    xStart = 50;
+		    yStart = 50;
+
+		    int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 16; //Корректирует положение точки на сетке по оси У относительно верхней границы
 			while (xStart < xFinal)
 			{
