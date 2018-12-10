@@ -26,35 +26,35 @@ namespace NoteAppUI
 		/// <returns>Возвращает структуру координат точки зажатия</returns>
 		public Coordinates Point (int x, int y, Graphics g)
 		{
-		    xStart = 50;
-		    yStart = 50;
+		    int xTempStart = xStart; // локальная переменная левой границы оси Х
+		    int yTempStart = yStart; // локальная переменная верхней границы оси У
 
 		    int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 16; //Корректирует положение точки на сетке по оси У относительно верхней границы
-			while (xStart < xFinal)
+			while (xTempStart < xFinal)
 			{
-				while (yStart <= yFinal)
+				while (yTempStart <= yFinal)
 				{
-					if (x > xStart && x < xStart + xStep && y > yStart && y < yStart + yStep)
+					if (x > xTempStart && x < xTempStart + xStep && y > yTempStart && y < yTempStart + yStep)
 					{
-						g.FillEllipse(Brushes.Black, xStart + xPointCorrect, yStart + yPointCorrect, fillEllipseWidth, fillEllipseHeight);
-						return new Coordinates(xStart + xPointCorrect, yStart + yPointCorrect);
+						g.FillEllipse(Brushes.Black, xTempStart + xPointCorrect, yTempStart + yPointCorrect, fillEllipseWidth, fillEllipseHeight);
+						return new Coordinates(xTempStart + xPointCorrect, yTempStart + yPointCorrect);
 					}
 					else
 					{
-						if (yStart == yFinal)
+						if (yTempStart == yFinal)
 						{
-							yStart = 50; //Установка в Начальное состояние
-							xStart += xStep;
+							yTempStart = 50; //Установка в Начальное состояние
+							xTempStart += xStep;
 						}
 						else
 						{
-							yStart += yStep;
+							yTempStart += yStep;
 						}
 					}
 				}
 			}
-		    throw new Exception("kjk");
+		    throw new Exception("Непредвиденная ошибка в рисовании точки");
 			//return new Coordinates(0,0);
 		}
 
@@ -91,11 +91,11 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// 
+		/// Метод отрисовки точки
 		/// </summary>
-		/// <param name="graphic"></param>
-		/// <param name="x"></param>
-		/// <param name="y"></param>
+		/// <param name="graphic">Инструмент рисования</param>
+		/// <param name="x">Координата точки по оси Х</param>
+		/// <param name="y">Координата точки по оси У</param>
 		public void DrawPoint(Graphics graphic, int x, int y)
 		{
 			int xPointCorrect = 40; //Кооректирует положение точки на сетке по оси Х относительно левой границы
