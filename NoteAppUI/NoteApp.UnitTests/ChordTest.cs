@@ -55,8 +55,8 @@ namespace NoteApp.UnitTests
 		{
 			var expected = (1,1);
 			var chord = new Chord();
-			//chord.SetFretsCoor();
-			//var actual = chord.Frets;
+			chord.SetFretsCoor();
+			var actual = chord.Frets;
 
 			//Assert.AreEqual(expected, actual, "Get Frets возвращает неверное значение");
 		}

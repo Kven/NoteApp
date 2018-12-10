@@ -40,7 +40,8 @@ namespace NoteAppUI
 		/// Добавляет аккорд в глобальный список, и добавляет визуально в список аккордов 
 		/// </summary>
         private void Add_chord_Click(object sender, EventArgs e)
-        {
+		{
+		    listOfChords.SelectedIndex = -1;
             AddChordForm addChordForm = new AddChordForm();
             addChordForm.ShowDialog();
 			if (addChordForm.NewChord != null)
@@ -56,8 +57,11 @@ namespace NoteAppUI
 		/// </summary>
 		private void DeleteItemButton_Click(object sender, EventArgs e)
 		{
-			List.RemoveAt(List.FindIndex(x => x.Name == listOfChords.SelectedItem.ToString()));
-			listOfChords.Items.RemoveAt(listOfChords.Items.IndexOf(listOfChords.SelectedItem.ToString()));
+		    if (listOfChords.SelectedIndex != -1 && listOfChords.SelectedItem != null)
+		    {
+		        List.RemoveAt(List.FindIndex(x => x.Name == listOfChords.SelectedItem.ToString()));
+		        listOfChords.Items.RemoveAt(listOfChords.Items.IndexOf(listOfChords.SelectedItem.ToString()));
+		    }
 		}
 
 		/// <summary>
@@ -135,6 +139,8 @@ namespace NoteAppUI
 		{
 			listOfChords.Items.Clear();
 			List.Clear();
+		    listOfChords.SelectedIndex = -1;
+		    label_libname.Text = "Новая библиотека";
 		}
 
 		/// <summary>
