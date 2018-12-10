@@ -46,7 +46,7 @@ namespace NoteAppUI
 		/// </summary>
         private void CloseButton_Click(object sender, EventArgs e)
 		{
-		    if (MessageBox.Show("Сохранить перед выходом?", "", MessageBoxButtons.YesNo) == DialogResult.No)
+		    if (MessageBox.Show("Сохранить перед выходом?", "Закрытие формы", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
 				Close();
 		    else
 		    {
