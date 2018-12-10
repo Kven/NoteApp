@@ -76,21 +76,25 @@ namespace NoteAppUI
 			}
 			else
 			{
-				if (_rN.IsMatch(nameInputTextBox.Text) && int.TryParse(beginFretInputTextBox.Text, out int bg))
+				if (_rN.IsMatch(nameInputTextBox.Text))
 				{
-					if (bg >= 0 && bg <= 12)
+					if (int.TryParse(beginFretInputTextBox.Text, out int bg) && bg >= 1 && bg <= 12)
 					{
 						NewChord = new Chord(nameInputTextBox.Text, int.Parse(beginFretInputTextBox.Text));
-						_tempCoordinatesList.ForEach(x => NewChord.SetFretsCoor(x));
+						_tempCoordinatesList.ForEach(x => NewChord.AddPoint(x));
 						Hide();
+					}
+					else
+					{ 
+						MessageBox.Show("Не верный начальный лад");
 					}
 				}
 				else
 				{
-					MessageBox.Show("Введено не корректное название или не допустимый лад");
+					MessageBox.Show("Введено не корректное название");
 				}
 			}
-        }
+		}
 
         /// <summary>
         /// При поялвении формы создает сетку аккорда
@@ -115,7 +119,9 @@ namespace NoteAppUI
         /// </summary>
         private void BeginInput_TextChanged(object sender, EventArgs e)
         {
-            beginFretOnBoxLabel.Text = beginFretInputTextBox.Text;
+			if (int.TryParse(beginFretInputTextBox.Text, out int value))
+				beginFretOnBoxLabel.Text = beginFretInputTextBox.Text;
+			
         }
 
 		/// <summary>

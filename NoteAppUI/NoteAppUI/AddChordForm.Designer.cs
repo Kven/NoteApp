@@ -59,7 +59,7 @@
 			this.nameInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.nameInputTextBox.Location = new System.Drawing.Point(166, 49);
 			this.nameInputTextBox.Name = "nameInputTextBox";
-			this.nameInputTextBox.Size = new System.Drawing.Size(100, 24);
+			this.nameInputTextBox.Size = new System.Drawing.Size(69, 24);
 			this.nameInputTextBox.TabIndex = 3;
 			this.nameInputTextBox.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
 			// 
