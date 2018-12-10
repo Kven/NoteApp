@@ -68,7 +68,7 @@
 			this.ListOfChordNamesListBox.Name = "ListOfChordNamesListBox";
 			this.ListOfChordNamesListBox.Size = new System.Drawing.Size(140, 296);
 			this.ListOfChordNamesListBox.TabIndex = 1;
-			this.ListOfChordNamesListBox.SelectedIndexChanged += new System.EventHandler(this.ListOfChords_SelectedIndexChanged);
+			this.ListOfChordNamesListBox.SelectedIndexChanged += new System.EventHandler(this.ListOfChordNamesListBox_SelectedIndexChanged);
 			// 
 			// AddChordButton
 			// 
@@ -86,7 +86,7 @@
 			this.AddChordButton.Text = "   Добавить аккорд";
 			this.AddChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.AddChordButton.UseVisualStyleBackColor = false;
-			this.AddChordButton.Click += new System.EventHandler(this.Add_chord_Click);
+			this.AddChordButton.Click += new System.EventHandler(this.AddChordButton_Click);
 			// 
 			// DeleteChordButton
 			// 
@@ -104,7 +104,7 @@
 			this.DeleteChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.DeleteChordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.DeleteChordButton.UseVisualStyleBackColor = false;
-			this.DeleteChordButton.Click += new System.EventHandler(this.DeleteItemButton_Click);
+			this.DeleteChordButton.Click += new System.EventHandler(this.DeleteChordButton_Click);
 			// 
 			// GridPictureBox
 			// 
@@ -115,7 +115,6 @@
 			this.GridPictureBox.Size = new System.Drawing.Size(215, 222);
 			this.GridPictureBox.TabIndex = 4;
 			this.GridPictureBox.TabStop = false;
-			this.GridPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
 			// 
 			// ChordNameLabel
 			// 
@@ -154,7 +153,7 @@
 			this.CreateNewLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.CreateNewLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.CreateNewLibraryButton.UseVisualStyleBackColor = false;
-			this.CreateNewLibraryButton.Click += new System.EventHandler(this.New_Click);
+			this.CreateNewLibraryButton.Click += new System.EventHandler(this.CreateNewLibraryButton_Click);
 			// 
 			// OpenLibraryButton
 			// 
@@ -173,7 +172,7 @@
 			this.OpenLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.OpenLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.OpenLibraryButton.UseVisualStyleBackColor = false;
-			this.OpenLibraryButton.Click += new System.EventHandler(this.Open_Click);
+			this.OpenLibraryButton.Click += new System.EventHandler(this.OpenLibraryButton_Click);
 			// 
 			// SaveLibraryButton
 			// 
@@ -192,7 +191,7 @@
 			this.SaveLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.SaveLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.SaveLibraryButton.UseVisualStyleBackColor = false;
-			this.SaveLibraryButton.Click += new System.EventHandler(this.Save_Click);
+			this.SaveLibraryButton.Click += new System.EventHandler(this.SaveLibraryButton_Click);
 			// 
 			// NameOfCurrentLibraryLabel
 			// 
@@ -226,7 +225,6 @@
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Просмотр библиотеки";
-			this.Load += new System.EventHandler(this.LookChordsForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
