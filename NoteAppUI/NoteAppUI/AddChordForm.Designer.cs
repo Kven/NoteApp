@@ -28,132 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.gridPictureBox = new System.Windows.Forms.PictureBox();
-			this.nameInputTextBox = new System.Windows.Forms.TextBox();
-			this.beginFretInputTextBox = new System.Windows.Forms.TextBox();
-			this.nameLabel = new System.Windows.Forms.Label();
-			this.beginFretLabel = new System.Windows.Forms.Label();
-			this.addChordButton = new System.Windows.Forms.Button();
-			this.cancelButton = new System.Windows.Forms.Button();
-			this.nameOnBoxLabel = new System.Windows.Forms.Label();
-			this.beginFretOnBoxLabel = new System.Windows.Forms.Label();
-			this.clearButton = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.gridPictureBox)).BeginInit();
+			this.GridPictureBox = new System.Windows.Forms.PictureBox();
+			this.NameInputTextBox = new System.Windows.Forms.TextBox();
+			this.BeginFretInputTextBox = new System.Windows.Forms.TextBox();
+			this.NameLabel = new System.Windows.Forms.Label();
+			this.BeginFretLabel = new System.Windows.Forms.Label();
+			this.AddChordButton = new System.Windows.Forms.Button();
+			this.NameOnBoxLabel = new System.Windows.Forms.Label();
+			this.BeginFretOnBoxLabel = new System.Windows.Forms.Label();
+			this.ClearButton = new System.Windows.Forms.Button();
+			this.CancelButton = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// gridPictureBox
+			// GridPictureBox
 			// 
-			this.gridPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.gridPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.gridPictureBox.Location = new System.Drawing.Point(60, 136);
-			this.gridPictureBox.Name = "gridPictureBox";
-			this.gridPictureBox.Size = new System.Drawing.Size(294, 313);
-			this.gridPictureBox.TabIndex = 2;
-			this.gridPictureBox.TabStop = false;
-			this.gridPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
-			this.gridPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseDown);
+			this.GridPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.GridPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.GridPictureBox.Location = new System.Drawing.Point(60, 136);
+			this.GridPictureBox.Name = "GridPictureBox";
+			this.GridPictureBox.Size = new System.Drawing.Size(294, 313);
+			this.GridPictureBox.TabIndex = 2;
+			this.GridPictureBox.TabStop = false;
+			this.GridPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseDown);
 			// 
-			// nameInputTextBox
+			// NameInputTextBox
 			// 
-			this.nameInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.nameInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.nameInputTextBox.Location = new System.Drawing.Point(166, 49);
-			this.nameInputTextBox.Name = "nameInputTextBox";
-			this.nameInputTextBox.Size = new System.Drawing.Size(69, 24);
-			this.nameInputTextBox.TabIndex = 3;
-			this.nameInputTextBox.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
+			this.NameInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.NameInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.NameInputTextBox.Location = new System.Drawing.Point(166, 49);
+			this.NameInputTextBox.Name = "NameInputTextBox";
+			this.NameInputTextBox.Size = new System.Drawing.Size(69, 24);
+			this.NameInputTextBox.TabIndex = 3;
+			this.NameInputTextBox.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
 			// 
-			// beginFretInputTextBox
+			// BeginFretInputTextBox
 			// 
-			this.beginFretInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.beginFretInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.beginFretInputTextBox.Location = new System.Drawing.Point(166, 89);
-			this.beginFretInputTextBox.Name = "beginFretInputTextBox";
-			this.beginFretInputTextBox.Size = new System.Drawing.Size(24, 24);
-			this.beginFretInputTextBox.TabIndex = 4;
-			this.beginFretInputTextBox.TextChanged += new System.EventHandler(this.BeginInput_TextChanged);
+			this.BeginFretInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.BeginFretInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.BeginFretInputTextBox.Location = new System.Drawing.Point(166, 89);
+			this.BeginFretInputTextBox.Name = "BeginFretInputTextBox";
+			this.BeginFretInputTextBox.Size = new System.Drawing.Size(24, 24);
+			this.BeginFretInputTextBox.TabIndex = 4;
+			this.BeginFretInputTextBox.TextChanged += new System.EventHandler(this.BeginInput_TextChanged);
 			// 
-			// nameLabel
+			// NameLabel
 			// 
-			this.nameLabel.AutoSize = true;
-			this.nameLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.nameLabel.Location = new System.Drawing.Point(12, 53);
-			this.nameLabel.Name = "nameLabel";
-			this.nameLabel.Size = new System.Drawing.Size(153, 20);
-			this.nameLabel.TabIndex = 5;
-			this.nameLabel.Text = "Название аккорда:";
+			this.NameLabel.AutoSize = true;
+			this.NameLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.NameLabel.Location = new System.Drawing.Point(12, 53);
+			this.NameLabel.Name = "NameLabel";
+			this.NameLabel.Size = new System.Drawing.Size(153, 20);
+			this.NameLabel.TabIndex = 5;
+			this.NameLabel.Text = "Название аккорда:";
 			// 
-			// beginFretLabel
+			// BeginFretLabel
 			// 
-			this.beginFretLabel.AutoSize = true;
-			this.beginFretLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.beginFretLabel.Location = new System.Drawing.Point(41, 89);
-			this.beginFretLabel.Name = "beginFretLabel";
-			this.beginFretLabel.Size = new System.Drawing.Size(124, 20);
-			this.beginFretLabel.TabIndex = 6;
-			this.beginFretLabel.Text = "Начальный лад:";
+			this.BeginFretLabel.AutoSize = true;
+			this.BeginFretLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.BeginFretLabel.Location = new System.Drawing.Point(41, 89);
+			this.BeginFretLabel.Name = "BeginFretLabel";
+			this.BeginFretLabel.Size = new System.Drawing.Size(124, 20);
+			this.BeginFretLabel.TabIndex = 6;
+			this.BeginFretLabel.Text = "Начальный лад:";
 			// 
-			// addChordButton
+			// AddChordButton
 			// 
-			this.addChordButton.BackColor = System.Drawing.Color.Transparent;
-			this.addChordButton.FlatAppearance.BorderSize = 0;
-			this.addChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.addChordButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.addChordButton.Location = new System.Drawing.Point(289, 66);
-			this.addChordButton.Name = "addChordButton";
-			this.addChordButton.Size = new System.Drawing.Size(99, 33);
-			this.addChordButton.TabIndex = 7;
-			this.addChordButton.Text = "Добавить";
-			this.addChordButton.UseVisualStyleBackColor = false;
-			this.addChordButton.Click += new System.EventHandler(this.AddChord_Click);
+			this.AddChordButton.BackColor = System.Drawing.Color.Transparent;
+			this.AddChordButton.FlatAppearance.BorderSize = 0;
+			this.AddChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.AddChordButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AddChordButton.Location = new System.Drawing.Point(289, 66);
+			this.AddChordButton.Name = "AddChordButton";
+			this.AddChordButton.Size = new System.Drawing.Size(99, 33);
+			this.AddChordButton.TabIndex = 7;
+			this.AddChordButton.Text = "Добавить";
+			this.AddChordButton.UseVisualStyleBackColor = false;
+			this.AddChordButton.Click += new System.EventHandler(this.AddChord_Click);
 			// 
-			// cancelButton
+			// NameOnBoxLabel
 			// 
-			this.cancelButton.BackColor = System.Drawing.Color.Transparent;
-			this.cancelButton.FlatAppearance.BorderSize = 0;
-			this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cancelButton.Font = new System.Drawing.Font("Century Gothic", 9F);
-			this.cancelButton.Location = new System.Drawing.Point(328, 12);
-			this.cancelButton.Name = "cancelButton";
-			this.cancelButton.Size = new System.Drawing.Size(75, 28);
-			this.cancelButton.TabIndex = 8;
-			this.cancelButton.Text = "Отменить";
-			this.cancelButton.UseVisualStyleBackColor = false;
-			this.cancelButton.Click += new System.EventHandler(this.Сancel_Click);
+			this.NameOnBoxLabel.AutoSize = true;
+			this.NameOnBoxLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.NameOnBoxLabel.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.NameOnBoxLabel.Location = new System.Drawing.Point(190, 163);
+			this.NameOnBoxLabel.Name = "NameOnBoxLabel";
+			this.NameOnBoxLabel.Size = new System.Drawing.Size(0, 21);
+			this.NameOnBoxLabel.TabIndex = 9;
 			// 
-			// nameOnBoxLabel
+			// BeginFretOnBoxLabel
 			// 
-			this.nameOnBoxLabel.AutoSize = true;
-			this.nameOnBoxLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.nameOnBoxLabel.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.nameOnBoxLabel.Location = new System.Drawing.Point(190, 163);
-			this.nameOnBoxLabel.Name = "nameOnBoxLabel";
-			this.nameOnBoxLabel.Size = new System.Drawing.Size(0, 21);
-			this.nameOnBoxLabel.TabIndex = 9;
+			this.BeginFretOnBoxLabel.AutoSize = true;
+			this.BeginFretOnBoxLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.BeginFretOnBoxLabel.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.BeginFretOnBoxLabel.Location = new System.Drawing.Point(105, 195);
+			this.BeginFretOnBoxLabel.Name = "BeginFretOnBoxLabel";
+			this.BeginFretOnBoxLabel.Size = new System.Drawing.Size(0, 21);
+			this.BeginFretOnBoxLabel.TabIndex = 10;
 			// 
-			// beginFretOnBoxLabel
+			// ClearButton
 			// 
-			this.beginFretOnBoxLabel.AutoSize = true;
-			this.beginFretOnBoxLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.beginFretOnBoxLabel.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.beginFretOnBoxLabel.Location = new System.Drawing.Point(105, 195);
-			this.beginFretOnBoxLabel.Name = "beginFretOnBoxLabel";
-			this.beginFretOnBoxLabel.Size = new System.Drawing.Size(0, 21);
-			this.beginFretOnBoxLabel.TabIndex = 10;
+			this.ClearButton.BackColor = System.Drawing.Color.Transparent;
+			this.ClearButton.FlatAppearance.BorderSize = 0;
+			this.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ClearButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.ClearButton.Location = new System.Drawing.Point(151, 455);
+			this.ClearButton.Name = "ClearButton";
+			this.ClearButton.Size = new System.Drawing.Size(97, 33);
+			this.ClearButton.TabIndex = 11;
+			this.ClearButton.Text = "Очистить";
+			this.ClearButton.UseVisualStyleBackColor = false;
+			this.ClearButton.Click += new System.EventHandler(this.Clear_Click);
 			// 
-			// clearButton
+			// CancelButton
 			// 
-			this.clearButton.BackColor = System.Drawing.Color.Transparent;
-			this.clearButton.FlatAppearance.BorderSize = 0;
-			this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.clearButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.clearButton.Location = new System.Drawing.Point(151, 455);
-			this.clearButton.Name = "clearButton";
-			this.clearButton.Size = new System.Drawing.Size(97, 33);
-			this.clearButton.TabIndex = 11;
-			this.clearButton.Text = "Очистить";
-			this.clearButton.UseVisualStyleBackColor = false;
-			this.clearButton.Click += new System.EventHandler(this.Clear_Click);
+			this.CancelButton.FlatAppearance.BorderSize = 0;
+			this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.CancelButton.Location = new System.Drawing.Point(366, 12);
+			this.CancelButton.Name = "CancelButton";
+			this.CancelButton.Size = new System.Drawing.Size(37, 31);
+			this.CancelButton.TabIndex = 12;
+			this.CancelButton.Text = "X";
+			this.CancelButton.UseVisualStyleBackColor = true;
+			this.CancelButton.Click += new System.EventHandler(this.Сancel_Click);
 			// 
 			// AddChordForm
 			// 
@@ -161,23 +159,23 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gray;
 			this.ClientSize = new System.Drawing.Size(415, 500);
-			this.Controls.Add(this.clearButton);
-			this.Controls.Add(this.beginFretOnBoxLabel);
-			this.Controls.Add(this.nameOnBoxLabel);
-			this.Controls.Add(this.cancelButton);
-			this.Controls.Add(this.addChordButton);
-			this.Controls.Add(this.beginFretLabel);
-			this.Controls.Add(this.nameLabel);
-			this.Controls.Add(this.beginFretInputTextBox);
-			this.Controls.Add(this.nameInputTextBox);
-			this.Controls.Add(this.gridPictureBox);
+			this.Controls.Add(this.CancelButton);
+			this.Controls.Add(this.ClearButton);
+			this.Controls.Add(this.BeginFretOnBoxLabel);
+			this.Controls.Add(this.NameOnBoxLabel);
+			this.Controls.Add(this.AddChordButton);
+			this.Controls.Add(this.BeginFretLabel);
+			this.Controls.Add(this.NameLabel);
+			this.Controls.Add(this.BeginFretInputTextBox);
+			this.Controls.Add(this.NameInputTextBox);
+			this.Controls.Add(this.GridPictureBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "AddChordForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Создание аккорда";
 			this.Load += new System.EventHandler(this.AddChordForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.gridPictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -185,15 +183,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox gridPictureBox;
-        private System.Windows.Forms.TextBox nameInputTextBox;
-        private System.Windows.Forms.TextBox beginFretInputTextBox;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label beginFretLabel;
-        private System.Windows.Forms.Button addChordButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label nameOnBoxLabel;
-        private System.Windows.Forms.Label beginFretOnBoxLabel;
-		private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.PictureBox GridPictureBox;
+        private System.Windows.Forms.TextBox NameInputTextBox;
+        private System.Windows.Forms.TextBox BeginFretInputTextBox;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label BeginFretLabel;
+        private System.Windows.Forms.Button AddChordButton;
+        private System.Windows.Forms.Label NameOnBoxLabel;
+        private System.Windows.Forms.Label BeginFretOnBoxLabel;
+		private System.Windows.Forms.Button ClearButton;
+		private System.Windows.Forms.Button CancelButton;
 	}
 }
