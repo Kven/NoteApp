@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using NoteApp;
@@ -31,7 +32,7 @@ namespace NoteAppUI
 			{
 				while (yStart <= yFinal)
 				{
-					if (x > xStart && x < xStart + xStart && y > yStart && y < yStart + yStep)
+					if (x > xStart && x < xStart + xStep && y > yStart && y < yStart + yStep)
 					{
 						g.FillEllipse(Brushes.Black, xStart + xPointCorrect, yStart + yPointCorrect, fillEllipseWidth, fillEllipseHeight);
 						return new Coordinates(xStart + xPointCorrect, yStart + yPointCorrect);
@@ -50,7 +51,8 @@ namespace NoteAppUI
 					}
 				}
 			}
-			return new Coordinates(0,0);
+		    throw new Exception("kjk");
+			//return new Coordinates(0,0);
 		}
 
 		/// <summary>

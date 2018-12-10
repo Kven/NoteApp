@@ -28,53 +28,50 @@ namespace NoteApp
 		/// </summary>
 		public Chord() { Points = new List<Coordinates>(); }
 
+	    private string _name;
 		/// <summary>
 		/// Устанавливает название аккорда
 		/// </summary>
-		public String Name
+		public string Name
 		{
-			get
-			{
-				return Name;
-			}
+			get => _name;
 			set
 			{
-				Name = value;
+                if(string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Поле должно иметь значение");
+				_name = value;
 			}
 		}
 
+	    private int _beginFret;
 		/// <summary>
 		/// Устанавливает начальный лад
 		/// </summary>
 		public int BeginFret {
-			get
-			{
-				return BeginFret;
-			}
+			get =>  _beginFret;
+			
 			set
 			{
-				BeginFret = value;
+                if (value < 0 && value > 12)
+                    throw new ArgumentException("Начальный лад введен некорректно");
+				_beginFret = value;
 			}
 		}
 
+	    private List<Coordinates> _points;
 		/// <summary>
 		/// Список точек зажима струны
 		/// </summary>
 		public List<Coordinates> Points {
-			get
-			{
-				return Points;
-			}
-			private set
-			{
-				Points = value;
-			}
-		}
+            get => _points;
 
-		/// <summary>
-		/// Добавление точки в список Points
-		/// </summary>
-		/// <param name="coor">Кортедж из координат точки</param>
-		public void SetFretsCoor(Coordinates coor) => Points.Add(coor);
+            private set => _points = value;
+        }
+
+        /// <summary>
+        /// Добавление точки в список Points
+        /// </summary>
+        /// <param name="coor">Кортедж из координат точки</param>
+        public void SetFretsCoor(Coordinates coor) => _points.Add(coor);
 	}
 }

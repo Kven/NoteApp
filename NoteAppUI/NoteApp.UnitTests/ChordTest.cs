@@ -54,7 +54,7 @@ namespace NoteApp.UnitTests
 		{
 			var expected = (1,1);
 			var chord = new Chord();
-			chord.SetFretsCoor(expected);
+			//chord.SetFretsCoor(expected);
 			var actual = chord.Points;
 
 			Assert.AreEqual(expected, actual, "Get Points возвращает неверное значение");
@@ -65,7 +65,7 @@ namespace NoteApp.UnitTests
 		{
 			var expected = (1, 1);
 			var chord = new Chord();
-			chord.SetFretsCoor((1,1));
+		//	chord.SetFretsCoor((1,1));
 
 			Assert.AreEqual(expected, chord.Points[0], "SetFretsCoor присваивает некорректное значение");
 		}

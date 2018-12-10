@@ -51,7 +51,7 @@ namespace NoteAppUI
 		/// </summary>
         private void Add_chord_Click(object sender, EventArgs e)
 		{
-		    listOfChords.SelectedIndex = -1;
+		    ListOfChordNamesListBox.SelectedIndex = -1;
             AddChordForm addChordForm = new AddChordForm();
             addChordForm.ShowDialog();
 			if (addChordForm.NewChord != null)
