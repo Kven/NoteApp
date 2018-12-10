@@ -19,16 +19,19 @@ namespace NoteAppUI
 		/// <summary>
 		/// Создается форма просмотра аккордов, туда передается глобальный списко аккордов
 		/// </summary>
-        private void Look_chords_Click(object sender, EventArgs e)
+        private void ShowChordsButton_Click(object sender, EventArgs e)
 		{
 			LookChordsForm lookChords = new LookChordsForm();
 			lookChords.ShowDialog();
 		}
 
-		private void Close_Click(object sender, EventArgs e)
+		private void CloseButton_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
 
+
 	}
+
+
 }

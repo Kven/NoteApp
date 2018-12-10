@@ -50,7 +50,7 @@
 			this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.CloseButton.Location = new System.Drawing.Point(369, 12);
 			this.CloseButton.Name = "CloseButton";
-			this.CloseButton.Size = new System.Drawing.Size(34, 32);
+			this.CloseButton.Size = new System.Drawing.Size(37, 31);
 			this.CloseButton.TabIndex = 0;
 			this.CloseButton.Text = "X";
 			this.CloseButton.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Gray;
+			this.BackColor = System.Drawing.Color.Silver;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.NameOfCurrentLibraryLabel);
 			this.Controls.Add(this.SaveLibraryButton);

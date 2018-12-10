@@ -56,7 +56,7 @@
 			// 
 			this.NameInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.NameInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NameInputTextBox.Location = new System.Drawing.Point(166, 49);
+			this.NameInputTextBox.Location = new System.Drawing.Point(186, 49);
 			this.NameInputTextBox.Name = "NameInputTextBox";
 			this.NameInputTextBox.Size = new System.Drawing.Size(69, 24);
 			this.NameInputTextBox.TabIndex = 3;
@@ -66,7 +66,7 @@
 			// 
 			this.BeginFretInputTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.BeginFretInputTextBox.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.BeginFretInputTextBox.Location = new System.Drawing.Point(166, 89);
+			this.BeginFretInputTextBox.Location = new System.Drawing.Point(186, 89);
 			this.BeginFretInputTextBox.Name = "BeginFretInputTextBox";
 			this.BeginFretInputTextBox.Size = new System.Drawing.Size(24, 24);
 			this.BeginFretInputTextBox.TabIndex = 4;
@@ -76,7 +76,7 @@
 			// 
 			this.NameLabel.AutoSize = true;
 			this.NameLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NameLabel.Location = new System.Drawing.Point(12, 53);
+			this.NameLabel.Location = new System.Drawing.Point(32, 53);
 			this.NameLabel.Name = "NameLabel";
 			this.NameLabel.Size = new System.Drawing.Size(153, 20);
 			this.NameLabel.TabIndex = 5;
@@ -86,7 +86,7 @@
 			// 
 			this.BeginFretLabel.AutoSize = true;
 			this.BeginFretLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.BeginFretLabel.Location = new System.Drawing.Point(41, 89);
+			this.BeginFretLabel.Location = new System.Drawing.Point(61, 89);
 			this.BeginFretLabel.Name = "BeginFretLabel";
 			this.BeginFretLabel.Size = new System.Drawing.Size(124, 20);
 			this.BeginFretLabel.TabIndex = 6;
@@ -98,9 +98,9 @@
 			this.AddChordButton.FlatAppearance.BorderSize = 0;
 			this.AddChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.AddChordButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.AddChordButton.Location = new System.Drawing.Point(289, 66);
+			this.AddChordButton.Location = new System.Drawing.Point(287, 53);
 			this.AddChordButton.Name = "AddChordButton";
-			this.AddChordButton.Size = new System.Drawing.Size(99, 33);
+			this.AddChordButton.Size = new System.Drawing.Size(99, 47);
 			this.AddChordButton.TabIndex = 7;
 			this.AddChordButton.Text = "Добавить";
 			this.AddChordButton.UseVisualStyleBackColor = false;
@@ -157,7 +157,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Gray;
+			this.BackColor = System.Drawing.Color.Silver;
 			this.ClientSize = new System.Drawing.Size(415, 500);
 			this.Controls.Add(this.CancelButton);
 			this.Controls.Add(this.ClearButton);
