@@ -28,89 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Look_chords = new System.Windows.Forms.Button();
-            this.melody_lib = new System.Windows.Forms.Button();
-            this.MainTitle = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // Look_chords
-            // 
-            this.Look_chords.BackColor = System.Drawing.Color.Transparent;
-            this.Look_chords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Look_chords.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Look_chords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Look_chords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Look_chords.ForeColor = System.Drawing.Color.Black;
-            this.Look_chords.Location = new System.Drawing.Point(108, 225);
-            this.Look_chords.Name = "Look_chords";
-            this.Look_chords.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Look_chords.Size = new System.Drawing.Size(200, 40);
-            this.Look_chords.TabIndex = 1;
-            this.Look_chords.Text = "Просмотреть аккорды";
-            this.Look_chords.UseVisualStyleBackColor = false;
-            this.Look_chords.Click += new System.EventHandler(this.Look_chords_Click);
-            // 
-            // melody_lib
-            // 
-            this.melody_lib.BackColor = System.Drawing.Color.Transparent;
-            this.melody_lib.Enabled = false;
-            this.melody_lib.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.melody_lib.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
-            this.melody_lib.Location = new System.Drawing.Point(108, 325);
-            this.melody_lib.Name = "melody_lib";
-            this.melody_lib.Size = new System.Drawing.Size(200, 40);
-            this.melody_lib.TabIndex = 2;
-            this.melody_lib.Text = "Библиотека записей";
-            this.melody_lib.UseVisualStyleBackColor = false;
-            // 
-            // MainTitle
-            // 
-            this.MainTitle.AutoSize = true;
-            this.MainTitle.BackColor = System.Drawing.Color.Transparent;
-            this.MainTitle.Font = new System.Drawing.Font("Century Schoolbook", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MainTitle.ForeColor = System.Drawing.Color.Black;
-            this.MainTitle.Location = new System.Drawing.Point(9, 109);
-            this.MainTitle.Name = "MainTitle";
-            this.MainTitle.Size = new System.Drawing.Size(394, 37);
-            this.MainTitle.TabIndex = 3;
-            this.MainTitle.Text = "Библиотека Аккордов";
-            // 
-            // close
-            // 
-            this.close.AutoSize = true;
-            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.close.Location = new System.Drawing.Point(385, 9);
-            this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(18, 18);
-            this.close.TabIndex = 4;
-            this.close.Text = "X";
-            this.close.Click += new System.EventHandler(this.Close_Click);
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(415, 500);
-            this.Controls.Add(this.close);
-            this.Controls.Add(this.MainTitle);
-            this.Controls.Add(this.melody_lib);
-            this.Controls.Add(this.Look_chords);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MainForm";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Библиотека аккордов";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.ShowChordsButton = new System.Windows.Forms.Button();
+			this.ShowMelodysButton = new System.Windows.Forms.Button();
+			this.MainTitle = new System.Windows.Forms.Label();
+			this.close = new System.Windows.Forms.Label();
+			this.SuspendLayout();
+			// 
+			// ShowChordsButton
+			// 
+			this.ShowChordsButton.BackColor = System.Drawing.Color.Transparent;
+			this.ShowChordsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.ShowChordsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.ShowChordsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ShowChordsButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ShowChordsButton.ForeColor = System.Drawing.Color.Black;
+			this.ShowChordsButton.Location = new System.Drawing.Point(108, 225);
+			this.ShowChordsButton.Name = "ShowChordsButton";
+			this.ShowChordsButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.ShowChordsButton.Size = new System.Drawing.Size(200, 40);
+			this.ShowChordsButton.TabIndex = 1;
+			this.ShowChordsButton.Text = "Просмотреть аккорды";
+			this.ShowChordsButton.UseVisualStyleBackColor = false;
+			this.ShowChordsButton.Click += new System.EventHandler(this.Look_chords_Click);
+			// 
+			// ShowMelodysButton
+			// 
+			this.ShowMelodysButton.BackColor = System.Drawing.Color.Transparent;
+			this.ShowMelodysButton.Enabled = false;
+			this.ShowMelodysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ShowMelodysButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(204)));
+			this.ShowMelodysButton.Location = new System.Drawing.Point(108, 325);
+			this.ShowMelodysButton.Name = "ShowMelodysButton";
+			this.ShowMelodysButton.Size = new System.Drawing.Size(200, 40);
+			this.ShowMelodysButton.TabIndex = 2;
+			this.ShowMelodysButton.Text = "Библиотека записей";
+			this.ShowMelodysButton.UseVisualStyleBackColor = false;
+			// 
+			// MainTitle
+			// 
+			this.MainTitle.AutoSize = true;
+			this.MainTitle.BackColor = System.Drawing.Color.Transparent;
+			this.MainTitle.Font = new System.Drawing.Font("Century Schoolbook", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.MainTitle.ForeColor = System.Drawing.Color.Black;
+			this.MainTitle.Location = new System.Drawing.Point(9, 109);
+			this.MainTitle.Name = "MainTitle";
+			this.MainTitle.Size = new System.Drawing.Size(394, 37);
+			this.MainTitle.TabIndex = 3;
+			this.MainTitle.Text = "Библиотека Аккордов";
+			// 
+			// close
+			// 
+			this.close.AutoSize = true;
+			this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.close.Location = new System.Drawing.Point(385, 9);
+			this.close.Name = "close";
+			this.close.Size = new System.Drawing.Size(18, 18);
+			this.close.TabIndex = 4;
+			this.close.Text = "X";
+			this.close.Click += new System.EventHandler(this.Close_Click);
+			// 
+			// MainForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Gray;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(415, 500);
+			this.Controls.Add(this.close);
+			this.Controls.Add(this.MainTitle);
+			this.Controls.Add(this.ShowMelodysButton);
+			this.Controls.Add(this.ShowChordsButton);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "MainForm";
+			this.ShowIcon = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Библиотека аккордов";
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button Look_chords;
-        private System.Windows.Forms.Button melody_lib;
+        private System.Windows.Forms.Button ShowChordsButton;
+        private System.Windows.Forms.Button ShowMelodysButton;
         private System.Windows.Forms.Label MainTitle;
 		private System.Windows.Forms.Label close;
 	}

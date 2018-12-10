@@ -9,23 +9,33 @@ namespace NoteAppUI
     public partial class LookChordsForm : Form
     {
 		/// <summary>
-		/// Поле для принятия списка из главной формы - глобальный список аккордов
+		/// Список аккордов
 		/// </summary>
-		public List<Chord> List = new List<Chord>();
+		private ListOfChords _listOfChords;
 
         /// <summary>
 		/// Инструмент для создания графики
 		/// </summary>
-		Graphics _g;
+		private Graphics _graphic;
 
 		/// <summary>
-		/// Инициализая формы, инициализация битмапа, и нарисование сетки
+		/// Экземпляр отрисовщика
+		/// </summary>
+		private Draw _draw;
+
+		int xGridBeginPosition = 31; //
+		int yGridBeginPosition = 6; //
+
+		/// <summary>
+		/// Инициализая формы, инициализация битмапа, и отрисовка сетки
 		/// </summary>
 		public LookChordsForm()
 		{
 		    InitializeComponent();
-		    var bitmap = new Bitmap(noteBox.Width, noteBox.Height);
-			Draw.DrawGrid(bitmap, _g, noteBox, 31, 6);
+			_listOfChords = new ListOfChords();
+		    var bitmap = new Bitmap(gridPictureBox.Width, gridPictureBox.Height);
+			_draw = new Draw();
+			_draw.DrawGrid(bitmap, _graphic, gridPictureBox, xGridBeginPosition, yGridBeginPosition);
 		}
 
 		/// <summary>
@@ -46,9 +56,9 @@ namespace NoteAppUI
             addChordForm.ShowDialog();
 			if (addChordForm.NewChord != null)
             {
-                List.Add(addChordForm.NewChord);
+                _listOfChords.Chords.Add(addChordForm.NewChord);
 				addChordForm.Close();
-                listOfChords.Items.Add(List[List.Count-1].Name);
+                ListOfChordNamesListBox.Items.Add(_listOfChords.Chords[_listOfChords.Chords.Count-1].Name);
             }
 		}
 
@@ -57,11 +67,8 @@ namespace NoteAppUI
 		/// </summary>
 		private void DeleteItemButton_Click(object sender, EventArgs e)
 		{
-		    if (listOfChords.SelectedIndex != -1 && listOfChords.SelectedItem != null)
-		    {
-		        List.RemoveAt(List.FindIndex(x => x.Name == listOfChords.SelectedItem.ToString()));
-		        listOfChords.Items.RemoveAt(listOfChords.Items.IndexOf(listOfChords.SelectedItem.ToString()));
-		    }
+			_listOfChords.Chords.RemoveAt(_listOfChords.Chords.FindIndex(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()));
+			ListOfChordNamesListBox.Items.RemoveAt(ListOfChordNamesListBox.Items.IndexOf(ListOfChordNamesListBox.SelectedItem.ToString()));
 		}
 
 		/// <summary>
@@ -69,7 +76,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void LookChordsForm_Load(object sender, EventArgs e)
 		{ 
-			List.ForEach(x => { listOfChords.Items.Add(x.Name); });
+			_listOfChords.Chords.ForEach(x => { ListOfChordNamesListBox.Items.Add(x.Name); });
         }
 
 		/// <summary>
@@ -77,7 +84,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			_g = noteBox.CreateGraphics();
+			_graphic = gridPictureBox.CreateGraphics();
 		}
 
 		/// <summary>
@@ -86,27 +93,27 @@ namespace NoteAppUI
 		/// </summary>
 		private void ListOfChords_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (listOfChords.SelectedItem != null)
+			if (ListOfChordNamesListBox.SelectedItem != null)
 			{
-				if (List.Find(x => x.Name == listOfChords.SelectedItem.ToString()) != null  )
+				if (_listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()) != null  )
 				{
-					noteBox.Refresh();
-					Chord selectedChord = List.Find(x => x.Name == listOfChords.SelectedItem.ToString());
-					chordName.Text = listOfChords.SelectedItem.ToString();
-					chordBegin.Text = List.Find(x => x.Name == listOfChords.SelectedItem.ToString()).Begin.ToString();
-					int count = selectedChord.Frets.Count;
+					gridPictureBox.Refresh();
+					Chord selectedChord = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString());
+					chordNameLabel.Text = ListOfChordNamesListBox.SelectedItem.ToString();
+					chordBeginFretLabel.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();
+					int count = selectedChord.Points.Count;
 					for (int i = 0; i < count; i++)
 					{
-						_g.FillEllipse(Brushes.Black, selectedChord.Frets[i].Item1 - 40, selectedChord.Frets[i].Item2 - 49, 15, 15);
+						_draw.DrawPoint(_graphic, selectedChord.Points[i].X, selectedChord.Points[i].Y);
 					}
 				}
 			}
 			else
 			{
-				listOfChords.SelectedIndex = -1;
-				chordBegin.Text = "";
-				chordName.Text = "";
-				noteBox.Refresh();
+				ListOfChordNamesListBox.SelectedIndex = -1;
+				chordBeginFretLabel.Text = "";
+				chordNameLabel.Text = "";
+				gridPictureBox.Refresh();
 			}
 		}
 
@@ -115,20 +122,20 @@ namespace NoteAppUI
 		/// </summary>
 		private void Open_Click(object sender, EventArgs e)
 		{
-			listOfChords.Items.Clear();
-			List.Clear();
-			OpenFileDialog ofDialog = new OpenFileDialog
+			ListOfChordNamesListBox.Items.Clear();
+			_listOfChords.Chords.Clear();
+			OpenFileDialog openFileDialog = new OpenFileDialog
 			{
 				Filter = "Файл библиотека (*.nlb)|*.nlb|Все файлы (*.*)|*.*"
 			};
-			ofDialog.ShowDialog();
-			if (!string.IsNullOrWhiteSpace(ofDialog.FileName))
+			openFileDialog.ShowDialog();
+			if (!string.IsNullOrWhiteSpace(openFileDialog.FileName))
 			{
-			    label_libname.Text = ofDialog.FileName.Substring(ofDialog.FileName.LastIndexOf('\\') + 1,
-			        ofDialog.FileName.Length - ofDialog.FileName.LastIndexOf('\\') - 5);
-				var fromFile = Serializator.ReadFile(ofDialog.FileName);
-				List.AddRange(fromFile);
-				List.ForEach(x => { listOfChords.Items.Add(x.Name); });
+			    nameOfCurrentLibraryLabel.Text = openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf('\\') + 1,
+			        openFileDialog.FileName.Length - openFileDialog.FileName.LastIndexOf('\\') - 5);
+				var fromFile = Serialize.ReadFile(openFileDialog.FileName);
+				_listOfChords = fromFile;
+				_listOfChords.Chords.ForEach(x => { ListOfChordNamesListBox.Items.Add(x.Name); });
 			}
 		}
 
@@ -137,10 +144,8 @@ namespace NoteAppUI
 		/// </summary>
 		private void New_Click(object sender, EventArgs e)
 		{
-			listOfChords.Items.Clear();
-			List.Clear();
-		    listOfChords.SelectedIndex = -1;
-		    label_libname.Text = "Новая библиотека";
+			ListOfChordNamesListBox.Items.Clear();
+			_listOfChords.Chords.Clear();
 		}
 
 		/// <summary>
@@ -148,16 +153,16 @@ namespace NoteAppUI
 		/// </summary>
 		private void Save_Click(object sender, EventArgs e)
 		{
-			SaveFileDialog sfDialog = new SaveFileDialog
+			SaveFileDialog saveFileDialog = new SaveFileDialog
 			{
 				Filter = "Файл библиотека (*.nlb)|*.nlb"
 			};
-			sfDialog.ShowDialog();
-			if (!string.IsNullOrWhiteSpace(sfDialog.FileName))
+			saveFileDialog.ShowDialog();
+			if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
 			{
-			    label_libname.Text = sfDialog.FileName.Substring(sfDialog.FileName.LastIndexOf('\\') + 1,
-			        sfDialog.FileName.Length - sfDialog.FileName.LastIndexOf('\\') - 5);
-                Serializator.SaveFile(List, sfDialog.FileName);
+			    nameOfCurrentLibraryLabel.Text = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf('\\') + 1,
+			        saveFileDialog.FileName.Length - saveFileDialog.FileName.LastIndexOf('\\') - 5);
+                Serialize.SaveFile(_listOfChords, saveFileDialog.FileName);
 			}
 		}
 

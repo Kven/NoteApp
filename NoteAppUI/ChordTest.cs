@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using NoteApp;
 
 namespace NoteApp.UnitTests
 {
@@ -28,25 +29,25 @@ namespace NoteApp.UnitTests
 			Assert.AreEqual(expected, actual, "Get Name возвращает неверное значение");
 		}
 
-		[Test(Description = "Тестирование на присвоеие значения в поле BeginFret")]
+		[Test(Description = "Тестирование на присвоеие значения в поле Begin")]
 		public void TestBeginSet_CorrectValue()
 		{
 			var expected = 1;
 			var chord = new Chord();
-			chord.BeginFret = 1;
+			chord.Begin = 1;
 
-			Assert.AreEqual(expected, chord.BeginFret, "Set BeginFret присваивает некорректное значение");
+			Assert.AreEqual(expected, chord.Begin, "Set Begin присваивает некорректное значение");
 		}
 
-		[Test(Description = "Тестирование на получение значения из поля BeginFret")]
+		[Test(Description = "Тестирование на получение значения из поля Begin")]
 		public void TestBeginGet_CorrectValue()
 		{
 			var expected = 7;
 			var chord = new Chord();
-			chord.BeginFret = expected;
-			var actual = chord.BeginFret;
+			chord.Begin = expected;
+			var actual = chord.Begin;
 
-			Assert.AreEqual(expected, actual, "Get BeginFret возвращает неверное значение");
+			Assert.AreEqual(expected, actual, "Get Begin возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование на получение значения из поля frets")]
@@ -54,10 +55,10 @@ namespace NoteApp.UnitTests
 		{
 			var expected = (1,1);
 			var chord = new Chord();
-			chord.SetFretsCoor(expected);
-			var actual = chord.Points;
+			//chord.SetFretsCoor();
+			//var actual = chord.Frets;
 
-			Assert.AreEqual(expected, actual, "Get Points возвращает неверное значение");
+			//Assert.AreEqual(expected, actual, "Get Frets возвращает неверное значение");
 		}
 
 		[Test(Description = "Тестирование метода на добавления значения в список поля frets")]
@@ -65,9 +66,9 @@ namespace NoteApp.UnitTests
 		{
 			var expected = (1, 1);
 			var chord = new Chord();
-			chord.SetFretsCoor((1,1));
+			//chord.SetFretsCoor((1,1));
 
-			Assert.AreEqual(expected, chord.Points[0], "SetFretsCoor присваивает некорректное значение");
+			//Assert.AreEqual(expected, chord.Frets[0], "SetFretsCoor присваивает некорректное значение");
 		}
 
 		[Test(Description = "Тестирование конструктора с начальным названием")]
@@ -78,7 +79,7 @@ namespace NoteApp.UnitTests
 			var chord = new Chord("Am",1);
 
 			Assert.AreEqual(expectedName, chord.Name, "Конструктор присваивает некорректное значение в название");
-			Assert.AreEqual(expectedBegin, chord.BeginFret, "Конструктор присваивает некорректное значение в начальный лад");
+			Assert.AreEqual(expectedBegin, chord.Begin, "Конструктор присваивает некорректное значение в начальный лад");
 
 		}
 
