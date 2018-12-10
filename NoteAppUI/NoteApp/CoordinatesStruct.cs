@@ -7,15 +7,20 @@ namespace NoteApp
 		/// <summary>
 		/// Координата Х, хранит местоположение точки зажима по оси Х
 		/// </summary>
-		public readonly int X;
+		public int X { get; private set; }
 
 
 		/// <summary>
 		/// Координата У, хранит местоположение точки зажима по оси У
 		/// </summary>
-		public readonly int Y;
+		public int Y { get; private set; }
 		
 
+		/// <summary>
+		/// Конструктор создания точки при вызове с двумя параметрами
+		/// </summary>
+		/// <param name="x">Координата Х точки зажатия</param>
+		/// <param name="y">Координата У точки зажатия</param>
 		public Coordinates (int x, int y)
 		{
 			if (x >= 50 && x <= 240)
