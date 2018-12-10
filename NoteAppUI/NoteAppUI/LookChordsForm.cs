@@ -99,7 +99,7 @@ namespace NoteAppUI
 					_graphic = GridPictureBox.CreateGraphics();
 					GridPictureBox.Refresh();
 
-					Chord selectedChord = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()); //
+					Chord selectedChord = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()); // Временный класс для работы с ним
 
 					ChordNameLabel.Text = ListOfChordNamesListBox.SelectedItem.ToString();
 					ChordBeginFretLabel.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();

@@ -7,14 +7,14 @@ namespace NoteAppUI
 {
 	public class Draw
 	{
-		int xStart = 50; // Граница области рисования слева
-		int xFinal = 240; // Граница области рисования справа
-		int yStart = 50; // Верхняя граница области рисования
-		int yFinal = 250; // Нижняя граница области рисования
-		int xStep = 30; // Расстояние между линиями сетки по оси Х
-		int yStep = 40; // Расстояние между линиями сетки по оси У
-		int fillEllipseWidth = 15; //Устанавливает Ширину точки
-		int fillEllipseHeight = 15; //Устанавливает Высоту точки
+		const int xStart = 50; // Граница области рисования слева
+		const int xFinal = 240; // Граница области рисования справа
+		const int yStart = 50; // Верхняя граница области рисования
+		const int yFinal = 250; // Нижняя граница области рисования
+		const int xStep = 30; // Расстояние между линиями сетки по оси Х
+		const int yStep = 40; // Расстояние между линиями сетки по оси У
+		const int fillEllipseWidth = 15; //Устанавливает Ширину точки
+		const int fillEllipseHeight = 15; //Устанавливает Высоту точки
 		
 
 		/// <summary>
@@ -28,9 +28,9 @@ namespace NoteAppUI
 		{
 		    int xTempStart = xStart; // локальная переменная левой границы оси Х
 		    int yTempStart = yStart; // локальная переменная верхней границы оси У
-
-		    int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
+			int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 16; //Корректирует положение точки на сетке по оси У относительно верхней границы
+
 			while (xTempStart < xFinal)
 			{
 				while (yTempStart <= yFinal)
@@ -54,8 +54,7 @@ namespace NoteAppUI
 					}
 				}
 			}
-		    throw new Exception("Непредвиденная ошибка в рисовании точки");
-			//return new Coordinates(0,0);
+		    throw new Exception("Ошибка в отрисовке точки");
 		}
 
 		/// <summary>
@@ -91,7 +90,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// Метод отрисовки точки
+		/// Метод отрисовки точки для формы просмотра аккордов
 		/// </summary>
 		/// <param name="graphic">Инструмент рисования</param>
 		/// <param name="x">Координата точки по оси Х</param>
