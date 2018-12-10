@@ -192,6 +192,6 @@
         private System.Windows.Forms.Label NameOnBoxLabel;
         private System.Windows.Forms.Label BeginFretOnBoxLabel;
 		private System.Windows.Forms.Button ClearButton;
-		private System.Windows.Forms.Button CancelButton;
+		private new System.Windows.Forms.Button CancelButton;
 	}
 }
