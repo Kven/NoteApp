@@ -29,31 +29,32 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LookChordsForm));
-			this.backButton = new System.Windows.Forms.Button();
+			this.CloseButton = new System.Windows.Forms.Button();
 			this.ListOfChordNamesListBox = new System.Windows.Forms.ListBox();
-			this.addChordButton = new System.Windows.Forms.Button();
-			this.deleteChordButton = new System.Windows.Forms.Button();
-			this.gridPictureBox = new System.Windows.Forms.PictureBox();
-			this.chordNameLabel = new System.Windows.Forms.Label();
-			this.chordBeginFretLabel = new System.Windows.Forms.Label();
-			this.createNewLibraryButton = new System.Windows.Forms.Button();
-			this.openLibraryButton = new System.Windows.Forms.Button();
-			this.saveLibraryButton = new System.Windows.Forms.Button();
-			this.nameOfCurrentLibraryLabel = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.gridPictureBox)).BeginInit();
+			this.AddChordButton = new System.Windows.Forms.Button();
+			this.DeleteChordButton = new System.Windows.Forms.Button();
+			this.GridPictureBox = new System.Windows.Forms.PictureBox();
+			this.ChordNameLabel = new System.Windows.Forms.Label();
+			this.ChordBeginFretLabel = new System.Windows.Forms.Label();
+			this.CreateNewLibraryButton = new System.Windows.Forms.Button();
+			this.OpenLibraryButton = new System.Windows.Forms.Button();
+			this.SaveLibraryButton = new System.Windows.Forms.Button();
+			this.NameOfCurrentLibraryLabel = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// backButton
+			// CloseButton
 			// 
-			this.backButton.FlatAppearance.BorderSize = 0;
-			this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.backButton.Image = global::NoteAppUI.Properties.Resources.back_arrow;
-			this.backButton.Location = new System.Drawing.Point(376, 12);
-			this.backButton.Name = "backButton";
-			this.backButton.Size = new System.Drawing.Size(27, 20);
-			this.backButton.TabIndex = 0;
-			this.backButton.UseVisualStyleBackColor = true;
-			this.backButton.Click += new System.EventHandler(this.Back_Click);
+			this.CloseButton.FlatAppearance.BorderSize = 0;
+			this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.CloseButton.Location = new System.Drawing.Point(369, 12);
+			this.CloseButton.Name = "CloseButton";
+			this.CloseButton.Size = new System.Drawing.Size(34, 32);
+			this.CloseButton.TabIndex = 0;
+			this.CloseButton.Text = "X";
+			this.CloseButton.UseVisualStyleBackColor = true;
+			this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
 			// 
 			// ListOfChordNamesListBox
 			// 
@@ -65,143 +66,143 @@
 			this.ListOfChordNamesListBox.ItemHeight = 21;
 			this.ListOfChordNamesListBox.Location = new System.Drawing.Point(24, 27);
 			this.ListOfChordNamesListBox.Name = "ListOfChordNamesListBox";
-			this.ListOfChordNamesListBox.Size = new System.Drawing.Size(140, 275);
+			this.ListOfChordNamesListBox.Size = new System.Drawing.Size(140, 296);
 			this.ListOfChordNamesListBox.TabIndex = 1;
 			this.ListOfChordNamesListBox.SelectedIndexChanged += new System.EventHandler(this.ListOfChords_SelectedIndexChanged);
 			// 
-			// addChordButton
+			// AddChordButton
 			// 
-			this.addChordButton.BackColor = System.Drawing.Color.Transparent;
-			this.addChordButton.FlatAppearance.BorderSize = 0;
-			this.addChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.addChordButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.addChordButton.ForeColor = System.Drawing.Color.Black;
-			this.addChordButton.Image = ((System.Drawing.Image)(resources.GetObject("addChordButton.Image")));
-			this.addChordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.addChordButton.Location = new System.Drawing.Point(247, 339);
-			this.addChordButton.Name = "addChordButton";
-			this.addChordButton.Size = new System.Drawing.Size(156, 43);
-			this.addChordButton.TabIndex = 2;
-			this.addChordButton.Text = "   Добавить аккорд";
-			this.addChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.addChordButton.UseVisualStyleBackColor = false;
-			this.addChordButton.Click += new System.EventHandler(this.Add_chord_Click);
+			this.AddChordButton.BackColor = System.Drawing.Color.Transparent;
+			this.AddChordButton.FlatAppearance.BorderSize = 0;
+			this.AddChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.AddChordButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.AddChordButton.ForeColor = System.Drawing.Color.Black;
+			this.AddChordButton.Image = ((System.Drawing.Image)(resources.GetObject("AddChordButton.Image")));
+			this.AddChordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.AddChordButton.Location = new System.Drawing.Point(247, 339);
+			this.AddChordButton.Name = "AddChordButton";
+			this.AddChordButton.Size = new System.Drawing.Size(156, 43);
+			this.AddChordButton.TabIndex = 2;
+			this.AddChordButton.Text = "   Добавить аккорд";
+			this.AddChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.AddChordButton.UseVisualStyleBackColor = false;
+			this.AddChordButton.Click += new System.EventHandler(this.Add_chord_Click);
 			// 
-			// deleteChordButton
+			// DeleteChordButton
 			// 
-			this.deleteChordButton.BackColor = System.Drawing.Color.Transparent;
-			this.deleteChordButton.FlatAppearance.BorderSize = 0;
-			this.deleteChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.deleteChordButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.deleteChordButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteChordButton.Image")));
-			this.deleteChordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.deleteChordButton.Location = new System.Drawing.Point(247, 388);
-			this.deleteChordButton.Name = "deleteChordButton";
-			this.deleteChordButton.Size = new System.Drawing.Size(160, 39);
-			this.deleteChordButton.TabIndex = 3;
-			this.deleteChordButton.Text = "   Удалить аккорд";
-			this.deleteChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.deleteChordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.deleteChordButton.UseVisualStyleBackColor = false;
-			this.deleteChordButton.Click += new System.EventHandler(this.DeleteItemButton_Click);
+			this.DeleteChordButton.BackColor = System.Drawing.Color.Transparent;
+			this.DeleteChordButton.FlatAppearance.BorderSize = 0;
+			this.DeleteChordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.DeleteChordButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.DeleteChordButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteChordButton.Image")));
+			this.DeleteChordButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.DeleteChordButton.Location = new System.Drawing.Point(247, 388);
+			this.DeleteChordButton.Name = "DeleteChordButton";
+			this.DeleteChordButton.Size = new System.Drawing.Size(160, 39);
+			this.DeleteChordButton.TabIndex = 3;
+			this.DeleteChordButton.Text = "   Удалить аккорд";
+			this.DeleteChordButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.DeleteChordButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.DeleteChordButton.UseVisualStyleBackColor = false;
+			this.DeleteChordButton.Click += new System.EventHandler(this.DeleteItemButton_Click);
 			// 
-			// gridPictureBox
+			// GridPictureBox
 			// 
-			this.gridPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.gridPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.gridPictureBox.Location = new System.Drawing.Point(184, 95);
-			this.gridPictureBox.Name = "gridPictureBox";
-			this.gridPictureBox.Size = new System.Drawing.Size(215, 222);
-			this.gridPictureBox.TabIndex = 4;
-			this.gridPictureBox.TabStop = false;
-			this.gridPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
+			this.GridPictureBox.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.GridPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.GridPictureBox.Location = new System.Drawing.Point(184, 95);
+			this.GridPictureBox.Name = "GridPictureBox";
+			this.GridPictureBox.Size = new System.Drawing.Size(215, 222);
+			this.GridPictureBox.TabIndex = 4;
+			this.GridPictureBox.TabStop = false;
+			this.GridPictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.NoteBox_Paint);
 			// 
-			// chordNameLabel
+			// ChordNameLabel
 			// 
-			this.chordNameLabel.AutoSize = true;
-			this.chordNameLabel.BackColor = System.Drawing.Color.Transparent;
-			this.chordNameLabel.Font = new System.Drawing.Font("Century Gothic", 16F);
-			this.chordNameLabel.Location = new System.Drawing.Point(260, 60);
-			this.chordNameLabel.Name = "chordNameLabel";
-			this.chordNameLabel.Size = new System.Drawing.Size(0, 25);
-			this.chordNameLabel.TabIndex = 5;
+			this.ChordNameLabel.AutoSize = true;
+			this.ChordNameLabel.BackColor = System.Drawing.Color.Transparent;
+			this.ChordNameLabel.Font = new System.Drawing.Font("Century Gothic", 16F);
+			this.ChordNameLabel.Location = new System.Drawing.Point(265, 60);
+			this.ChordNameLabel.Name = "ChordNameLabel";
+			this.ChordNameLabel.Size = new System.Drawing.Size(0, 25);
+			this.ChordNameLabel.TabIndex = 5;
 			// 
-			// chordBeginFretLabel
+			// ChordBeginFretLabel
 			// 
-			this.chordBeginFretLabel.AutoSize = true;
-			this.chordBeginFretLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.chordBeginFretLabel.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.chordBeginFretLabel.Location = new System.Drawing.Point(190, 110);
-			this.chordBeginFretLabel.Name = "chordBeginFretLabel";
-			this.chordBeginFretLabel.Size = new System.Drawing.Size(0, 19);
-			this.chordBeginFretLabel.TabIndex = 6;
+			this.ChordBeginFretLabel.AutoSize = true;
+			this.ChordBeginFretLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.ChordBeginFretLabel.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.ChordBeginFretLabel.Location = new System.Drawing.Point(190, 110);
+			this.ChordBeginFretLabel.Name = "ChordBeginFretLabel";
+			this.ChordBeginFretLabel.Size = new System.Drawing.Size(0, 19);
+			this.ChordBeginFretLabel.TabIndex = 6;
 			// 
-			// createNewLibraryButton
+			// CreateNewLibraryButton
 			// 
-			this.createNewLibraryButton.BackColor = System.Drawing.Color.Transparent;
-			this.createNewLibraryButton.FlatAppearance.BorderSize = 0;
-			this.createNewLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.createNewLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.createNewLibraryButton.ForeColor = System.Drawing.Color.Black;
-			this.createNewLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("createNewLibraryButton.Image")));
-			this.createNewLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.createNewLibraryButton.Location = new System.Drawing.Point(12, 433);
-			this.createNewLibraryButton.Name = "createNewLibraryButton";
-			this.createNewLibraryButton.Size = new System.Drawing.Size(225, 38);
-			this.createNewLibraryButton.TabIndex = 7;
-			this.createNewLibraryButton.Text = "     Создать новую";
-			this.createNewLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.createNewLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.createNewLibraryButton.UseVisualStyleBackColor = false;
-			this.createNewLibraryButton.Click += new System.EventHandler(this.New_Click);
+			this.CreateNewLibraryButton.BackColor = System.Drawing.Color.Transparent;
+			this.CreateNewLibraryButton.FlatAppearance.BorderSize = 0;
+			this.CreateNewLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.CreateNewLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.CreateNewLibraryButton.ForeColor = System.Drawing.Color.Black;
+			this.CreateNewLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("CreateNewLibraryButton.Image")));
+			this.CreateNewLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.CreateNewLibraryButton.Location = new System.Drawing.Point(12, 433);
+			this.CreateNewLibraryButton.Name = "CreateNewLibraryButton";
+			this.CreateNewLibraryButton.Size = new System.Drawing.Size(225, 38);
+			this.CreateNewLibraryButton.TabIndex = 7;
+			this.CreateNewLibraryButton.Text = "     Создать новую";
+			this.CreateNewLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.CreateNewLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.CreateNewLibraryButton.UseVisualStyleBackColor = false;
+			this.CreateNewLibraryButton.Click += new System.EventHandler(this.New_Click);
 			// 
-			// openLibraryButton
+			// OpenLibraryButton
 			// 
-			this.openLibraryButton.BackColor = System.Drawing.Color.Transparent;
-			this.openLibraryButton.FlatAppearance.BorderSize = 0;
-			this.openLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.openLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.openLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("openLibraryButton.Image")));
-			this.openLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.openLibraryButton.Location = new System.Drawing.Point(12, 388);
-			this.openLibraryButton.Name = "openLibraryButton";
-			this.openLibraryButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.openLibraryButton.Size = new System.Drawing.Size(225, 39);
-			this.openLibraryButton.TabIndex = 8;
-			this.openLibraryButton.Text = "     Открыть библиотеку";
-			this.openLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.openLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.openLibraryButton.UseVisualStyleBackColor = false;
-			this.openLibraryButton.Click += new System.EventHandler(this.Open_Click);
+			this.OpenLibraryButton.BackColor = System.Drawing.Color.Transparent;
+			this.OpenLibraryButton.FlatAppearance.BorderSize = 0;
+			this.OpenLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.OpenLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.OpenLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenLibraryButton.Image")));
+			this.OpenLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.OpenLibraryButton.Location = new System.Drawing.Point(12, 388);
+			this.OpenLibraryButton.Name = "OpenLibraryButton";
+			this.OpenLibraryButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.OpenLibraryButton.Size = new System.Drawing.Size(225, 39);
+			this.OpenLibraryButton.TabIndex = 8;
+			this.OpenLibraryButton.Text = "     Открыть библиотеку";
+			this.OpenLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.OpenLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.OpenLibraryButton.UseVisualStyleBackColor = false;
+			this.OpenLibraryButton.Click += new System.EventHandler(this.Open_Click);
 			// 
-			// saveLibraryButton
+			// SaveLibraryButton
 			// 
-			this.saveLibraryButton.BackColor = System.Drawing.Color.Transparent;
-			this.saveLibraryButton.FlatAppearance.BorderSize = 0;
-			this.saveLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.saveLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
-			this.saveLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("saveLibraryButton.Image")));
-			this.saveLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.saveLibraryButton.Location = new System.Drawing.Point(12, 339);
-			this.saveLibraryButton.Name = "saveLibraryButton";
-			this.saveLibraryButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.saveLibraryButton.Size = new System.Drawing.Size(225, 43);
-			this.saveLibraryButton.TabIndex = 9;
-			this.saveLibraryButton.Text = "     Сохранить библиотеку";
-			this.saveLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.saveLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.saveLibraryButton.UseVisualStyleBackColor = false;
-			this.saveLibraryButton.Click += new System.EventHandler(this.Save_Click);
+			this.SaveLibraryButton.BackColor = System.Drawing.Color.Transparent;
+			this.SaveLibraryButton.FlatAppearance.BorderSize = 0;
+			this.SaveLibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.SaveLibraryButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+			this.SaveLibraryButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveLibraryButton.Image")));
+			this.SaveLibraryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.SaveLibraryButton.Location = new System.Drawing.Point(12, 339);
+			this.SaveLibraryButton.Name = "SaveLibraryButton";
+			this.SaveLibraryButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.SaveLibraryButton.Size = new System.Drawing.Size(225, 43);
+			this.SaveLibraryButton.TabIndex = 9;
+			this.SaveLibraryButton.Text = "     Сохранить библиотеку";
+			this.SaveLibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.SaveLibraryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.SaveLibraryButton.UseVisualStyleBackColor = false;
+			this.SaveLibraryButton.Click += new System.EventHandler(this.Save_Click);
 			// 
-			// nameOfCurrentLibraryLabel
+			// NameOfCurrentLibraryLabel
 			// 
-			this.nameOfCurrentLibraryLabel.AutoSize = true;
-			this.nameOfCurrentLibraryLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.nameOfCurrentLibraryLabel.Location = new System.Drawing.Point(181, 27);
-			this.nameOfCurrentLibraryLabel.Name = "nameOfCurrentLibraryLabel";
-			this.nameOfCurrentLibraryLabel.Size = new System.Drawing.Size(130, 17);
-			this.nameOfCurrentLibraryLabel.TabIndex = 10;
-			this.nameOfCurrentLibraryLabel.Text = "Новая библиотека";
+			this.NameOfCurrentLibraryLabel.AutoSize = true;
+			this.NameOfCurrentLibraryLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.NameOfCurrentLibraryLabel.Location = new System.Drawing.Point(181, 27);
+			this.NameOfCurrentLibraryLabel.Name = "NameOfCurrentLibraryLabel";
+			this.NameOfCurrentLibraryLabel.Size = new System.Drawing.Size(130, 17);
+			this.NameOfCurrentLibraryLabel.TabIndex = 10;
+			this.NameOfCurrentLibraryLabel.Text = "Новая библиотека";
 			// 
 			// LookChordsForm
 			// 
@@ -209,24 +210,24 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gray;
 			this.ClientSize = new System.Drawing.Size(415, 500);
-			this.Controls.Add(this.nameOfCurrentLibraryLabel);
-			this.Controls.Add(this.saveLibraryButton);
-			this.Controls.Add(this.openLibraryButton);
-			this.Controls.Add(this.createNewLibraryButton);
-			this.Controls.Add(this.chordBeginFretLabel);
-			this.Controls.Add(this.chordNameLabel);
-			this.Controls.Add(this.gridPictureBox);
-			this.Controls.Add(this.deleteChordButton);
-			this.Controls.Add(this.addChordButton);
+			this.Controls.Add(this.NameOfCurrentLibraryLabel);
+			this.Controls.Add(this.SaveLibraryButton);
+			this.Controls.Add(this.OpenLibraryButton);
+			this.Controls.Add(this.CreateNewLibraryButton);
+			this.Controls.Add(this.ChordBeginFretLabel);
+			this.Controls.Add(this.ChordNameLabel);
+			this.Controls.Add(this.GridPictureBox);
+			this.Controls.Add(this.DeleteChordButton);
+			this.Controls.Add(this.AddChordButton);
 			this.Controls.Add(this.ListOfChordNamesListBox);
-			this.Controls.Add(this.backButton);
+			this.Controls.Add(this.CloseButton);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "LookChordsForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Просмотр библиотеки";
 			this.Load += new System.EventHandler(this.LookChordsForm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.gridPictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -234,16 +235,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.ListBox ListOfChordNamesListBox;
-        private System.Windows.Forms.Button addChordButton;
-        private System.Windows.Forms.Button deleteChordButton;
-        private System.Windows.Forms.PictureBox gridPictureBox;
-		private System.Windows.Forms.Label chordNameLabel;
-		private System.Windows.Forms.Label chordBeginFretLabel;
-		private System.Windows.Forms.Button createNewLibraryButton;
-		private System.Windows.Forms.Button openLibraryButton;
-		private System.Windows.Forms.Button saveLibraryButton;
-        private System.Windows.Forms.Label nameOfCurrentLibraryLabel;
+        private System.Windows.Forms.Button AddChordButton;
+        private System.Windows.Forms.Button DeleteChordButton;
+        private System.Windows.Forms.PictureBox GridPictureBox;
+		private System.Windows.Forms.Label ChordNameLabel;
+		private System.Windows.Forms.Label ChordBeginFretLabel;
+		private System.Windows.Forms.Button CreateNewLibraryButton;
+		private System.Windows.Forms.Button OpenLibraryButton;
+		private System.Windows.Forms.Button SaveLibraryButton;
+        private System.Windows.Forms.Label NameOfCurrentLibraryLabel;
     }
 }

@@ -31,18 +31,20 @@ namespace NoteAppUI
 		public LookChordsForm()
 		{
 		    InitializeComponent();
+
 			_listOfChords = new ListOfChords();
-		    var bitmap = new Bitmap(gridPictureBox.Width, gridPictureBox.Height);
+
 			_draw = new Draw();
-			_draw.DrawGrid(bitmap, _graphic, gridPictureBox, xGridBeginPosition, yGridBeginPosition);
+
+			Bitmap bitmap = new Bitmap(GridPictureBox.Width, GridPictureBox.Height);
+			_draw.DrawGrid(bitmap, _graphic, GridPictureBox, xGridBeginPosition, yGridBeginPosition);
 		}
 
 		/// <summary>
 		/// Закрывает текущую форму и возвращает на главную форму
 		/// </summary>
-        private void Back_Click(object sender, EventArgs e)
+        private void CloseButton_Click(object sender, EventArgs e)
 		{
-
 		    if (MessageBox.Show("Сохранить перед выходом?", "", MessageBoxButtons.YesNo) == DialogResult.No)
 		    Close();
 		    else
@@ -95,7 +97,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void NoteBox_Paint(object sender, PaintEventArgs e)
 		{
-			_graphic = gridPictureBox.CreateGraphics();
+			_graphic = GridPictureBox.CreateGraphics();
 		}
 
 		/// <summary>
@@ -108,10 +110,10 @@ namespace NoteAppUI
 			{
 				if (_listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()) != null  )
 				{
-					gridPictureBox.Refresh();
+					GridPictureBox.Refresh();
 					Chord selectedChord = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString());
-					chordNameLabel.Text = ListOfChordNamesListBox.SelectedItem.ToString();
-					chordBeginFretLabel.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();
+					ChordNameLabel.Text = ListOfChordNamesListBox.SelectedItem.ToString();
+					ChordBeginFretLabel.Text = _listOfChords.Chords.Find(x => x.Name == ListOfChordNamesListBox.SelectedItem.ToString()).BeginFret.ToString();
 					int count = selectedChord.Points.Count;
 					for (int i = 0; i < count; i++)
 					{
@@ -122,9 +124,9 @@ namespace NoteAppUI
 			else
 			{
 				ListOfChordNamesListBox.SelectedIndex = -1;
-				chordBeginFretLabel.Text = "";
-				chordNameLabel.Text = "";
-				gridPictureBox.Refresh();
+				ChordBeginFretLabel.Text = "";
+				ChordNameLabel.Text = "";
+				GridPictureBox.Refresh();
 			}
 		}
 
@@ -142,7 +144,7 @@ namespace NoteAppUI
 			openFileDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(openFileDialog.FileName))
 			{
-			    nameOfCurrentLibraryLabel.Text = openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf('\\') + 1,
+			    NameOfCurrentLibraryLabel.Text = openFileDialog.FileName.Substring(openFileDialog.FileName.LastIndexOf('\\') + 1,
 			        openFileDialog.FileName.Length - openFileDialog.FileName.LastIndexOf('\\') - 5);
 				var fromFile = Serialize.ReadFile(openFileDialog.FileName);
 				_listOfChords = fromFile;
@@ -171,7 +173,7 @@ namespace NoteAppUI
 			saveFileDialog.ShowDialog();
 			if (!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
 			{
-			    nameOfCurrentLibraryLabel.Text = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf('\\') + 1,
+			    NameOfCurrentLibraryLabel.Text = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf('\\') + 1,
 			        saveFileDialog.FileName.Length - saveFileDialog.FileName.LastIndexOf('\\') - 5);
                 Serialize.SaveFile(_listOfChords, saveFileDialog.FileName);
 			}

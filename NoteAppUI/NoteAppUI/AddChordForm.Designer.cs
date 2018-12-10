@@ -50,7 +50,7 @@
 			this.GridPictureBox.Size = new System.Drawing.Size(294, 313);
 			this.GridPictureBox.TabIndex = 2;
 			this.GridPictureBox.TabStop = false;
-			this.GridPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NoteBox_MouseDown);
+			this.GridPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GridPictureBox_MouseDown);
 			// 
 			// NameInputTextBox
 			// 
@@ -60,7 +60,7 @@
 			this.NameInputTextBox.Name = "NameInputTextBox";
 			this.NameInputTextBox.Size = new System.Drawing.Size(69, 24);
 			this.NameInputTextBox.TabIndex = 3;
-			this.NameInputTextBox.TextChanged += new System.EventHandler(this.NameInput_TextChanged);
+			this.NameInputTextBox.TextChanged += new System.EventHandler(this.NameInputTextBox_TextChanged);
 			// 
 			// BeginFretInputTextBox
 			// 
@@ -70,7 +70,7 @@
 			this.BeginFretInputTextBox.Name = "BeginFretInputTextBox";
 			this.BeginFretInputTextBox.Size = new System.Drawing.Size(24, 24);
 			this.BeginFretInputTextBox.TabIndex = 4;
-			this.BeginFretInputTextBox.TextChanged += new System.EventHandler(this.BeginInput_TextChanged);
+			this.BeginFretInputTextBox.TextChanged += new System.EventHandler(this.BeginFretInputTextBox_TextChanged);
 			// 
 			// NameLabel
 			// 
@@ -104,7 +104,7 @@
 			this.AddChordButton.TabIndex = 7;
 			this.AddChordButton.Text = "Добавить";
 			this.AddChordButton.UseVisualStyleBackColor = false;
-			this.AddChordButton.Click += new System.EventHandler(this.AddChord_Click);
+			this.AddChordButton.Click += new System.EventHandler(this.AddChordButton_Click);
 			// 
 			// NameOnBoxLabel
 			// 
@@ -138,7 +138,7 @@
 			this.ClearButton.TabIndex = 11;
 			this.ClearButton.Text = "Очистить";
 			this.ClearButton.UseVisualStyleBackColor = false;
-			this.ClearButton.Click += new System.EventHandler(this.Clear_Click);
+			this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
 			// 
 			// CancelButton
 			// 
@@ -151,7 +151,7 @@
 			this.CancelButton.TabIndex = 12;
 			this.CancelButton.Text = "X";
 			this.CancelButton.UseVisualStyleBackColor = true;
-			this.CancelButton.Click += new System.EventHandler(this.Сancel_Click);
+			this.CancelButton.Click += new System.EventHandler(this.CloseButton_Click);
 			// 
 			// AddChordForm
 			// 
@@ -174,7 +174,6 @@
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Создание аккорда";
-			this.Load += new System.EventHandler(this.AddChordForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.GridPictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
