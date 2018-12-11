@@ -6,7 +6,7 @@ using System;
 namespace NoteApp.UnitTests
 {
 	[TestFixture]
-	class JsonTest
+	class SerializeTest
 	{
 		[Test(Description = "Тест метода сериализации в файл")]
 		public void TestSerializeSaveFile_Method()
