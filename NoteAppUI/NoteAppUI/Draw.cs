@@ -7,14 +7,14 @@ namespace NoteAppUI
 {
 	public class Draw
 	{
-		const int xStart = 50; // Граница области рисования слева
-		const int xFinal = 240; // Граница области рисования справа
-		const int yStart = 50; // Верхняя граница области рисования
-		const int yFinal = 250; // Нижняя граница области рисования
-		const int xStep = 30; // Расстояние между линиями сетки по оси Х
-		const int yStep = 40; // Расстояние между линиями сетки по оси У
-		const int fillEllipseWidth = 15; //Устанавливает Ширину точки
-		const int fillEllipseHeight = 15; //Устанавливает Высоту точки
+		const int XStart = 50; // Граница области рисования слева
+		const int XFinal = 240; // Граница области рисования справа
+		const int YStart = 50; // Верхняя граница области рисования
+		const int YFinal = 250; // Нижняя граница области рисования
+		const int XStep = 30; // Расстояние между линиями сетки по оси Х
+		const int YStep = 40; // Расстояние между линиями сетки по оси У
+		const int FillEllipseWidth = 15; //Устанавливает Ширину точки
+		const int FillEllipseHeight = 15; //Устанавливает Высоту точки
 		
 
 		/// <summary>
@@ -26,30 +26,30 @@ namespace NoteAppUI
 		/// <returns>Возвращает структуру координат точки зажатия</returns>
 		public Coordinates Point (int x, int y, Graphics g)
 		{
-		    int xTempStart = xStart; // локальная переменная левой границы оси Х
-		    int yTempStart = yStart; // локальная переменная верхней границы оси У
+		    int xTempStart = XStart; // локальная переменная левой границы оси Х
+		    int yTempStart = YStart; // локальная переменная верхней границы оси У
 			int xPointCorrect = 13; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 16; //Корректирует положение точки на сетке по оси У относительно верхней границы
 
-			while (xTempStart < xFinal)
+			while (xTempStart < XFinal)
 			{
-				while (yTempStart <= yFinal)
+				while (yTempStart <= YFinal)
 				{
-					if (x > xTempStart && x < xTempStart + xStep && y > yTempStart && y < yTempStart + yStep)
+					if (x > xTempStart && x < xTempStart + XStep && y > yTempStart && y < yTempStart + YStep)
 					{
-						g.FillEllipse(Brushes.Black, xTempStart + xPointCorrect, yTempStart + yPointCorrect, fillEllipseWidth, fillEllipseHeight);
+						g.FillEllipse(Brushes.Black, xTempStart + xPointCorrect, yTempStart + yPointCorrect, FillEllipseWidth, FillEllipseHeight);
 						return new Coordinates(xTempStart + xPointCorrect, yTempStart + yPointCorrect);
 					}
 					else
 					{
-						if (yTempStart == yFinal)
+						if (yTempStart == YFinal)
 						{
 							yTempStart = 50; //Установка в Начальное состояние
-							xTempStart += xStep;
+							xTempStart += XStep;
 						}
 						else
 						{
-							yTempStart += yStep;
+							yTempStart += YStep;
 						}
 					}
 				}
@@ -67,7 +67,12 @@ namespace NoteAppUI
 		/// <param name="y">Точка по оси У с которой начинается отрисовка по оси У</param>
 		public void DrawGrid(Bitmap bitmap, Graphics g, PictureBox pictureBox, int x, int y)
 		{
-			using (g = Graphics.FromImage(bitmap))
+            if (g == null)
+            {
+                throw new ArgumentNullException(nameof(g));
+            }
+
+            using (g = Graphics.FromImage(bitmap))
 			{
 				Pen pen = new Pen(Color.Black, 2);
 				int x1 = x;
@@ -76,14 +81,14 @@ namespace NoteAppUI
 				for (int i = 0; i < 6; i++)
 				{
 					g.DrawLine(pen, x1, y1, x1, y1 + 200);
-					x1 += xStep;
+					x1 += XStep;
 				}
 				//горизонтальные
 				x1 = x-1;
 				for (int i = 0; i < 6; i++)
 				{
 					g.DrawLine(pen, x1, y1, x1 + 152, y1);
-					y1 += yStep;
+					y1 += YStep;
 				}
 			}
 			pictureBox.Image = bitmap;
@@ -99,7 +104,7 @@ namespace NoteAppUI
 		{
 			int xPointCorrect = 40; //Кооректирует положение точки на сетке по оси Х относительно левой границы
 			int yPointCorrect = 49; //Корректирует положение точки на сетке по оси У относительно верхней границы
-			graphic.FillEllipse(Brushes.Black, x - xPointCorrect, y - yPointCorrect, fillEllipseWidth, fillEllipseHeight);
+			graphic.FillEllipse(Brushes.Black, x - xPointCorrect, y - yPointCorrect, FillEllipseWidth, FillEllipseHeight);
 		}
 
 	}

@@ -41,11 +41,11 @@ namespace NoteAppUI
 
 			_draw = new Draw();
 
-			Bitmap _bitmap = new Bitmap(GridPictureBox.Width, GridPictureBox.Height);
+			Bitmap bitmap = new Bitmap(GridPictureBox.Width, GridPictureBox.Height);
 						
 			int xPosition = 70; //Точка начала отрисовки линий сетки по оси Х
 			int yPosition = 55; //Точка начала отрисовки линий сетки по оси У
-			_draw.DrawGrid(_bitmap, _graphic, GridPictureBox, xPosition, yPosition);
+			_draw.DrawGrid(bitmap, _graphic, GridPictureBox, xPosition, yPosition);
 		}
 
        
@@ -112,7 +112,7 @@ namespace NoteAppUI
 		/// </summary>
 		private void BeginFretInputTextBox_TextChanged(object sender, EventArgs e)
         {
-			if (int.TryParse(BeginFretInputTextBox.Text, out int value))
+			if (int.TryParse(BeginFretInputTextBox.Text, out _))
 				BeginFretOnBoxLabel.Text = BeginFretInputTextBox.Text;
         }
 
