@@ -66,9 +66,9 @@ namespace NoteAppUI
             {
                 _listOfChords.Chords.Add(addChordForm.NewChord);
 				addChordForm.Close();
-                ListOfChordNamesListBox.Items.Add(_listOfChords.Chords[_listOfChords.Chords.Count-1].Name);
-				ListOfChordNamesListBox.SelectedIndex = ListOfChordNamesListBox.Items.Count - 1;
-			}
+                    ListOfChordNamesListBox.Items.Add(_listOfChords.Chords[_listOfChords.Chords.Count - 1].Name);
+                    ListOfChordNamesListBox.SelectedIndex = ListOfChordNamesListBox.Items.Count - 1;
+            }
 		}
 
 		/// <summary>

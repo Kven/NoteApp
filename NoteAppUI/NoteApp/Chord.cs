@@ -9,20 +9,20 @@ namespace NoteApp
 	/// </summary>
 	public class Chord
 	{
-		private System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex(@"^[A-Z]{1,10}"); //Регулярное выражение для проверки введенного названия
+		private System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex("^[A-Z]{1,9}$|[A-Z][a-z,0-9]{1,9}$"); //Регулярное выражение для проверки введенного названия
 
 		/// <summary>
 		/// Конструктор с передаваемым именем и начальным ладом
 		/// </summary>
 		/// <param name="name">Название аккорда</param>
-		/// <param name="beginfret">Начальный лад</param>
-		public Chord(string name, int beginfret)
+		/// <param name="beginFret">Начальный лад</param>
+		public Chord(string name, int beginFret)
 		{
-			if (_regularForName.IsMatch(name))
+			if (_regularForName.IsMatch(name) && name.Length >= 1 && name.Length <= 10)
 				Name = name;
 						
-			if (beginfret >= 1 && beginfret <= 12)
-				BeginFret = beginfret;
+			if (beginFret >= 1 && beginFret <= 12)
+				BeginFret = beginFret;
 			
 			Points = new List<Coordinates>();
 		}
@@ -45,7 +45,7 @@ namespace NoteApp
 			get => _name;
 			set
 			{
-                if(! _regularForName.IsMatch(value))
+                if(!_regularForName.IsMatch(value) || value.Length >= 10)
                     throw new ArgumentException("Не корректное название");
 				_name = value;
 			}

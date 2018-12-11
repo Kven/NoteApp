@@ -67,12 +67,7 @@ namespace NoteAppUI
 		/// <param name="y">Точка по оси У с которой начинается отрисовка по оси У</param>
 		public void DrawGrid(Bitmap bitmap, Graphics g, PictureBox pictureBox, int x, int y)
 		{
-            if (g == null)
-            {
-                throw new ArgumentNullException(nameof(g));
-            }
-
-            using (g = Graphics.FromImage(bitmap))
+           using (g = Graphics.FromImage(bitmap))
 			{
 				Pen pen = new Pen(Color.Black, 2);
 				int x1 = x;

@@ -23,7 +23,7 @@ namespace NoteAppUI
 		/// </summary>
 		private List<Coordinates> _tempCoordinatesList;
 
-		System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex(@"^[A-Z]{1,10}"); //регулярное выражение - шаблон для проверки вводимого названия аккорда
+		System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex("^[A-Z]{1,9}$|[A-Z][a-z,0-9]{1,9}$"); //регулярное выражение - шаблон для проверки вводимого названия аккорда
 
 		/// <summary>
 		/// Инструмент для отрисовки сетки и точек

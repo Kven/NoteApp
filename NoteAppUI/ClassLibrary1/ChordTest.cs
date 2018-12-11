@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using NoteApp;
 
@@ -23,8 +24,8 @@ namespace NoteApp.UnitTests
 	    {
 	        var wrongName = "Am10Sdasd5555131";
 	        var chord = new Chord();
-	        
-	        Assert.
+
+	        Assert.Throws<ArgumentException>(() => { chord.Name = wrongName; }, "Должно возникать исключение, если название больше 10 символов");
 	    }
 
         [Test(Description = "Тестирование на получение значения из поля Name")]
