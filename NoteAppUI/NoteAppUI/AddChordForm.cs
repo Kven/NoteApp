@@ -64,7 +64,7 @@ namespace NoteAppUI
 		private void GridPictureBox_MouseDown(object sender, MouseEventArgs e)
 		{
 			_graphic = GridPictureBox.CreateGraphics();
-			if (e.X >= 50 && e.X <= 240 && e.Y >= 50 && e.Y <= 250)
+			if (e.X > 50 && e.X < 230 && e.Y > 50 && e.Y < 260)
 				_tempCoordinatesList.Add(_draw.Point(e.X, e.Y, _graphic));
 		}
 

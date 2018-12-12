@@ -22,9 +22,9 @@ namespace NoteAppUI
 		/// </summary>
 		/// <param name="x">Координата курсора в момент клика по оси Х</param>
 		/// <param name="y">Коориданта курсора в момент клика по оси У</param>
-		/// <param name="g">Инструмент графики</param>
+		/// <param name="graphics">Инструмент графики</param>
 		/// <returns>Возвращает структуру координат точки зажатия</returns>
-		public Coordinates Point (int x, int y, Graphics g)
+		public Coordinates Point (int x, int y, Graphics graphics)
 		{
 		    int xTempStart = XStart; // локальная переменная левой границы оси Х
 		    int yTempStart = YStart; // локальная переменная верхней границы оси У
@@ -37,7 +37,7 @@ namespace NoteAppUI
 				{
 					if (x > xTempStart && x < xTempStart + XStep && y > yTempStart && y < yTempStart + YStep)
 					{
-						g.FillEllipse(Brushes.Black, xTempStart + xPointCorrect, yTempStart + yPointCorrect, FillEllipseWidth, FillEllipseHeight);
+						graphics.FillEllipse(Brushes.Black, xTempStart + xPointCorrect, yTempStart + yPointCorrect, FillEllipseWidth, FillEllipseHeight);
 						return new Coordinates(xTempStart + xPointCorrect, yTempStart + yPointCorrect);
 					}
 					else

@@ -23,12 +23,12 @@ namespace NoteApp
 		/// <param name="y">Координата У точки зажатия</param>
 		public Coordinates (int x, int y)
 		{
-			if (x >= 50 && x <= 240)
+			if (x >= 50 && x <= 255)
 				X = x;
 			else
 				throw new Exception("Координата Х не может быть меньше 50 или больше 240");
 
-			if (y >= 50 && y <= 250)
+			if (y >= 50 && y <= 266)
 				Y = y;
 			else
 				throw new Exception("Координата У не может быть меньше 50 или больше 250");

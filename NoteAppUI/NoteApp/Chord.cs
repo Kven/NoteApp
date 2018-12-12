@@ -9,7 +9,7 @@ namespace NoteApp
 	/// </summary>
 	public class Chord
 	{
-		private System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex("^[A-Z]{1,9}$|[A-Z][a-z,0-9]{1,9}$"); //Регулярное выражение для проверки введенного названия
+		private System.Text.RegularExpressions.Regex _regularForName = new System.Text.RegularExpressions.Regex("^[A-Z]{1}$|[A-Z]{1}[a-z,0-9]{1,9}$"); //Регулярное выражение для проверки введенного названия
 
 		/// <summary>
 		/// Конструктор с передаваемым именем и начальным ладом
