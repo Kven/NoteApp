@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChordTest.cs" />
-    <Compile Include="JsonTest.cs" />
+    <Compile Include="CoordinatesStructTest.cs" />
+    <Compile Include="ListOfChordsTest.cs" />
+    <Compile Include="SerializeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

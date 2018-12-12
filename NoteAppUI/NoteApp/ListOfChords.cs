@@ -26,7 +26,7 @@ namespace NoteApp
 		{
 			get
 			{
-				return Chords[index];
+				return this.Chords[index];
 			}
 		}
 

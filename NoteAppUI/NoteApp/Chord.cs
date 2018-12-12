@@ -60,7 +60,7 @@ namespace NoteApp
 			get =>  _beginFret;
 			set
 			{
-                if (value <= 1 && value > 12)
+                if (value < 1 || value > 12)
                     throw new ArgumentException("Некорректный начальный лад");
 				_beginFret = value;
 			}
