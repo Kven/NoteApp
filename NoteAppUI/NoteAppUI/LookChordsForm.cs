@@ -150,6 +150,10 @@ namespace NoteAppUI
 		/// </summary>
 		private void CreateNewLibraryButton_Click(object sender, EventArgs e)
 		{
+		    NameOfCurrentLibraryLabel.Text = "Новая библиотека";
+		    ChordNameLabel.Text = string.Empty;
+		    ChordBeginFretLabel.Text = string.Empty;
+            GridPictureBox.Refresh();
 			ListOfChordNamesListBox.Items.Clear();
 			_listOfChords.Chords.Clear();
 		}

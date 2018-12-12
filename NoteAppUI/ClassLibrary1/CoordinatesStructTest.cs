@@ -16,14 +16,14 @@ namespace NoteApp.UnitTests
 
 
 		[TestCase(40, "Должно возникать исключение если значение меньше 50", TestName = "Присвоение значение меньше 50 в поле Х")]
-		[TestCase(250, "Должно возникать исключение если значение больше 240", TestName = "Присвоение значение больше 240 в поле Х")]
+		[TestCase(260, "Должно возникать исключение если значение больше 255", TestName = "Присвоение значение больше 255 в поле Х")]
 		public void TestXCoordinatesStructSet_ArgumentExeption(int wrongValue, string message)
 		{
 			Assert.Throws<ArgumentException>(() => { var coordinates = new Coordinates(wrongValue, 50); }, message);
 		}
 
 		[TestCase(40, "Должно возникать исключение если значение меньше 50", TestName = "Присвоение значение меньше 50 в поле Y")]
-		[TestCase(260, "Должно возникать исключение если значение больше 250", TestName = "Присвоение значение больше 250 в поле Y")]
+		[TestCase(270, "Должно возникать исключение если значение больше 266", TestName = "Присвоение значение больше 266 в поле Y")]
 		public void TestYCoordinatesStructSet_ArgumentExeption(int wrongValue, string message)
 		{
 			Assert.Throws<ArgumentException>(() => { var coordinates = new Coordinates(50, wrongValue); }, message);
