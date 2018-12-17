@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace NoteApp.UnitTests
 {
-	class ListOfChordsTest
+	public class ListOfChordsTest
 	{
 		private ListOfChords _expected;
 		private ListOfChords _actual;

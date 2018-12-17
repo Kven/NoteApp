@@ -4,7 +4,7 @@ using System;
 
 namespace NoteApp.UnitTests
 {
-	class CoordinatesStructTest
+	public class CoordinatesStructTest
 	{
 		private Coordinates _coordinates;
 
