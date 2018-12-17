@@ -74,7 +74,7 @@ namespace NoteApp
             get => _points;
 			set
 			{
-				
+			    	
 				_points = value;
 			}
         }
