@@ -13,7 +13,7 @@ namespace NoteApp.UnitTests
 		{
 			var expected = new ListOfChords();
 			expected.Chords.Add(new Chord() { Name = "Am", BeginFret = 1 });
-			string path = "d:/test.txt";
+			string path = AppDomain.CurrentDomain.BaseDirectory + @"\Test.txt";
 			Serialize.SaveFile(expected, path);
 			var actual = new ListOfChords();
 			
@@ -31,7 +31,6 @@ namespace NoteApp.UnitTests
 					Assert.AreEqual(expectedVariable.BeginFret, actualVariable.BeginFret, "Файл сериализован не правильно");
 				}
 		    }
-			
 		}
 
 		[Test(Description = "Тест метода десириализации из файла")]
@@ -39,7 +38,7 @@ namespace NoteApp.UnitTests
 		{
 			var expected = new ListOfChords();
 			expected.Chords.Add(new Chord("Am", 1));
-			string path = "d:/ReadFileTest.txt";
+			string path = AppDomain.CurrentDomain.BaseDirectory + @"\Test.txt";
 			Serialize.SaveFile(expected, path);
 			var actual = Serialize.ReadFile(path);
 
