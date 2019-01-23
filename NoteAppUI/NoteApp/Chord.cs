@@ -37,6 +37,7 @@ namespace NoteApp
 
 
 	    private string _name; //Поле, хранящее название аккорда
+
 		/// <summary>
 		/// Свойство поля _name. Проверяет и устанавливает, а так же возвращает название 
 		/// </summary>
@@ -51,8 +52,8 @@ namespace NoteApp
 			}
 		}
 
-
 	    private int _beginFret; //Поле которое хранит начальный лад
+
 		/// <summary>
 		/// Свойство поля _beginFret. Проверяет и устанавливает начальный лад, а так же возвращает его
 		/// </summary>
@@ -62,11 +63,13 @@ namespace NoteApp
 			{
                 if (value < 1 || value > 12)
                     throw new ArgumentException("Некорректный начальный лад");
+				
 				_beginFret = value;
 			}
 		}
 
 	    private List<Coordinates> _points; //Список точек зажатия на грифе
+
 		/// <summary>
 		/// Список точек зажима струны
 		/// </summary>
@@ -74,7 +77,6 @@ namespace NoteApp
             get => _points;
 			set
 			{
-			    	
 				_points = value;
 			}
         }
