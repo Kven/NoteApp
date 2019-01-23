@@ -132,4 +132,16 @@
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.11.2\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.11.2\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>md $(SolutionDir)InstallScript
+md $(SolutionDir)InstallScript\Installers
+md $(SolutionDir)InstallScript\Release
+xcopy $(TargetDir)*.dll $(SolutionDir)InstallScript\Release\
+xcopy $(TargetDir)*.exe $(SolutionDir)InstallScript\Release\
+"C:\Program Files (x86)\Inno Setup 5\ISCC.exe" $(SolutionDir)\InstallScript\script.iss
+del $(SolutionDir)InstallScript\Release /q
+
+
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
