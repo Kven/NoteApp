@@ -136,7 +136,8 @@
     <PostBuildEvent>md $(SolutionDir)InstallScript
 md $(SolutionDir)InstallScript\Installers
 md $(SolutionDir)InstallScript\Release
-xcopy $(TargetDir)*.dll $(SolutionDir)InstallScript\Release\
+xcopy $(TargetDir)Newtonsoft.Json.dll $(SolutionDir)InstallScript\Release\
+xcopy $(TargetDir)NoteApp.dll $(SolutionDir)InstallScript\Release\
 xcopy $(TargetDir)*.exe $(SolutionDir)InstallScript\Release\
 "C:\Program Files (x86)\Inno Setup 5\ISCC.exe" $(SolutionDir)\InstallScript\script.iss
 del $(SolutionDir)InstallScript\Release /q
