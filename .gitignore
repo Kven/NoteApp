@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/NoteAppUI/enterprise.eapx
+/NoteAppUI/InstallScript/Installers
